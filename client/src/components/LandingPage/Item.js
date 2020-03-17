@@ -55,7 +55,7 @@ function Item({ items, match, handleAddingToCart }) {
                 style={{ maxWidth: "100%" }}
                 src={item.images[0]}
                 alt="Generic placeholder image"
-                width="500"
+                width="375"
                 height="auto"
                 class="order-1 order-lg-1 mainImage"
               />

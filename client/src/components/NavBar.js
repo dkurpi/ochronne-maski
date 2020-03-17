@@ -7,9 +7,10 @@ function NavBar({ items, cart }) {
       {item.name}
     </a>
   ));
-  const cartList = cart.map(item => (
+  const cartList = cart.map(({ item, quantity }) => (
     <a href={`/product/${item.id}`} class="dropdown-item">
-      {item.name}
+      {item.name} {" |  "} {quantity}szt {" |  "}
+      {quantity * item.prize}zł
     </a>
   ));
 
@@ -32,7 +33,7 @@ function NavBar({ items, cart }) {
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse  " id="navbarResponsive">
-          <ul class="navbar-nav ml-auto justify-content-center">
+          <ul class="navbar-nav  ml-9 mr-8 justify-content-center">
             <li class="nav-item active">
               <a class="nav-link" href="/">
                 Start

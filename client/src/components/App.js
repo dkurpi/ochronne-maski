@@ -49,8 +49,9 @@ function App() {
 
   const [cart, setcart] = useState([]);
 
-  const handleAddingToCart = item => {
-    setcart([...cart, item]);
+  const handleAddingToCart = (item, quantity) => {
+    const singleCartItem = { item, quantity };
+    setcart([...cart, singleCartItem]);
     console.log(cart);
   };
 

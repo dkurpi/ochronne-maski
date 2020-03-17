@@ -39,16 +39,29 @@
   display: flex;
   flex-direction: column;
 }
-
+.resetcss{
+    font-size: 12px;
+}
 .mini-item {
   width: 5vw;
 }
+.descriptions{
+    flex-basis: 100% !important;
+}
 @media (max-width: 1024px) {
-  .media.align-items-lg-center.flex-column {
-    padding: 0 !important;
+  .product {
+    padding: 1em 0;
   }
-
   .mini-items {
-    display: none;
+    flex-direction: row;
+    flex-grow: 1;
+    order: 1;
+  width: 100%;
+
+  }
+  .mini-item {
+    width: 50px;
+    margin: 5px;
+    flex-grow: 1;
   }
 }

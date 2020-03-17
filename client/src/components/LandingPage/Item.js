@@ -55,9 +55,9 @@ function Item({ items, match, handleAddingToCart }) {
                 style={{ maxWidth: "100%" }}
                 src={item.images[0]}
                 alt="Generic placeholder image"
-                width="375"
-                height="auto"
-                class="order-1 order-lg-1 mainImage"
+                width="475"
+                height="350"
+                class="order-1 order-lg-1 mainImage mr-lg-5 ml-lg-5"
               />
             </LightgalleryItem>
           </LightgalleryProvider>

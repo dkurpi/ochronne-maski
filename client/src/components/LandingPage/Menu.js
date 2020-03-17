@@ -7,8 +7,7 @@ function Menu({ items }) {
     </a>
   ));
   return (
-    <div class="col-lg-3 menuItem">
-      <h1 class="my-2">Menu</h1>
+    <div class="col-lg-3 menuItem mt-5">
       <div class="list-group ">{menuItems}</div>
     </div>
   );

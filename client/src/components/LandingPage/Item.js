@@ -51,14 +51,7 @@ function Item({ items, match, handleAddingToCart }) {
             </div>
 
             <LightgalleryItem group={`item`} src={item.images[0]}>
-              <img
-                style={{ maxWidth: "100%" }}
-                src={item.images[0]}
-                alt="Generic placeholder image"
-                width="475"
-                height="350"
-                class="order-1 order-lg-1 mainImage mr-lg-5 ml-lg-5"
-              />
+              <img class="card-img-top mainImage" src={item.images[0]} alt="" />
             </LightgalleryItem>
           </LightgalleryProvider>
 

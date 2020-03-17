@@ -46,7 +46,7 @@ function Item({ items, match, handleAddingToCart }) {
       <div className="product col-lg-9 ">
         <div class="descriptions media  flex-column flex-lg-row">
           <LightgalleryProvider>
-            <div className="mini-items d-flex justify-content-center">
+            <div className="mini-items  justify-content-center">
               {mini_images}
             </div>
 

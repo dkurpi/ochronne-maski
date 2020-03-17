@@ -39,25 +39,34 @@
   display: flex;
   flex-direction: column;
 }
-.resetcss{
-    font-size: 12px;
+.resetcss {
+  font-size: 12px;
 }
 .mini-item {
-  width: 5vw;
+  width: 50px;
 }
-.descriptions{
-    flex-basis: 100% !important;
+.descriptions {
+  flex-basis: 100% !important;
 }
+.cartMini {
+    display: none;
+  }
 @media (max-width: 1024px) {
+  .cartMini {
+    display: block;
+  }
   .product {
     padding: 1em 0;
   }
+  .cartLG {
+    display: none !important;
+  }
   .mini-items {
+    display: none !important;
+
     flex-direction: row;
     flex-grow: 1;
     order: 1;
-  width: 100%;
-
   }
   .mini-item {
     width: 50px;

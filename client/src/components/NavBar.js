@@ -20,7 +20,13 @@ function NavBar({ items, cart }) {
         <a class="navbar-brand" href="/">
           Maseczki ochronne
         </a>
-
+        <div className="cartMini ml-auto mr-3">
+          <a
+            href="/koszyk"
+          >
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+        </div>
         <button
           class="navbar-toggler"
           type="button"
@@ -33,7 +39,29 @@ function NavBar({ items, cart }) {
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse  " id="navbarResponsive">
-          <ul class="navbar-nav  ml-9 mr-8 justify-content-center">
+          <ul class="navbar-nav  ml-auto mr-8 justify-content-center">
+            <li
+              onMouseEnter={e => {
+                console.log("eee");
+              }}
+              class="nav-item dropdown cartLG"
+            >
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbardrop"
+                data-toggle="dropdown"
+              >
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+              <div class="dropdown-menu">
+                {cart.length === 0 ? (
+                  <a class="dropdown-item">Brak przedmiotów w koszyku</a>
+                ) : (
+                  cartList
+                )}
+              </div>
+            </li>
             <li class="nav-item active">
               <a class="nav-link" href="/">
                 Start
@@ -55,29 +83,6 @@ function NavBar({ items, cart }) {
               <a class="nav-link" href="#">
                 Kontakt
               </a>
-            </li>
-
-            <li
-              onMouseEnter={e => {
-                console.log("eee");
-              }}
-              class="nav-item dropdown"
-            >
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbardrop"
-                data-toggle="dropdown"
-              >
-                <i class="fas fa-shopping-cart"></i>
-              </a>
-              <div class="dropdown-menu">
-                {cart.length === 0 ? (
-                  <a class="dropdown-item">Brak przedmiotów w koszyku</a>
-                ) : (
-                  cartList
-                )}
-              </div>
             </li>
           </ul>
         </div>

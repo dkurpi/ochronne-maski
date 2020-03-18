@@ -89,13 +89,13 @@ export default class Cart extends Component {
       });
     }
     const form = document.querySelector(".orderForm");
+
     const formPosition =
-      document.body.scrollTop +
+      window.pageYOffset +
       form.getBoundingClientRect().top -
       window.innerHeight * 0.1;
-    console.log(formPosition);
-
-    document.body.scrollTo({
+    console.log(formPosition, window.pageYOffset);
+    window.scrollTo({
       top: formPosition,
       behavior: "smooth"
     });
@@ -185,7 +185,8 @@ export default class Cart extends Component {
               kurierskiej DPD <br />
               <br />
               Koszt przesyłki naliczamy zgodnie z taryfikatorem: <br />
-              <span>13,99 zł</span> przesyłka za wcześniejszym przelewem na konto
+              <span>13,99 zł</span> przesyłka za wcześniejszym przelewem na
+              konto
               <span>21,99 zł</span> przesyłka pobraniowa
               <br />
               <br /> W przypadku wysyłki za granicę koszt zgodnie z cennikiem

@@ -75,3 +75,15 @@
     flex-grow: 1;
   }
 }
+
+@media (max-width: 425px) {
+  .flexcolumn-wrapper {
+    flex-direction: row;
+  }
+  .flexcolumn {
+    width: 50% !important;
+    flex-grow: 1;
+    padding: .3em !important;
+
+  }
+}

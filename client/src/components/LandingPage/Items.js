@@ -5,7 +5,7 @@ export default function Items(props) {
 
   const products = items.map(item => {
     return (
-      <div class="col-lg-3 col-md-4 col- mb-4">
+      <div class="col-lg-3 col-md-4  col-sm-6 mb-2 flexcolumn">
         <div class="card h-100  text-center">
           <a href={`/product/${item.id}`}>
             <img class="card-img-top" src={item.images[0]} alt="" />
@@ -20,7 +20,6 @@ export default function Items(props) {
               </s>{" "}
               {item.prize}zł
             </h5>
-            <p class="card-text">{item.description}</p>
           </div>
           <div class="card-footer">
             <button
@@ -38,5 +37,5 @@ export default function Items(props) {
     );
   });
 
-  return <div class="row">{products}</div>;
+  return <div class="row flexcolumn-wrapper">{products}</div>;
 }

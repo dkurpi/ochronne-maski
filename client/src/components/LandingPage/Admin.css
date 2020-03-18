@@ -73,7 +73,7 @@ tr:hover {
   padding: 20px;
   margin: 10vh 0;
 }
-.singleCartItem__img{
+.singleCartItem__img {
   flex-grow: 1;
   flex-basis: 100%;
 }
@@ -113,6 +113,8 @@ tr:hover {
 }
 
 .adminOrder__item {
+  display: flex;
+  flex-direction: column;
   margin: 10px;
   width: 30%;
   border: 1px solid rgba(128, 128, 128, 0.397);
@@ -192,6 +194,7 @@ table th {
     justify-content: center;
   }
   .adminOrder__item {
+    padding: 2px;
     flex-basis: 44%;
   }
 }

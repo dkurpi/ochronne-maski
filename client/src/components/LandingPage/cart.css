@@ -120,8 +120,9 @@ body {
   }
   
   .orderHeader {
-    height: 30vh;
+    height: 20vh;
     width: 100%;
+    margin-top: 5vh;
   }
   
   .orderWrapper {
@@ -138,7 +139,7 @@ body {
   
   .orderHeaderMask__your-order {
     position: absolute;
-    bottom: 8vh;
+    bottom: 0vh;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -164,7 +165,7 @@ body {
     flex-wrap: wrap;
     padding: 20px;
     background-color: rgb(255, 255, 255);
-    margin-top: 12vh;
+    margin-top: 5vh;
     width: 60vw;
   }
   

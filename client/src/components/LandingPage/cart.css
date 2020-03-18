@@ -168,9 +168,7 @@ body {
   margin-top: 5vh;
   width: 60vw;
 }
-.productSiteWrapper {
-  background: rgba(153, 153, 153, 0.671)
-}
+
 
 .sizes {
   display: flex;

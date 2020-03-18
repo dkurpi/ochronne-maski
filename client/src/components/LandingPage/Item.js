@@ -45,8 +45,6 @@ function Item({ items, match, handleAddingToCart }) {
     <>
       <div className="product col-lg-9 ">
         <div class="descriptions media  flex-column flex-lg-row">
-
-
           {/* <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100  text-center">
               <LightgalleryProvider>
@@ -64,8 +62,6 @@ function Item({ items, match, handleAddingToCart }) {
               </LightgalleryProvider>
             </div>
           </div> */}
-
-
 
           <div class="media-body order-2 order-lg-2 ml-lg-5 flex-fill">
             <h5 class="mt-2 mb-1">{item.name}</h5>
@@ -170,12 +166,12 @@ function Item({ items, match, handleAddingToCart }) {
                 </p>
                 <p>
                   <strong>
-                    <img
+                    {/* <img
                       alt=""
                       height="171"
                       src="/public/assets//zak%C5%82adanie.jpg"
                       width="826"
-                    />
+                    /> */}
                   </strong>
                 </p>
               </div>

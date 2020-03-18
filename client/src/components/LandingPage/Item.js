@@ -183,8 +183,9 @@ function Item({ items, match, handleAddingToCart }) {
       </div>
       <h4 className="pb-6 mt-1">Bestsellery:</h4>
       <hr class="mb-2 mt-1 seperator" />
-
-      <Items items={items} handleAddingToCart={handleAddingToCart} />
+      <div class="row col-12 ml-auto mr-auto">
+        <Items items={items} handleAddingToCart={handleAddingToCart} />
+      </div>
     </>
   );
 }

@@ -1,59 +1,74 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const cors = require('cors')
+const cors = require("cors");
 
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
-// const config = require("./config/key");
+app.use(cors());
 
-// const mongoose = require("mongoose");
-// mongoose
-//   .connect(config.mongoURI, { useNewUrlParser: true })
-//   .then(() => console.log("DB connected"))
-//   .catch(err => console.error(err));
-
-// const mongoose = require("mongoose");
-// const connect = mongoose.connect(config.mongoURI,
-//   {
-//     useNewUrlParser: true, useUnifiedTopology: true,
-//     useCreateIndex: true, useFindAndModify: false
-//   })
-//   .then(() => console.log('MongoDB Connected...'))
-//   .catch(err => console.log(err));
-
-app.use(cors())
-
-//to not get any deprecation warning or error
-//support parsing of application/x-www-form-urlencoded post data
 app.use(bodyParser.urlencoded({ extended: true }));
-//to get json data
-// support parsing of application/json type post data
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.use('/api/users', require('./routes/users'));
+//////////////MONGODB
+const MongoClient = require("mongodb").MongoClient;
+const uri =
+  // "mongodb+srv://local :<dawidrw123>@cluster1-qkch5.mongodb.net/test?retryWrites=true&w=majority";
+  "mongodb+srv://local:dawidrw123@cluster0-ehgqo.mongodb.net/test?authSource=admin&replicaSet=Cluster0-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass%20Community&retryWrites=true&ssl=true";
 
+MongoClient.connect(
+  uri,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  },
+  (err, db) => {
+    console.log("connected to MongoClient");
 
-//use this to show the image you have in node js server to client (react js)
-//https://stackoverflow.com/questions/48914987/send-image-path-from-node-js-express-server-to-react-client
-app.use('/uploads', express.static('uploads'));
+    ///////APIS
+    app.post("/api/new-order", (req, res, err) => {
+      const newOrder = req.body;
 
-// Serve static assets if in production
-if (process.env.NODE_ENV === "production") {
+      const collection = db.db("ochronne-maski").collection("zamowienia");
+      console.log("newor", newOrder);
+      res.json({ isSaved: true });
+      collection.insertOne(newOrder);
+    });
 
-  // Set static folder
-  app.use(express.static("client/build"));
+    app.get("/api/orders", (req, res) => {
+      const collection = db.db("ochronne-maski").collection("zamowienia");
 
-  // index.html for all page routes
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
-  });
-}
+      collection
+        .find({})
+        .toArray()
+        .then(response => {
+          const orders = { orders: response };
+          res.json({
+            orders
+          });
+          console.log(response);
+        });
+    });
 
-const port = process.env.PORT || 5000
+    /////////////PRODUCTION
+    if (process.env.NODE_ENV === "production") {
+      // Set static folder
+      app.use(express.static("client/build"));
 
-app.listen(port, () => {
-  console.log(`Server Running at ${port}`)
-});
+      // index.html for all page routes
+      app.get("*", (req, res) => {
+        res.sendFile(
+          path.resolve(__dirname, "../client", "build", "index.html")
+        );
+      });
+    }
+
+    const port = process.env.PORT || 5000;
+
+    app.listen(port, () => {
+      console.log(`Server Running at ${port}`);
+    });
+  }
+);

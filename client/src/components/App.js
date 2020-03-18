@@ -80,6 +80,8 @@ function App() {
 
   const handleAddingToCart = (item, quantity) => {
     item.quantity = quantity;
+    delete item.description;
+
     setcart([...cart, item]);
     console.log(cart);
     Cookies.set("maski-ochronne", [...cart, item], {

@@ -47,21 +47,22 @@ body {
     width: 100%;
   }
   .singleCartItem__info {
-    flex-basis: 40%;
-    font-size: 13px;
-    margin: 0 30px;
+    margin-top: 1em;
+    font-size: 14px;
     flex-grow: 1;
   }
   
-  .singleCartItem__infoSingle {
+  .singleCartItem__info {
+    display: flex;
+    flex-direction: column;
     line-height: 20px;
-    color: rgb(190, 190, 190);
+    color: rgb(56, 56, 56);
+    flex-grow: 1;
   }
   .singleCartItem:hover {
     transform: translateX(-0.2vw);
   }
   .singleCartItem__infoSingle:nth-child(1) {
-    border-right: 1px solid rgba(255, 0, 0, 0.582);
     padding-right: 20px;
     color: white;
   }

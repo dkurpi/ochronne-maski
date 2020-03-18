@@ -6,6 +6,7 @@ import Menu from "./Menu.js";
 import "./Page.css";
 import Item from "./Item.js";
 import Cart from "./Cart.js";
+import Orders from "./Orders.js";
 function LandingPage(props) {
   return (
     <>
@@ -16,6 +17,9 @@ function LandingPage(props) {
               cart={props.cart}
               cookiesDeleteItem={props.cookiesDeleteItem}
             />
+          </Route>
+          <Route exact path="/zamowienia">
+            <Orders />
           </Route>
           <Route exact path="/">
             <div class="container-fluid container--modified">

@@ -5,7 +5,7 @@ export default function Items(props) {
 
   const products = items.map(item => {
     return (
-      <div class="col-lg-3 col-md-4 mb-4">
+      <div class="col-lg-3 col-md-4 col- mb-4">
         <div class="card h-100  text-center">
           <a href={`/product/${item.id}`}>
             <img class="card-img-top" src={item.images[0]} alt="" />
@@ -25,7 +25,7 @@ export default function Items(props) {
           <div class="card-footer">
             <button
               onClick={() => {
-                props.handleAddingToCart(item);
+                props.handleAddingToCart(item, 1);
               }}
               type="button"
               class="btn btn-danger"
@@ -38,9 +38,5 @@ export default function Items(props) {
     );
   });
 
-  return (
-    <div>
-      <div class="row">{products}</div>
-    </div>
-  );
+  return <div class="row">{products}</div>;
 }

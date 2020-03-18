@@ -114,7 +114,7 @@ export default class Cart extends Component {
     console.log(data);
 
     if (cart.length !== "") {
-      fetch("/api/newOrder", {
+      fetch("/api/new-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -123,14 +123,10 @@ export default class Cart extends Component {
       })
         .then(res => res.json())
         .then(res => {
-          console.log("Dodałem użytkownika:");
-          console.log(res);
+          alert(res.isSaved);
         });
     } else alert("Popraw dane");
-    this.props.clearCart();
-
-    const popup = document.querySelector(".popup");
-    popup.style.display = "block";
+    // this.props.clearCart();
   };
 
   resetCart = () => {};
@@ -189,9 +185,8 @@ export default class Cart extends Component {
               kurierskiej DPD <br />
               <br />
               Koszt przesyłki naliczamy zgodnie z taryfikatorem: <br />
-              <br />
-              <b>13,99 zł</b> przesyłka za wcześniejszym przelewem na konto
-              <br /> <b>21,99 zł</b> przesyłka pobraniowa
+              <span>13,99 zł</span> przesyłka za wcześniejszym przelewem na konto
+              <span>21,99 zł</span> przesyłka pobraniowa
               <br />
               <br /> W przypadku wysyłki za granicę koszt zgodnie z cennikiem
               Poczty Polskiej.
@@ -356,7 +351,6 @@ export default class Cart extends Component {
             </div>
           </div>
         </div>
-        {popup}
       </>
     );
   }

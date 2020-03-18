@@ -32,6 +32,7 @@ function Carousel({ items }) {
         id="carouselExampleIndicators"
         class="carousel slide my-4 carousel-modified"
         data-ride="carousel"
+        data-interval="2000"
       >
         <ol class="carousel-indicators">
           <li

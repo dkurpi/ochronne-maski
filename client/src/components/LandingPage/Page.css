@@ -11,7 +11,9 @@
 }
 .shoppingCart {
 }
-
+.productSiteWrapper {
+  background: #555 !important;
+}
 .navbar-nav > li {
   margin-left: 20px;
   margin-right: 20px;
@@ -97,7 +99,7 @@ ol.carousel-indicators li.active {
 }
 .dropdown-item {
   padding: 2px 20px !important;
-    border-radius: 0 !important;
+  border-radius: 0 !important;
   border-bottom: 1px solid rgb(216, 216, 216) !important;
 }
 .carousel-control-prev {

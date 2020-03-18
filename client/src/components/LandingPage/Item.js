@@ -1,6 +1,8 @@
 import React, { useEffect, useParams, useState } from "react";
 import { LightgalleryProvider, LightgalleryItem } from "react-lightgallery";
 import "lightgallery.js/dist/css/lightgallery.css";
+import Items from "./Items.js";
+import Carousel from "./Carousel/Carousel.js";
 
 function Item({ items, match, handleAddingToCart }) {
   const [item, setitem] = useState(items[match.params.id]);
@@ -43,7 +45,7 @@ function Item({ items, match, handleAddingToCart }) {
 
   return (
     <>
-      <div className="product col-lg-9 ">
+      <div className="product col-12 pl-1 pr-1">
         <div class="descriptions media  flex-column flex-lg-row">
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100  text-center">
@@ -179,6 +181,10 @@ function Item({ items, match, handleAddingToCart }) {
           </div>
         </div>
       </div>
+      <h4 className="pb-6 mt-1">Bestsellery:</h4>
+      <hr class="mb-2 mt-1 seperator" />
+
+      <Items items={items} handleAddingToCart={handleAddingToCart} />
     </>
   );
 }

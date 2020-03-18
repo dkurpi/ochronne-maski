@@ -17,7 +17,7 @@ function App() {
         "/images/maska3.jpg",
         "/images/maska2.jpg"
       ],
-      name: "Maska1 - 100szt",
+      name: "Maska1 - 1szt",
       prize: 39.99,
       oldPrize: 59.99,
       description: "Lorem ipsum "
@@ -25,7 +25,7 @@ function App() {
     {
       id: 1,
       images: ["/images/maska2.jpg"],
-      name: "Maska2 - 100szt",
+      name: "Maska2 - 2szt",
       prize: 39.99,
       oldPrize: 59.99,
       description: "Lorem ipsum dolor sit, ameos!"
@@ -33,7 +33,7 @@ function App() {
     {
       id: 2,
       images: ["/images/maska3.jpg"],
-      name: "Maska3 - 100szt",
+      name: "Maska3 - 3szt",
       prize: 39.99,
       oldPrize: 59.99,
       description: "Lorem ipsum dolor sit, ameos!"
@@ -41,7 +41,23 @@ function App() {
     {
       id: 3,
       images: ["/images/maska3.jpg"],
-      name: "Mask312132213a4 - 100szt",
+      name: "Mask312132213a4 - 4szt",
+      prize: 39.99,
+      oldPrize: 59.99,
+      description: "Lorem ipsum dolor sit, ameos!"
+    },
+    {
+      id: 4,
+      images: ["/images/maska2.jpg"],
+      name: "Mask312132213a4 - 4szt",
+      prize: 39.99,
+      oldPrize: 59.99,
+      description: "Lorem ipsum dolor sit, ameos!"
+    },
+    {
+      id: 5,
+      images: ["/images/maska1.jpg"],
+      name: "Mask312132213a4 - 4szt",
       prize: 39.99,
       oldPrize: 59.99,
       description: "Lorem ipsum dolor sit, ameos!"

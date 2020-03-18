@@ -41,7 +41,6 @@ function LandingPage(props) {
               <>
                 <div class="container-fluid container--modified">
                   <div class="row">
-                    <Menu items={props.items} />
                     <Item
                       items={props.items}
                       handleAddingToCart={props.handleAddingToCart}

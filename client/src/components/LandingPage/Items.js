@@ -5,7 +5,7 @@ export default function Items(props) {
 
   const products = items.map(item => {
     return (
-      <div class="col-lg-4 col-md-6 mb-4">
+      <div class="col-lg-3 col-md-4 mb-4">
         <div class="card h-100  text-center">
           <a href={`/product/${item.id}`}>
             <img class="card-img-top" src={item.images[0]} alt="" />

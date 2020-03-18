@@ -324,7 +324,7 @@ export default class Cart extends Component {
 
     return (
       <>
-        <div style={{ backgroundColor: "gray" }} className="productSiteWrapper">
+        <div className="productSiteWrapper">
           <div class="orderHeader">
             <div class="orderHeaderMask">
               <div className="orderHeaderMask__your-order">

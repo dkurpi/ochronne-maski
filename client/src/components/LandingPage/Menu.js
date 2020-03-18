@@ -7,7 +7,10 @@ function Menu({ items }) {
     </a>
   ));
   return (
-    <div class="col-lg-3 menuItem mt-5">
+    
+    <div class="col-lg-3 menuItem mt-3">
+                  <span className="Text text__delivery"> Nasze produkty:</span>
+
       <div class="list-group ">{menuItems}</div>
     </div>
   );

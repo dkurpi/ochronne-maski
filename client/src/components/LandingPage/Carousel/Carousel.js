@@ -1,26 +1,28 @@
 import React from "react";
 
 function Carousel({ items }) {
-  const item = [
-    <div class="col-lg-6 col-md-4  col-sm-6 mb-2 flexcolumn">
-      <div class="card h-100  text-center">
-        <a href={`/product/${items[0].id}`}>
-          <img class="card-img-top" src={items[0].images[0]} alt="" />
-        </a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href={`product/${items[0].id}`}>{items[0].name}</a>
-          </h4>
-          <h5>
-            <s style={{ color: "red", fontSize: "15px" }}>
-              {items[0].oldPrize}zł
-            </s>{" "}
-            {items[0].prize}zł
-          </h5>
+  const item = index => {
+    return (
+      <div class="col-lg-6 col-md-4  col-sm-6 mb-2 flexcolumn">
+        <div class="card h-100  text-center color-gray">
+          <a href={`/product/${items[index].id}`}>
+            <img class="card-img-top" src={items[index].images[0]} alt="" />
+          </a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href={`product/${items[index].id}`}>{items[index].name}</a>
+            </h4>
+            <h5>
+              <s style={{ color: "red", fontSize: "15px" }}>
+                {items[index].oldPrize}zł
+              </s>{" "}
+              {items[index].prize}zł
+            </h5>
+          </div>
         </div>
       </div>
-    </div>
-  ];
+    );
+  };
 
   return (
     <>
@@ -45,14 +47,14 @@ function Carousel({ items }) {
           <div class="carousel-item active">
             <div className="slider__section">
               {/* <img class="slider__image" src="/images/slider1.jpg" alt="" /> */}
-              <div className="slider__section">{[item, item]}</div>
+              <div className="slider__section">{[item(5), item(3)]}</div>
             </div>
           </div>
           <div class="carousel-item">
-            <div className="slider__section">{[item, item]}</div>
+            <div className="slider__section">{[item(2), item(1)]}</div>
           </div>
           <div class="carousel-item">
-            <div className="slider__section">{[item, item]}</div>
+            <div className="slider__section">{[item(1), item(3)]}</div>
           </div>
         </div>
         <a

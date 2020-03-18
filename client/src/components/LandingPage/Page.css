@@ -50,20 +50,82 @@
 .cartMini {
   display: none;
 }
-
-.slider__section {
-  max-height: 50vh;
-  width: 100%;
-  display: flex;
-  overflow: hidden;
-
+.carousel-indicators li {
+  background-color: rgba(70, 70, 70, 0.25) !important;
 }
 
+.carousel-indicators .active {
+  background-color: rgb(56, 34, 34) !important;
+}
+
+ol.carousel-indicators {
+  position: absolute;
+  bottom: 5px;
+  margin: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+}
+
+ol.carousel-indicators li,
+ol.carousel-indicators li.active {
+  width: 2rem;
+  height: 0.3rem;
+  margin: 0;
+  border: 0;
+  background: transparent;
+}
+.quantity {
+  width: 140px;
+  text-align: center;
+  height: 2em;
+}
+ol.carousel-indicators li {
+  background: rgba(19, 19, 19, 0.39);
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.navbar-nav > li > .dropdown-menu {
+  background-color: rgb(255, 255, 255);
+}
+ol.carousel-indicators li.active {
+  background: yellow;
+}
+.dropdown-menu {
+  padding: 0 !important;
+  border: none !important;
+}
+.dropdown-item {
+  padding: 2px 20px !important;
+    border-radius: 0 !important;
+  border-bottom: 1px solid rgb(216, 216, 216) !important;
+}
+.carousel-control-prev {
+}
+.carousel-control-prev-icon {
+  color: black !important;
+}
+.Text.text__delivery {
+  margin-top: 8em !important;
+}
+.slider__section {
+  width: 100%;
+  display: flex;
+  padding-bottom: 1em;
+}
+.adding {
+  display: flex;
+  justify-content: left;
+  padding: 0.4em 0;
+}
 .slider__image {
   width: 100%;
   object-fit: fill;
 }
-
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  filter: invert(1);
+}
 @media (max-width: 1024px) {
   .dropdown-menu {
     display: block !important;
@@ -88,7 +150,21 @@
     flex-grow: 1;
   }
 }
+.card-img-top {
+  max-height: 60%;
+}
+.pay {
+  background-color: red !important;
+  color: white !important;
+  font-weight: 600 !important;
+}
+.nav-link.dropdown-toggle.btn-danger {
+  color: rgb(255, 255, 255) !important;
+}
 
+.list-group-item.list-group-item-action:hover {
+  background-color: rgba(141, 141, 141, 0.685) !important;
+}
 @media (max-width: 425px) {
   .flexcolumn-wrapper {
     flex-direction: row;
@@ -98,4 +174,16 @@
     flex-grow: 1;
     padding: 0.3em !important;
   }
+  .adding {
+    justify-content: center;
+  }
+}
+
+.color-gray {
+}
+.card-title {
+  font-size: 16px;
+}
+h5 {
+  font-size: 14px !important;
 }

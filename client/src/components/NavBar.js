@@ -2,17 +2,23 @@ import React, { useState } from "react";
 
 import "bootstrap/dist/css/bootstrap.css";
 function NavBar({ items, cart }) {
+  let suma = 0;
   const navItems = items.map(item => (
     <a href={`/product/${item.id}`} class="dropdown-item">
       {item.name}
     </a>
   ));
-  const cartList = cart.map(item => (
-    <a href={`/product/${item.id}`} class="dropdown-item">
-      {item.name} {" |  "} {item.quantity}szt {" |  "}
-      {[item.quantity * item.prize][0].toFixed(2)}zł
-    </a>
-  ));
+  const cartList = cart.map(item => {
+    const prizeAll = [item.quantity * item.prize][0].toFixed(2);
+    console.log(typeof suma);
+    suma += prizeAll*1;
+    return (
+      <a href={`/product/${item.id}`} class="dropdown-item">
+        {item.name} {" |  "} {item.quantity}szt {" |  "}
+        {prizeAll}zł
+      </a>
+    );
+  });
 
   return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center fixed-top">
@@ -58,8 +64,8 @@ function NavBar({ items, cart }) {
                 ) : (
                   [
                     cartList,
-                    <a href={`/koszyk`} class=" dropdown-item">
-                      ZAPŁAĆ
+                    <a href={`/koszyk`} class=" dropdown-item pay ">
+                      ZAPŁAĆ ({suma} zł)
                     </a>
                   ]
                 )}
@@ -73,14 +79,14 @@ function NavBar({ items, cart }) {
             </li>
             <li class="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                class="nav-link dropdown-toggle btn-danger btn-md"
                 href="#"
                 id="navbardrop"
                 data-toggle="dropdown"
               >
                 Produkty
               </a>
-              <div class="dropdown-menu">{navItems}</div>
+              <div class="dropdown-menu ">{navItems}</div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">

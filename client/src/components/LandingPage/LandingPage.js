@@ -5,15 +5,19 @@ import Items from "./Items.js";
 import Menu from "./Menu.js";
 import "./Page.css";
 import Item from "./Item.js";
+import Cart from "./Cart.js";
 function LandingPage(props) {
   return (
     <>
+      <Route exact cart={props.cart} path="/koszyk" component={Cart} />
+      {console.log(props.cart)}
       <div class="container-fluid container--modified">
         <div class="row">
-          <Menu items={props.items} />
           <Router>
             <Switch>
               <Route exact path="/">
+                <Menu items={props.items} />
+
                 <div class="col-lg-9">
                   <Carousel
                     items={props.items}
@@ -27,13 +31,15 @@ function LandingPage(props) {
               </Route>
               <Route
                 path="/product/:id"
-                render={(propse) => 
+                render={propse => [
+                  <Menu items={props.items} />,
                   <Item
                     items={props.items}
                     handleAddingToCart={props.handleAddingToCart}
-                    items={props.items} {...propse}
+                    items={props.items}
+                    {...propse}
                   />
-                }
+                ]}
               ></Route>
             </Switch>
           </Router>

@@ -5,6 +5,7 @@ import Auth from "../hoc/auth";
 import LandingPage from "./LandingPage/LandingPage.js";
 import NavBar from "./NavBar.js";
 import Footer from "./Footer.js";
+import Cookies from "js-cookie";
 
 function App() {
   const items = [
@@ -49,18 +50,66 @@ function App() {
 
   const [cart, setcart] = useState([]);
 
+  // clearCart = item => {
+  //   console.log(item);
+  //   Cookies.set("shoppingCartVellutoGiorno", [], {
+  //     expires: 1
+  //   });
+  //   this.setState({
+  //     cart: []
+  //   });
+  // };
+
+  // cookiesDeleteItem = index => {
+  //   const { cart } = this.state;
+  //   cart.splice(index, 1);
+  //   console.log(index, cart);
+  //   Cookies.set("shoppingCartVellutoGiorno", cart, {
+  //     expires: 1
+  //   });
+  //   this.setState({
+  //     cart
+  //   });
+  //   window.location.reload();
+  // };
+
+  // handleDelete = index => {
+  //   const { cart } = this.state;
+  //   cart.splice(index, 1);
+  //   console.log(index, cart);
+  //   Cookies.set("shoppingCartVellutoGiorno", cart, {
+  //     expires: 1
+  //   });
+  //   this.setState({
+  //     cart
+  //   });
+  // };
+
   const handleAddingToCart = (item, quantity) => {
-    const singleCartItem = { item, quantity };
-    setcart([...cart, singleCartItem]);
+    item.quantity = quantity;
+    setcart([...cart, item]);
     console.log(cart);
+    Cookies.set("maski-ochronne", [...cart, item], {
+      expires: 1
+    });
   };
 
-  useEffect(() => {}, [cart]);
+  useEffect(() => {
+    if (Cookies.get("maski-ochronne")) {
+      const cookiesLog = JSON.parse(Cookies.get("maski-ochronne"));
+      console.log(cookiesLog);
+      setcart(cookiesLog);
+    }
+  }, []);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <NavBar cart={cart} items={items} />
-      <LandingPage handleAddingToCart={handleAddingToCart} items={items} />
+      <LandingPage
+        handleAddingToCart={handleAddingToCart}
+        items={items}
+        cart={cart}
+      />
       <Footer />
     </Suspense>
   );

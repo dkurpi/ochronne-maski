@@ -7,10 +7,10 @@ function NavBar({ items, cart }) {
       {item.name}
     </a>
   ));
-  const cartList = cart.map(({ item, quantity }) => (
+  const cartList = cart.map(item => (
     <a href={`/product/${item.id}`} class="dropdown-item">
-      {item.name} {" |  "} {quantity}szt {" |  "}
-      {quantity * item.prize}zł
+      {item.name} {" |  "} {item.quantity}szt {" |  "}
+      {item.quantity * item.prize}zł
     </a>
   ));
 
@@ -21,9 +21,7 @@ function NavBar({ items, cart }) {
           Maseczki ochronne
         </a>
         <div className="cartMini ml-auto mr-3">
-          <a
-            href="/koszyk"
-          >
+          <a href="/koszyk">
             <i class="fas fa-shopping-cart"></i>
           </a>
         </div>
@@ -56,9 +54,14 @@ function NavBar({ items, cart }) {
               </a>
               <div class="dropdown-menu">
                 {cart.length === 0 ? (
-                  <a class="dropdown-item">Brak przedmiotów w koszyku</a>
+                  <a class="dropdown-item ">Brak przedmiotów w koszyku</a>
                 ) : (
-                  cartList
+                  [
+                    cartList,
+                    <a href={`/koszyk`} class=" dropdown-item">
+                      ZAPŁAĆ
+                    </a>
+                  ]
                 )}
               </div>
             </li>

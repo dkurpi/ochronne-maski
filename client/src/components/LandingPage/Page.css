@@ -37,7 +37,7 @@
 
 .mini-items {
   display: flex;
-  flex-direction: column;
+  order: 2;
 }
 .resetcss {
   font-size: 12px;

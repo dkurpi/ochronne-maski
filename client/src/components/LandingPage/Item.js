@@ -45,16 +45,23 @@ function Item({ items, match, handleAddingToCart }) {
     <>
       <div className="product col-lg-9 ">
         <div class="descriptions media  flex-column flex-lg-row">
-          <LightgalleryProvider>
-            <div className="mini-items  justify-content-center">
-              {mini_images}
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100  text-center">
+              <LightgalleryProvider>
+                <div className="mini-items  justify-content-center">
+                  {mini_images}
+                </div>
+
+                <LightgalleryItem group={`item`} src={item.images[0]}>
+                  <img
+                    class="card-img-top mainImage"
+                    src={item.images[0]}
+                    alt=""
+                  />
+                </LightgalleryItem>
+              </LightgalleryProvider>
             </div>
-
-            <LightgalleryItem group={`item`} src={item.images[0]}>
-              <img class="card-img-top mainImage" src={item.images[0]} alt="" />
-            </LightgalleryItem>
-          </LightgalleryProvider>
-
+          </div>
           <div class="media-body order-2 order-lg-2 ml-lg-5 flex-fill">
             <h5 class="mt-2 mb-1">{item.name}</h5>
             <div class="product-rating my-2">

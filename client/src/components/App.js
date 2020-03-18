@@ -17,7 +17,7 @@ function App() {
         "/images/maska3.jpg",
         "/images/maska2.jpg"
       ],
-      name: "Maska1 - 1szt",
+      name: "Maska1 - milion szt",
       prize: 39.99,
       oldPrize: 59.99,
       description: "Lorem ipsum "

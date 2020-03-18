@@ -31,6 +31,8 @@ function LandingPage(props) {
                     items={props.items}
                     handleAddingToCart={props.handleAddingToCart}
                   />
+                  <span className="Text text__delivery"> Promocje:</span>
+
                   <Items
                     items={props.items}
                     handleAddingToCart={props.handleAddingToCart}

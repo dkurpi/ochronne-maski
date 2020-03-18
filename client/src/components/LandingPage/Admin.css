@@ -115,9 +115,7 @@ tr:hover {
 .adminOrder__item {
   display: flex;
   flex-direction: column;
-  margin: 10px;
   width: 30%;
-  border: 1px solid rgba(128, 128, 128, 0.397);
   padding: 1em;
 }
 table th {

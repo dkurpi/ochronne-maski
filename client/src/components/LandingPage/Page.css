@@ -3,7 +3,6 @@
   max-width: 1620px;
 }
 .carousel-modified {
-  background-color: red;
 }
 
 .fa-shopping-cart {
@@ -51,6 +50,20 @@
 .cartMini {
   display: none;
 }
+
+.slider__section {
+  max-height: 50vh;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+
+}
+
+.slider__image {
+  width: 100%;
+  object-fit: fill;
+}
+
 @media (max-width: 1024px) {
   .dropdown-menu {
     display: block !important;
@@ -83,7 +96,6 @@
   .flexcolumn {
     width: 50% !important;
     flex-grow: 1;
-    padding: .3em !important;
-
+    padding: 0.3em !important;
   }
 }

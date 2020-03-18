@@ -10,7 +10,7 @@ function NavBar({ items, cart }) {
   const cartList = cart.map(item => (
     <a href={`/product/${item.id}`} class="dropdown-item">
       {item.name} {" |  "} {item.quantity}szt {" |  "}
-      {item.quantity * item.prize}zł
+      {[item.quantity * item.prize][0].toFixed(2)}zł
     </a>
   ));
 

@@ -50,40 +50,17 @@ function App() {
 
   const [cart, setcart] = useState([]);
 
-  // clearCart = item => {
-  //   console.log(item);
-  //   Cookies.set("shoppingCartVellutoGiorno", [], {
-  //     expires: 1
-  //   });
-  //   this.setState({
-  //     cart: []
-  //   });
-  // };
+  const cookiesDeleteItem = index => {
+    const cartCopy = cart;
+    cartCopy.splice(index, 1);
+    Cookies.set("maski-ochronne", cartCopy, {
+      expires: 1
+    });
+    setcart(cartCopy);
+    window.location.reload();
+  };
 
-  // cookiesDeleteItem = index => {
-  //   const { cart } = this.state;
-  //   cart.splice(index, 1);
-  //   console.log(index, cart);
-  //   Cookies.set("shoppingCartVellutoGiorno", cart, {
-  //     expires: 1
-  //   });
-  //   this.setState({
-  //     cart
-  //   });
-  //   window.location.reload();
-  // };
-
-  // handleDelete = index => {
-  //   const { cart } = this.state;
-  //   cart.splice(index, 1);
-  //   console.log(index, cart);
-  //   Cookies.set("shoppingCartVellutoGiorno", cart, {
-  //     expires: 1
-  //   });
-  //   this.setState({
-  //     cart
-  //   });
-  // };
+  const handleDelete = index => {};
 
   const handleAddingToCart = (item, quantity) => {
     item.quantity = quantity;
@@ -107,6 +84,7 @@ function App() {
       <NavBar cart={cart} items={items} />
       <LandingPage
         handleAddingToCart={handleAddingToCart}
+        cookiesDeleteItem={cookiesDeleteItem}
         items={items}
         cart={cart}
       />

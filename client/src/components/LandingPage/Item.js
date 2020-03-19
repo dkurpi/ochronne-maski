@@ -160,10 +160,7 @@ function Item({ items, match, handleAddingToCart, best }) {
                 </button>
               </div>
             </span>
-            <hr class="mb-2 mt-1 seperator" />
-            <div class="d-flex align-items-center justify-content-between mt-1">
-              {item.description}
-            </div>
+
             <h5 class="mt-5">Opis:</h5>
             <hr class="mb-2 mt-1 seperator" />
             <div class="d-flex align-items-center justify-content-between mt-1">

@@ -17,6 +17,12 @@ function Footer() {
                   542
                 </a>
               </div>
+              <div>
+                <a href="mailto:info@ochronne-maski.pl">
+                  <i className="fas fa-envelope footer_contact"></i>
+                  info@ochronne-maski.pl
+                </a>
+              </div>
             </div>
 
             <hr class="clearfix w-100 d-md-none pb-3" />

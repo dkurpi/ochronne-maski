@@ -66,11 +66,12 @@ function Item({ items, match, handleAddingToCart }) {
           </div>
 
           <div class="media-body order-2 order-lg-2 ml-lg-5 flex-fill">
-            <h5 class="mt-2 mb-1">{item.name}</h5>
+            <h2 class="mt-2 mb-1">{item.name}</h2>
+            <hr />
             <div class="product-rating my-2">
               Dostępność: towar na wyczerpaniu
             </div>
-            <div class="product-rating mb-2">Wysyłka w: 48 godzin</div>
+            <div class="product-rating mb-2 vat">Wysyłka w: 48 godzin</div>
             <span class="product_price price-new">
               <h5>
                 <s style={{ color: "red", fontSize: "15px" }}>
@@ -121,6 +122,11 @@ function Item({ items, match, handleAddingToCart }) {
               <div class="resetcss" itemprop="description">
                 <h4>Maska filtrująca:</h4>
                 <ul>
+                  <li>maska do wielokrotnego użytku po wypraniu </li>
+                  <li>
+                    ergonomiczny kształt z metalowym dociskiem na nos idealnie
+                    dostosuje się do twarzy
+                  </li>
                   <li>zakładana na elastyczną gumkę</li>
                   <li>
                     metalowa klamra na wysokości nosa na zewnętrznej części
@@ -132,57 +138,12 @@ function Item({ items, match, handleAddingToCart }) {
                   </li>
                   <li>idealna ochrona przed pyłami i drobnymi cząstkami</li>
                 </ul>
-                <p>
-                  <strong>UŻYTKOWANIE I PRZECHOWYWANIE</strong>
-                </p>
-                <p>
-                  W celu zapewnienia jak najlepszej szczelności części
-                  twarzowej, sposób zakładania i dopasowywania półmasek powinien
-                  przebiegać wg następującego schematu:
-                </p>
-                <p>
-                  1. Przed założeniem półmaski, wstępnie ukształtować zacisk
-                  nosowy poprzez jego zaciśnięcie, co poprawia późniejsze
-                  dopasowanie półmaski do twarzy,
-                </p>
-                <p>
-                  2. Umieścić część twarzową tak, aby przykrywała usta i nos,
-                </p>
-                <p>
-                  3. Taśmy nagłowia założyć tak, aby dolna taśma obejmowała kark
-                  poniżej ucha, a górna przechodziła z tyłu głowy nad uchem;
-                </p>
-                <p>
-                  4. Dopasować wstępnie uformowany zacisk nosowy tak, aby
-                  zapewnić szczelność;
-                </p>
-                <p>
-                  5. Sprawdzić prawidłowość założenia; przyłożyć dłonie i
-                  przytrzymać czaszę; mocno wydmuchnąć powietrze; w przypadku
-                  nieszczelności wyregulować pozycję czaszy, zacisk nosowy lub
-                  taśmy nagłowia.
-                </p>
-                <p>&nbsp;</p>
-                <p>
-                  <strong>Użytkowanie&nbsp;maski:</strong>
-                </p>
-                <p>
-                  <strong>
-                    {/* <img
-                      alt=""
-                      height="171"
-                      src="/public/assets//zak%C5%82adanie.jpg"
-                      width="826"
-                    /> */}
-                  </strong>
-                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
       <h4 className="pb-6 mt-1">Bestsellery:</h4>
-      <hr class="mb-2 mt-1 seperator" />
       <div class="row col-12 ml-auto mr-auto">
         <Items items={items} handleAddingToCart={handleAddingToCart} />
       </div>

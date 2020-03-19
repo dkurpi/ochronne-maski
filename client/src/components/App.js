@@ -4,7 +4,7 @@ import Auth from "../hoc/auth";
 // pages for this product
 import LandingPage from "./LandingPage/LandingPage.js";
 import NavBar from "./NavBar.js";
-import Footer from "./Footer.js";
+import { Footer } from "./Footer.js";
 import Cookies from "js-cookie";
 
 function App() {

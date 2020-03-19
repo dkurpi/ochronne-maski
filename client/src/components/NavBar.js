@@ -11,7 +11,7 @@ function NavBar({ items, cart }) {
   const cartList = cart.map(item => {
     const prizeAll = [item.quantity * item.prize][0].toFixed(2);
     console.log(typeof suma);
-    suma += prizeAll*1;
+    suma += prizeAll * 1;
     return (
       <a href={`/product/${item.id}`} class="dropdown-item">
         {item.name} {" |  "} {item.quantity}szt {" |  "}
@@ -44,6 +44,14 @@ function NavBar({ items, cart }) {
         </button>
         <div class="collapse navbar-collapse  " id="navbarResponsive">
           <ul class="navbar-nav  ml-auto mr-8 justify-content-center">
+
+            <li class="nav-item contacto ">
+              <a class="nav-link contacto" href="/kontakt">
+                Kontakt
+              </a>
+            </li>
+
+
             <li
               onMouseEnter={e => {
                 console.log("eee");
@@ -71,12 +79,7 @@ function NavBar({ items, cart }) {
                 )}
               </div>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/">
-                Start
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
+
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle btn-danger btn-md"
@@ -87,11 +90,6 @@ function NavBar({ items, cart }) {
                 Produkty
               </a>
               <div class="dropdown-menu ">{navItems}</div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                Kontakt
-              </a>
             </li>
           </ul>
         </div>

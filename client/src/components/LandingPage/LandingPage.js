@@ -7,6 +7,8 @@ import "./Page.css";
 import Item from "./Item.js";
 import Cart from "./Cart.js";
 import Orders from "./Orders.js";
+import { Contact, Delivery, Terms } from "../Footer.js";
+
 function LandingPage(props) {
   return (
     <>
@@ -32,7 +34,7 @@ function LandingPage(props) {
                     handleAddingToCart={props.handleAddingToCart}
                   />
                   <span className="Text text__delivery"> Promocje:</span>
-
+                  <hr />
                   <Items
                     items={props.items}
                     handleAddingToCart={props.handleAddingToCart}
@@ -58,6 +60,9 @@ function LandingPage(props) {
               </>
             ]}
           ></Route>
+          <Route path="/kontakt" component={Contact} />
+          <Route path="/regulamin" component={Terms} />
+          <Route path="/dostawa" component={Delivery} />
         </Switch>
       </Router>
     </>

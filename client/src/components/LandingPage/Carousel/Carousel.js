@@ -18,6 +18,14 @@ function Carousel({ items }) {
               </s>{" "}
               {items[index].prize}zł
             </h5>
+            <h6 class="vat">zawiera 23% VAT, bez kosztów dostawy</h6>
+          </div>
+          <div class="card-footer">
+            <a href={`product/${index}`}>
+              <button type="button" class="btn btn-danger">
+                Sprawdź
+              </button>
+            </a>
           </div>
         </div>
       </div>
@@ -27,6 +35,7 @@ function Carousel({ items }) {
   return (
     <>
       <span className="Text text__delivery"> Bestsellery:</span>
+      <hr/>
 
       <div
         id="carouselExampleIndicators"

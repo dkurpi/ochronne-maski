@@ -18,6 +18,8 @@ function Carousel({ items }) {
               </s>{" "}
               {items[index].prize}zł
             </h5>
+            <div class="product-rating mb-2 vat">{items[index].prizeEach} zł/szt</div>
+
             <h6 class="vat">zawiera 23% VAT, bez kosztów dostawy</h6>
           </div>
           <div class="card-footer">
@@ -35,7 +37,7 @@ function Carousel({ items }) {
   return (
     <>
       <span className="Text text__delivery"> Bestsellery:</span>
-      <hr/>
+      <hr />
 
       <div
         id="carouselExampleIndicators"

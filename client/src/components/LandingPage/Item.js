@@ -71,15 +71,18 @@ function Item({ items, match, handleAddingToCart }) {
             <div class="product-rating my-2">
               Dostępność: towar na wyczerpaniu
             </div>
-            <div class="product-rating mb-2 vat">Wysyłka w: 48 godzin</div>
+            <div class="product-rating mb-2 vat">Wysyłka w: 24 godzin</div>
             <span class="product_price price-new">
+              
               <h5>
-                <s style={{ color: "red", fontSize: "15px" }}>
+                <s style={{ color: "red", fontSize: "20px" }}>
                   {item.oldPrize}zł
                 </s>
                 {"      "}
                 {item.prize}zł
               </h5>
+              <div class="product-rating mb-2 vat">{item.prizeEach} zł/szt</div>
+
               <div className="adding my-2">
                 <input
                   onChange={e => {

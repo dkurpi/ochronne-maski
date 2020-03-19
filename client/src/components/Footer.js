@@ -6,10 +6,12 @@ function Footer() {
       <div class="container-fluid text-center text-md-left">
         <div class="row">
           <div class="col-md-6 mt-md-0 mt-3">
-            <h5 class="text-uppercase">Footer Content</h5>
-            <p>
-              Here you can use rows and columns to organize your footer content.
-            </p>
+            <h5 class="text-uppercase">Kontakt</h5>
+            <div>
+              <a href="tel:600441542">
+                <i className="fas fa-mobile-alt footer_contact"></i>600 441 542
+              </a>
+            </div>
           </div>
 
           <hr class="clearfix w-100 d-md-none pb-3" />
@@ -38,7 +40,7 @@ function Footer() {
                 <a href="/regulamin">Polityka prywatności</a>
               </li>
               <li>
-                <a href="#!">Kontakt</a>
+                <a href="/kontakt">Kontakt</a>
               </li>
             </ul>
           </div>
@@ -171,26 +173,22 @@ function Contact() {
                     <header class="entry-header">
                       <h1 class="entry-title">Kontakt</h1>{" "}
                     </header>
-
+                    <hr />
                     <div class="entry-content">
                       <p>
-                        <span style={{ fontWeight: "400" }}>Imie Nazwisko</span>
+                        <span style={{ fontWeight: "400" }}>
+                          Krawiectwo Konfekcyjne kacztex
+                        </span>
                       </p>
-                      <p>
-                        <span style={{ fontWeight: "400" }}>Imie Nazwisko</span>
-                      </p>
-                      <p>
-                        <span style={{ fontWeight: "400" }}>Imie Nazwisko</span>
-                      </p>
-                      <p>
-                        <span style={{ fontWeight: "400" }}>Imie Nazwisko</span>
-                      </p>
-                      <p>
-                        <span style={{ fontWeight: "400" }}>Imie Nazwisko</span>
-                      </p>
-                      <p>
-                        <span style={{ fontWeight: "400" }}>Imie Nazwisko</span>
-                      </p>
+                      Franciszek Kaczor
+                      <br />
+                      34-713 Skawa
+                      <br />
+                      Skawa 558A
+                      <br />
+                      <span style={{ fontWeight: "400" }}>
+                        <a href="tel:600441542">Tel. 600441542</a>
+                      </span>
                     </div>
                   </div>
                 </article>

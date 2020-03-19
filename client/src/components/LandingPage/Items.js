@@ -20,6 +20,7 @@ export default function Items(props) {
               </s>{" "}
               {item.prize}zł
             </h5>
+            <div class="product-rating mb-2 vat">{item.prizeEach} zł/szt</div>
             <h6 class="vat">zawiera 23% VAT, bez kosztów dostawy</h6>
           </div>
           <div class="card-footer">

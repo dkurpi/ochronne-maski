@@ -17,49 +17,55 @@ function App() {
         "/images/maska3.jpg",
         "/images/maska2.jpg"
       ],
-      name: "Maska1 - milion szt",
+      name: "Maska1",
       prize: 39.99,
       oldPrize: 59.99,
-      description: "Lorem ipsum "
+      prizeEach: 39.99,
+      description: "Lorem ipsum ",
     },
     {
       id: 1,
       images: ["/images/maska2.jpg"],
-      name: "Maska2 - 2szt",
+      name: "Maska2",
       prize: 39.99,
       oldPrize: 59.99,
+      prizeEach: 39.99,
       description: "Lorem ipsum dolor sit, ameos!"
     },
     {
       id: 2,
       images: ["/images/maska3.jpg"],
-      name: "Maska3 - 3szt",
+      name: "Maska3",
       prize: 39.99,
       oldPrize: 59.99,
+      prizeEach: 39.99,
       description: "Lorem ipsum dolor sit, ameos!"
     },
     {
       id: 3,
       images: ["/images/maska3.jpg"],
-      name: "Mask312132213a4 - 4szt",
+      name: "Mask4",
       prize: 39.99,
       oldPrize: 59.99,
+      prizeEach: 39.99,
       description: "Lorem ipsum dolor sit, ameos!"
     },
     {
       id: 4,
       images: ["/images/maska2.jpg"],
-      name: "Mask312132213a4 - 4szt",
+      name: "Mask5",
       prize: 39.99,
       oldPrize: 59.99,
+      prizeEach: 39.99,
       description: "Lorem ipsum dolor sit, ameos!"
     },
     {
       id: 5,
       images: ["/images/maska1.jpg"],
-      name: "Mask312132213a4 - 4szt",
+      name: "Mask6",
       prize: 39.99,
       oldPrize: 59.99,
+      prizeEach: 39.99,
       description: "Lorem ipsum dolor sit, ameos!"
     }
   ];

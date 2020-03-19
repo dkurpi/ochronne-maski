@@ -170,7 +170,11 @@ function Item({ items, match, handleAddingToCart, best }) {
               <div class="resetcss" itemprop="description">
                 <h4>Maska filtrująca:</h4>
                 <ul>
-                  <li>maska do wielokrotnego użytku po wypraniu </li>
+                  <li>
+                    tkanina najwyższej jakości bawełny 100% z możliwością
+                    dezynfekcji i wielokrotnego użytku
+                  </li>
+
                   <li>
                     ergonomiczny kształt z metalowym dociskiem na nos idealnie
                     dostosuje się do twarzy
@@ -180,7 +184,6 @@ function Item({ items, match, handleAddingToCart, best }) {
                     metalowa klamra na wysokości nosa na zewnętrznej części
                     maski
                   </li>
-                  <li>piankowa poduszka chroni nos przed odgnieceniem</li>
                   <li>
                     okrągły kształt półmaski zapewnia dopasowanie do twarzy
                   </li>

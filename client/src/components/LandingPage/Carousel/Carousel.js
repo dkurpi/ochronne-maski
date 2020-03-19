@@ -12,13 +12,13 @@ function Carousel({ items }) {
             <h4 class="card-title">
               <a href={`product/${items[index].id}`}>{items[index].name}</a>
             </h4>
-            <h5>
+            <h4 >
               <s style={{ color: "red", fontSize: "15px" }}>
                 {items[index].oldPrize}zł
               </s>{" "}
               {items[index].prize}zł
-            </h5>
-            <div class="product-rating mb-2 vat">{items[index].prizeEach} zł/szt</div>
+            </h4>
+            <div class="product-rating mb-2 vat">{items[index].prizeEach} zł/maska</div>
 
             <h6 class="vat">zawiera 23% VAT, bez kosztów dostawy</h6>
           </div>

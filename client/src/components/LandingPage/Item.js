@@ -3,11 +3,12 @@ import { LightgalleryProvider, LightgalleryItem } from "react-lightgallery";
 import "lightgallery.js/dist/css/lightgallery.css";
 import Items from "./Items.js";
 import Carousel from "./Carousel/Carousel.js";
+import Popup from "reactjs-popup";
 
-function Item({ items, match, handleAddingToCart }) {
+function Item({ items, match, handleAddingToCart, best }) {
   const [item, setitem] = useState(items[match.params.id]);
   const [quantity, setQuantity] = useState(0);
-
+  const [isPopedOpen, setisPopedOpen] = useState(false);
   useEffect(() => {
     const ID = parseInt(match.params.id);
     const item1 = items.find(itm => itm.id === ID);
@@ -43,6 +44,48 @@ function Item({ items, match, handleAddingToCart }) {
       );
   });
 
+  const popup = [
+    <Popup
+      quantity={quantity}
+      handleAddingToCart={handleAddingToCart}
+      item={item}
+      open={isPopedOpen}
+      modal
+      setisPopedOpen={setisPopedOpen}
+      onClose={() => setisPopedOpen(false)}
+    >
+      {close => (
+        <div className="modale">
+          <a
+            className="close"
+            onClick={() => {
+              close();
+              setisPopedOpen(false);
+            }}
+          >
+            &times;
+          </a>
+          <h4 className="header"> Produkt dodano </h4>
+          <hr />
+          {item.name} <br />
+          ilość: {quantity} <br />
+          suma: {[quantity * item.prize][0].toFixed(2)} <br />
+          <hr />
+          <div className="actions">
+            <button
+              className="button"
+              onClick={() => {
+                close();
+              }}
+            >
+              Zamknij
+            </button>
+          </div>
+        </div>
+      )}
+    </Popup>
+  ];
+
   return (
     <>
       <div className="product col-12 pl-1 pr-1">
@@ -73,15 +116,16 @@ function Item({ items, match, handleAddingToCart }) {
             </div>
             <div class="product-rating mb-2 vat">Wysyłka w: 24 godzin</div>
             <span class="product_price price-new">
-              
-              <h5>
+              <h4>
                 <s style={{ color: "red", fontSize: "20px" }}>
                   {item.oldPrize}zł
                 </s>
                 {"      "}
                 {item.prize}zł
-              </h5>
-              <div class="product-rating mb-2 vat">{item.prizeEach} zł/szt</div>
+              </h4>
+              <div class="product-rating mb-2 vat">
+                {item.prizeEach} zł/maska
+              </div>
 
               <div className="adding my-2">
                 <input
@@ -97,15 +141,16 @@ function Item({ items, match, handleAddingToCart }) {
                   placeholder="Ilość"
                   style={{ alignItems: "center" }}
                 />
-
                 <button
                   onClick={() => {
+                    console.log("działa");
                     if (
                       quantity >= 1 &&
                       quantity <= 100 &&
                       typeof quantity === "number"
                     ) {
                       handleAddingToCart(item, quantity);
+                      setisPopedOpen(true);
                     } else alert("Złe dane");
                   }}
                   type="button"
@@ -147,9 +192,10 @@ function Item({ items, match, handleAddingToCart }) {
         </div>
       </div>
       <h4 className="pb-6 mt-1">Bestsellery:</h4>
-      <div class="row col-12 ml-auto mr-auto">
-        <Items items={items} handleAddingToCart={handleAddingToCart} />
+      <div class="row mb-5 col-12 ml-auto mr-auto">
+        <Items items={best} handleAddingToCart={handleAddingToCart} />
       </div>
+      {popup}
     </>
   );
 }

@@ -25,7 +25,7 @@ function LandingPage(props) {
           </Route>
           <Route exact path="/">
             <div class="container-fluid container--modified">
-              <div class="row">
+              <div class="row mb-5">
                 <Menu items={props.items} />
                 <div class="col-lg-9 mt-lg-3 mt-6">
                   <Carousel
@@ -50,8 +50,8 @@ function LandingPage(props) {
                   <div class="row">
                     <Item
                       items={props.items}
+                      best={props.best}
                       handleAddingToCart={props.handleAddingToCart}
-                      items={props.items}
                       {...propse}
                     />
                   </div>

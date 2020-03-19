@@ -73,7 +73,7 @@ function NavBar({ items, cart }) {
                   [
                     cartList,
                     <a href={`/koszyk`} class=" dropdown-item pay ">
-                      ZAPŁAĆ ({suma} zł)
+                      ZAPŁAĆ ({suma.toFixed(2)} zł)
                     </a>
                   ]
                 )}

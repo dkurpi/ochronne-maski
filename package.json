@@ -31,6 +31,7 @@
     "mongoose": "^5.4.20",
     "react-lightgallery": "^0.6.3",
     "react-redux": "^5.0.7",
+    "reactjs-popup": "^1.5.0",
     "saslprep": "^1.0.3"
   },
   "devDependencies": {

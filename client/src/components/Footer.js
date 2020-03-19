@@ -2,56 +2,62 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer class="page-footer font-small blue mt-5 pt-4">
-      <div class="container-fluid text-center text-md-left">
-        <div class="row">
-          <div class="col-md-6 mt-md-0 mt-3">
-            <h5 class="text-uppercase">Kontakt</h5>
-            <div>
-              <a href="tel:600441542">
-                <i className="fas fa-mobile-alt footer_contact"></i>600 441 542
-              </a>
+    <>
+      <br />
+      <br />
+      <br />
+      <footer class="page-footer font-small blue  pt-4">
+        <div class="container-fluid text-center text-md-left">
+          <div class="row">
+            <div class="col-md-6 mt-md-0 mt-3">
+              <h5 class="text-uppercase">Kontakt</h5>
+              <div>
+                <a href="tel:600441542">
+                  <i className="fas fa-mobile-alt footer_contact"></i>600 441
+                  542
+                </a>
+              </div>
+            </div>
+
+            <hr class="clearfix w-100 d-md-none pb-3" />
+
+            <div class="col-md-3 mb-md-0 mb-3">
+              <h5 class="text-uppercase">Płatności i dostawa</h5>
+
+              <ul class="list-unstyled">
+                <li>
+                  <a href="/dostawa">Formy płatności</a>
+                </li>
+                <li>
+                  <a href="/dostawa">Czas i koszty dostawy</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-md-3 mb-md-0 mb-3">
+              <h5 class="text-uppercase">Informacje</h5>
+
+              <ul class="list-unstyled">
+                <li>
+                  <a href="/regulamin">Regulamin</a>
+                </li>
+                <li>
+                  <a href="/regulamin">Polityka prywatności</a>
+                </li>
+                <li>
+                  <a href="/kontakt">Kontakt</a>
+                </li>
+              </ul>
             </div>
           </div>
-
-          <hr class="clearfix w-100 d-md-none pb-3" />
-
-          <div class="col-md-3 mb-md-0 mb-3">
-            <h5 class="text-uppercase">Płatności i dostawa</h5>
-
-            <ul class="list-unstyled">
-              <li>
-                <a href="/dostawa">Formy płatności</a>
-              </li>
-              <li>
-                <a href="/dostawa">Czas i koszty dostawy</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-md-3 mb-md-0 mb-3">
-            <h5 class="text-uppercase">Informacje</h5>
-
-            <ul class="list-unstyled">
-              <li>
-                <a href="/regulamin">Regulamin</a>
-              </li>
-              <li>
-                <a href="/regulamin">Polityka prywatności</a>
-              </li>
-              <li>
-                <a href="/kontakt">Kontakt</a>
-              </li>
-            </ul>
-          </div>
         </div>
-      </div>
 
-      <div class="footer-copyright text-center py-3">
-        © 2020 Copyright:
-        <a href="/"> Velluto Giorno</a>
-      </div>
-    </footer>
+        <div class="footer-copyright text-center py-3">
+          © 2020 Copyright:
+          <a href="/"> Velluto Giorno</a>
+        </div>
+      </footer>
+    </>
   );
 }
 
@@ -91,7 +97,6 @@ function Delivery() {
                           Koszt przesyłki naliczamy zgodnie z taryfikatorem:
                         </span>
                       </p>
-
                       <ol>
                         <li style={{ fontWeight: "400" }}>
                           <span style={{ fontWeight: "400" }}>
@@ -105,6 +110,7 @@ function Delivery() {
                           </span>
                         </li>
                       </ol>
+                      Wysyłka paczki do 24h.
                       <br />
                       <p>
                         <span style={{ fontWeight: "400" }}>
@@ -123,7 +129,6 @@ function Delivery() {
                           Istnieje możliwość płatności w dwóch formach:
                         </span>
                       </p>
-
                       <ol>
                         <li style={{ fontWeight: "400" }}>
                           <span style={{ fontWeight: "400" }}>
@@ -136,6 +141,7 @@ function Delivery() {
                           </span>
                         </li>
                       </ol>
+                      <hr />
                       <br />
                       <p>
                         <span style={{ fontWeight: "400" }}>
@@ -244,7 +250,7 @@ function Terms() {
                           <span style={{ fontWeight: "400" }}>
                             Administratorem danych osobowych zawartych w
                             serwisie jest firma Velluto Giorno z siedzibą w
-                            Rabce-Zdrój
+                            Skawie
                           </span>
                         </li>
                         <li style={{ fontWeight: "400" }}>
@@ -318,16 +324,6 @@ function Terms() {
                             będziemy informować w sposób widoczny i zrozumiały.
                           </span>
                         </li>
-                        <li style={{ fontWeight: "400" }}>
-                          <span style={{ fontWeight: "400" }}>
-                            Zastrzegamy sobie prawo do zmiany w polityce ochrony
-                            prywatności serwisu, na które może wpłynąć rozwój
-                            technologii internetowej, ewentualne zmiany prawa w
-                            zakresie ochrony danych osobowych oraz rozwój
-                            naszego serwisu internetowego. O wszelkich zmianach
-                            będziemy informować w sposób widoczny i zrozumiały.
-                          </span>
-                        </li>
                       </ol>
                       <br />
                       <hr />
@@ -362,16 +358,15 @@ function Terms() {
                       </h3>
                       <p>
                         <span style={{ fontWeight: "200" }}>
-                          AB Amadeusz Bogacz używa ciasteczek w różnych celach:
-                          by strony i aplikacje działały szybciej i by były
-                          łatwiejsze w użyciu, aby lepiej dopasować treści i
-                          reklamy do twoich oczekiwań i zainteresowań oraz do
-                          zbierania anonimowych, zagregowanych statystyk, które
-                          pomagają w poprawianiu funkcjonalności i zawartości
-                          stron i aplikacji. Używając ciasteczek w wyżej opisany
-                          sposób nigdy nie identyfikujemy tożsamości
-                          użytkowników na podstawie informacji przechowywanych w
-                          ciasteczkach.
+                          Firma używa ciasteczek w różnych celach: by strony i
+                          aplikacje działały szybciej i by były łatwiejsze w
+                          użyciu, aby lepiej dopasować treści i reklamy do
+                          twoich oczekiwań i zainteresowań oraz do zbierania
+                          anonimowych, zagregowanych statystyk, które pomagają w
+                          poprawianiu funkcjonalności i zawartości stron i
+                          aplikacji. Używając ciasteczek w wyżej opisany sposób
+                          nigdy nie identyfikujemy tożsamości użytkowników na
+                          podstawie informacji przechowywanych w ciasteczkach.
                         </span>
                       </p>
                     </div>

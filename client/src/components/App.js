@@ -6,6 +6,7 @@ import LandingPage from "./LandingPage/LandingPage.js";
 import NavBar from "./NavBar.js";
 import { Footer } from "./Footer.js";
 import Cookies from "js-cookie";
+import "./LandingPage/popup.css";
 
 function App() {
   const items = [
@@ -17,11 +18,11 @@ function App() {
         "/images/maska3.jpg",
         "/images/maska2.jpg"
       ],
-      name: "Maska1",
-      prize: 39.99,
-      oldPrize: 59.99,
-      prizeEach: 39.99,
-      description: "Lorem ipsum ",
+      name: "Maska1 - 50 masek",
+      prize: 500,
+      oldPrize: 759.99,
+      prizeEach: 10.0,
+      description: "Lorem ipsum "
     },
     {
       id: 1,
@@ -70,6 +71,8 @@ function App() {
     }
   ];
 
+  const bestID = [4, 3, 2, 1];
+  const best = bestID.map(id => items[id]);
   const [cart, setcart] = useState([]);
 
   const cookiesDeleteItem = index => {
@@ -84,9 +87,9 @@ function App() {
 
   const handleDelete = index => {};
 
-  const handleAddingToCart = (item, quantity) => {
+  const handleAddingToCart = (itm, quantity) => {
+    let item = itm;
     item.quantity = quantity;
-    delete item.description;
 
     setcart([...cart, item]);
     console.log(cart);
@@ -110,6 +113,7 @@ function App() {
         handleAddingToCart={handleAddingToCart}
         cookiesDeleteItem={cookiesDeleteItem}
         items={items}
+        best={best}
         cart={cart}
       />
       <Footer />

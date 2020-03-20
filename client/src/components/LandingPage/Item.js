@@ -2,8 +2,8 @@ import React, { useEffect, useParams, useState } from "react";
 import { LightgalleryProvider, LightgalleryItem } from "react-lightgallery";
 import "lightgallery.js/dist/css/lightgallery.css";
 import Items from "./Items.js";
-import Carousel from "./Carousel/Carousel.js";
 import Popup from "reactjs-popup";
+import gsap from "gsap";
 
 function Item({ items, match, handleAddingToCart, best }) {
   const [item, setitem] = useState(items[match.params.id]);
@@ -12,10 +12,38 @@ function Item({ items, match, handleAddingToCart, best }) {
 
   const [isPopedOpen, setisPopedOpen] = useState(false);
 
+  const handleAnimations = () => {
+    const titles = document.querySelector(".col-lg-4.col-md-6.mb-4").childNodes;
+    console.log(titles);
+    const items = document.querySelector(
+      ".media-body.order-2.order-lg-2.ml-lg-5.flex-fill"
+    ).childNodes;
+
+    const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
+    tl.from(titles, 2, { x: -300, opacity: 0, stagger: 0.2 }).from(
+      items,
+      {
+        x: 500,
+        opacity: 0,
+        stagger: 0.2,
+        ease: "power0"
+      },
+      "-=1"
+    );
+  };
+  const handleChangePrize = () => {
+    const quant = document.getElementById("quant");
+    const prize1 = document.querySelector(".product_price.price-new")
+      .childNodes;
+    const prize = [prize1[0], prize1[1]];
+    const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
+    tl.from([prize, quant], 0.2, { x: 300, opacity: 0, stagger: 0.2 });
+  };
   useEffect(() => {
     const ID = parseInt(match.params.id);
     const item1 = items.find(itm => itm.id === ID);
     setitem(item1);
+    handleAnimations();
   }, [item]);
 
   const mini_images = item.images.map((itm, idx) => {
@@ -134,7 +162,7 @@ function Item({ items, match, handleAddingToCart, best }) {
 
           <div class="media-body order-2 order-lg-2 ml-lg-5 flex-fill">
             <h2 class="mt-2 mb-1">
-              {item.name} - paczka {packet} masek
+              {item.name} <br /> paczka <span id="quant">{packet}</span> masek
             </h2>
             <hr />
             <div class="product-rating my-2">
@@ -156,11 +184,12 @@ function Item({ items, match, handleAddingToCart, best }) {
               <select
                 value={packet}
                 onChange={e => {
+                  handleChangePrize();
                   setPacket(e.target.value);
                   const selID = e.target.selectedIndex;
                   if (item.prizeSelected) {
                     item.prizeEach = item.prizeSelected[selID];
-                    item.prize = item.prizeEach ;
+                    item.prize = item.prizeEach;
                     console.log(item.prizeEach, item.prize);
                   }
                 }}

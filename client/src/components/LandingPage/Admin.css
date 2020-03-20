@@ -71,6 +71,7 @@ tr:hover {
   width: 100vw;
   display: flex;
   padding: 20px;
+  margin: 10vh 0;
 }
 .singleCartItem__img {
   flex-grow: 1;

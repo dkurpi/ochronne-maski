@@ -223,7 +223,9 @@ ol.carousel-indicators li.active {
     padding: 0 .1em !important;
   }
   .dropdown-item {
-    padding: 2px 1em !important;
+    padding: .5em 1em !important;
+    font-family: montserrat;
+    font-size: 14px ;
     border-radius: 0 !important;
     background-color: #343a40 !important;
     color: rgb(241, 240, 240) !important;

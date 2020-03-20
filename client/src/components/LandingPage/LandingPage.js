@@ -27,7 +27,7 @@ function LandingPage(props) {
             <div class="container-fluid container--modified">
               <div class="row mb-5">
                 <Menu items={props.items} />
-                <div class="col-lg-9 mt-lg-3 mt-6">
+                <div class="col-lg-9 mt-lg-3 mt-6 container-top">
                   <Carousel
                     items={props.items}
                     handleAddingToCart={props.handleAddingToCart}

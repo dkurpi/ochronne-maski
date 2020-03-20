@@ -192,6 +192,11 @@ ol.carousel-indicators li.active {
     color: rgb(241, 240, 240) !important;
     border-top: 1px solid rgba(148, 148, 148, 0.568) !important;
   }
+  .dropdown-item:nth-child(1) {
+    border-top: none !important;
+    margin-top: .5em !important;
+
+  }
   .navbar.navbar-expand-lg.navbar-dark {
   }
   .nav-item {

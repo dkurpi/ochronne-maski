@@ -16,7 +16,8 @@ function App() {
       name: "Maska0 - 1 maska",
       prize: 39.99,
       oldPrize: 59.99,
-      prizeEach: 39.99
+      prizeEach: 39.99,
+      description : "100 % bawełna artykuł medikal granatura 180 gram.pojedyncza warstwa"
     },
     {
       id: 1,
@@ -24,7 +25,8 @@ function App() {
       name: "Maska1 - 1 maska",
       prize: 39.99,
       oldPrize: 59.99,
-      prizeEach: 39.99
+      prizeEach: 39.99,
+      description : "100% bawełna Gramatura 125 gram pojedyncza warstwa."
     },
     {
       id: 2,
@@ -32,7 +34,8 @@ function App() {
       name: "Maska2 - 1 maska",
       prize: 39.99,
       oldPrize: 59.99,
-      prizeEach: 39.99
+      prizeEach: 39.99,
+      description : "100% bawełna Gramatura 125 gram pojedyncza warstwa."
     },
     {
       id: 3,
@@ -40,7 +43,8 @@ function App() {
       name: "Maska3 - 1 maska",
       prize: 39.99,
       oldPrize: 59.99,
-      prizeEach: 39.99
+      prizeEach: 39.99,
+      description : "100% bawełna Gramatura 125 gram pojedyncza warstwa."
     },
     {
       id: 4,
@@ -48,7 +52,8 @@ function App() {
       name: "Maska4 - 1 maska",
       prize: 39.99,
       oldPrize: 59.99,
-      prizeEach: 39.99
+      prizeEach: 39.99,
+      description : "100% bawełna Gramatura 125 gram pojedyncza warstwa."
     },
     {
       id: 5,
@@ -56,7 +61,8 @@ function App() {
       name: "Maska5 - 1 maska",
       prize: 39.99,
       oldPrize: 59.99,
-      prizeEach: 39.99
+      prizeEach: 39.99,
+      description : "100% bawełna Gramatura 125 gram pojedyncza warstwa."
     },
     {
       id: 6,
@@ -64,7 +70,8 @@ function App() {
       name: "Maska6 - 1 maska",
       prize: 39.99,
       oldPrize: 59.99,
-      prizeEach: 39.99
+      prizeEach: 39.99,
+      description : "100 % bawełna artykuł medikal granatura 180 gram.pojedyncza warstwa"
     },
     {
       id: 7,
@@ -72,7 +79,8 @@ function App() {
       name: "Maska7 - 1 maska",
       prize: 39.99,
       oldPrize: 59.99,
-      prizeEach: 39.99
+      prizeEach: 39.99,
+      description : "100% bawełna Gramatura 125 gram pojedyncza warstwa."
     },
     {
       id: 8,
@@ -80,7 +88,8 @@ function App() {
       name: "Maska8 - 1 maska",
       prize: 39.99,
       oldPrize: 59.99,
-      prizeEach: 39.99
+      prizeEach: 39.99,
+      description : "100% bawełna Gramatura 125 gram pojedyncza warstwa."
     }
   ];
 

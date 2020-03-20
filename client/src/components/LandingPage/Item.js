@@ -80,6 +80,16 @@ function Item({ items, match, handleAddingToCart, best }) {
             >
               Zamknij
             </button>
+            <a href="/koszyk">
+              <button
+                className="button"
+                onClick={() => {
+                  close();
+                }}
+              >
+                Przejdź do kasy
+              </button>
+            </a>
           </div>
         </div>
       )}
@@ -156,6 +166,8 @@ function Item({ items, match, handleAddingToCart, best }) {
                 >
                   Dodaj do koszyka
                 </button>
+
+                <br />
               </div>
             </span>
 
@@ -169,6 +181,8 @@ function Item({ items, match, handleAddingToCart, best }) {
                     Tkanina najwyższej jakości OEKO-TEX Bawełny 100% z
                     możliwością dezynfekcji i wielokrotnego użytku
                   </li>
+                  <li>Można je dezynfekować w temperaturze nawet 90 stopni</li>
+
                   <li>
                     ergonomiczny kształt z metalowym dociskiem na nos idealnie
                     dostosuje się do twarzy
@@ -181,6 +195,7 @@ function Item({ items, match, handleAddingToCart, best }) {
 
                   <li>idealna ochrona przed pyłami i drobnymi cząstkami</li>
                 </ul>
+                <h5>{item.description} </h5>
               </div>
             </div>
           </div>

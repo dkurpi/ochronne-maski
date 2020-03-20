@@ -6,15 +6,21 @@ export default class Cart extends Component {
   state = {
     cart: [],
     customerInfo: {},
-    isClicked: false
+    isClicked: false,
+    suma: 0
   };
 
   componentDidMount() {
     if (Cookies.get("maski-ochronne")) {
       const cookiesLog = JSON.parse(Cookies.get("maski-ochronne"));
-      console.log(cookiesLog);
+
+      let suma = 0;
+      const items = cookiesLog;
+      items.forEach(item => (suma += item.quantity * item.prize * item.packet));
+      suma = suma.toFixed(2);
       this.setState({
-        cart: cookiesLog
+        cart: cookiesLog,
+        suma
       });
     }
   }
@@ -81,7 +87,8 @@ export default class Cart extends Component {
         numberStreet,
         telephone,
         email,
-        deliveryMethod: text
+        deliveryMethod: text,
+        suma: this.state.suma
       };
       this.setState({
         customerInfo,
@@ -134,7 +141,7 @@ export default class Cart extends Component {
     const items = this.state.cart;
     let suma = 0;
     console.log(this.state);
-    items.forEach(item => (suma += item.quantity * item.prize));
+    items.forEach(item => (suma += item.quantity * item.prize * item.packet));
 
     let info = [];
     if (this.state.isClicked) {
@@ -213,13 +220,17 @@ export default class Cart extends Component {
 
             <div className="sizes">
               <div className="singleProduct__info">
-                <div className="singleProduct__info-des">Kolor:</div>
-                <div className="singleProduct__info-des">Liczba sztuk:</div>
+                <div className="singleProduct__info-des">Masek w paczce:</div>
+                <div className="singleProduct__info-des">Ilość paczek:</div>
+                <div className="singleProduct__info-des">Łącznie masek:</div>
                 <div className="singleProduct__info-des">Cena za sztukę:</div>
               </div>
               <div className="singleProduct__info">
-                <div className="singleProduct__info-des">Biały</div>
+                <div className="singleProduct__info-des">{item.packet}</div>
                 <div className="singleProduct__info-des"> {item.quantity}</div>
+                <div className="singleProduct__info-des">
+                  {item.packet * item.quantity}
+                </div>
                 <div className="singleProduct__info-des"> {item.prize}</div>
               </div>
             </div>
@@ -228,7 +239,7 @@ export default class Cart extends Component {
 
           <div className="singleProduct__prize">
             {" "}
-            {[item.prize * item.quantity][0].toFixed(2)} PLN
+            {[item.prize * item.quantity * item.packet][0].toFixed(2)} PLN
           </div>
         </div>
       );

@@ -26,9 +26,10 @@ function App() {
 
   const handleDelete = index => {};
 
-  const handleAddingToCart = (itm, quantity) => {
+  const handleAddingToCart = (itm, quantity, packet) => {
     let item = itm;
     item.quantity = quantity;
+    item.packet = packet
 
     setcart([...cart, item]);
     console.log(cart);

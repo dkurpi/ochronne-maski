@@ -26,10 +26,24 @@ export default function Items(props) {
           </a>
           <h4 className="header"> Produkt dodano </h4>
           <hr />
-          {item.name} <br />
-          ilość: {1} <br />
-          suma: {[1 * item.prize][0].toFixed(2)} <br />
-          <hr />
+          <img
+            class="popup__img"
+            src={item.images[0]}
+            height="200"
+            width="200"
+            alt=""
+          />
+          <div className="popup__text">
+            <br />
+            <h4>{item.name}</h4>
+            Masek w paczce: {item.packet} <br />
+            Ilość paczek: {item.quantity} <br />
+            Łącznie masek: {item.packet * item.quantity} <br />
+            <h4>
+              {[item.packet * item.quantity * item.prize][0].toFixed(2)} zł{" "}
+              <br />
+            </h4>
+          </div>
           <div className="actions">
             <button
               className="button"
@@ -39,6 +53,16 @@ export default function Items(props) {
             >
               Zamknij
             </button>
+            <a href="/koszyk">
+              <button
+                className="button"
+                onClick={() => {
+                  close();
+                }}
+              >
+                Przejdź do kasy
+              </button>
+            </a>
           </div>
         </div>
       )}
@@ -83,7 +107,7 @@ export default function Items(props) {
             <div class="card-footer">
               <button
                 onClick={() => {
-                  props.handleAddingToCart(item, 1);
+                  props.handleAddingToCart(item, 1, 3);
                   setitem(item);
                   setPopedOpen(true);
                 }}

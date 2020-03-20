@@ -9,12 +9,12 @@ function NavBar({ items, cart }) {
     </a>
   ));
   const cartList = cart.map(item => {
-    const prizeAll = [item.quantity * item.prize][0].toFixed(2);
+    const prizeAll = [item.packet * item.quantity * item.prize][0].toFixed(2);
     console.log(typeof suma);
     suma += prizeAll * 1;
     return (
-      <a href={`/product/${item.id}`} class="dropdown-item">
-        {item.name} {" |  "} {item.quantity}szt {" |  "}
+      <a href={`/product/${item.id}`} class="dropdown-item ">
+        {item.name} {" |  "} {item.quantity} pak {" |  "}
         {prizeAll}zł
       </a>
     );
@@ -44,13 +44,11 @@ function NavBar({ items, cart }) {
         </button>
         <div class="collapse navbar-collapse  " id="navbarResponsive">
           <ul class="navbar-nav  ml-auto mr-8 justify-content-center">
-
             <li class="nav-item contacto ">
               <a class="nav-link contacto" href="/kontakt">
                 Kontakt
               </a>
             </li>
-
 
             <li
               onMouseEnter={e => {
@@ -66,7 +64,7 @@ function NavBar({ items, cart }) {
               >
                 <i class="fas fa-shopping-cart"></i>
               </a>
-              <div class="dropdown-menu">
+              <div class="dropdown-menu dropdown-menu-right">
                 {cart.length === 0 ? (
                   <a class="dropdown-item ">Brak przedmiotów w koszyku</a>
                 ) : (

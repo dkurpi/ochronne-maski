@@ -4,7 +4,8 @@ const items = [
     images: ["/images/M0-1.jpeg", "/images/M0-2.jpeg"],
     name: "Maska błękitna troczki",
     prize: 15.99,
-    oldPrize: 20.99,
+    prizeSelected: [15.99, 15.99, 15.99, 15.49, 15.49, 14.99, 14.49],
+    oldPrize: 22.99,
     prizeEach: 15.99,
     description:
       "100 % bawełna artykuł medikal granatura 180 gram.pojedyncza warstwa"
@@ -14,8 +15,9 @@ const items = [
     images: ["/images/M1-1.jpeg", "/images/M1-2.jpeg"],
     name: "Maska biała troczki",
     prize: 15.99,
-    oldPrize: 20.99,
+    oldPrize: 22.99,
     prizeEach: 15.99,
+    prizeSelected: [15.99, 15.99, 15.99, 15.49, 15.49, 14.99, 14.49],
     description:
       "100 % bawełna artykuł medikal granatura 180 gram.pojedyncza warstwa"
   },
@@ -25,6 +27,7 @@ const items = [
     name: "Maska biała kwiatki",
     prize: 13.99,
     oldPrize: 20.99,
+    prizeSelected: [13.99, 13.99, 13.99, 13.49, 13.49, 12.99, 12.49],
     prizeEach: 13.99,
     description: ""
   },
@@ -34,6 +37,7 @@ const items = [
     name: "Maska biała trójkąty1",
     prize: 13.99,
     oldPrize: 20.99,
+    prizeSelected: [13.99, 13.99, 13.99, 13.49, 13.49, 12.99, 12.49],
     prizeEach: 13.99,
     description: ""
   },
@@ -43,6 +47,7 @@ const items = [
     name: "Maska czarna bąbelki",
     prize: 13.99,
     oldPrize: 20.99,
+    prizeSelected: [13.99, 13.99, 13.99, 13.49, 13.49, 12.99, 12.49],
     prizeEach: 13.99,
     description: ""
   },
@@ -52,6 +57,7 @@ const items = [
     name: "Maska biała trójkąty2",
     prize: 13.99,
     oldPrize: 20.99,
+    prizeSelected: [13.99, 13.99, 13.99, 13.49, 13.49, 12.99, 12.49],
     prizeEach: 13.99,
     description: ""
   },
@@ -61,6 +67,7 @@ const items = [
     name: "Maska czarna kwiatki",
     prize: 13.99,
     oldPrize: 20.99,
+    prizeSelected: [13.99, 13.99, 13.99, 13.49, 13.49, 12.99, 12.49],
     prizeEach: 13.99,
     description: ""
   },
@@ -70,6 +77,7 @@ const items = [
     name: "Maska czerwona serduszka",
     prize: 13.99,
     oldPrize: 20.99,
+    prizeSelected: [13.99, 13.99, 13.99, 13.49, 13.49, 12.99, 12.49],
     prizeEach: 13.99,
     description: ""
   },
@@ -80,6 +88,7 @@ const items = [
     name: "Maska biała",
     prize: 13.99,
     oldPrize: 20.99,
+    prizeSelected: [13.99, 13.99, 13.99, 13.49, 13.49, 12.99, 12.49],
     prizeEach: 13.99,
     description: ""
   },
@@ -89,6 +98,7 @@ const items = [
     name: "Maska błekitna",
     prize: 13.99,
     oldPrize: 20.99,
+    prizeSelected: [13.99, 13.99, 13.99, 13.49, 13.49, 12.99, 12.49],
     prizeEach: 13.99,
     description: ""
   }

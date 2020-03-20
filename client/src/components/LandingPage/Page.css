@@ -18,15 +18,15 @@
   margin-left: 20px;
   margin-right: 20px;
 }
-#quantity{
+#quantity {
   padding: 2px;
   margin: 0px 10px;
+  text-align: center;
 }
 .popup__img {
   margin: 10px 4em;
-
 }
-.popup__text{
+.popup__text {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -130,6 +130,11 @@ ol.carousel-indicators li.active {
   justify-content: left;
   padding: 0.4em 0;
 }
+.menu__cart {
+  display: flex!important;
+  justify-content: space-evenly!important;
+  font-size: 13px;
+}
 .slider__image {
   width: 100%;
   object-fit: fill;
@@ -140,7 +145,7 @@ ol.carousel-indicators li.active {
 }
 
 .vat {
-  font-size: 12px;
+  font-size: 14px;
   color: gray;
 }
 .contacto {

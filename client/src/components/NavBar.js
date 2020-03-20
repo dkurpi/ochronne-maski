@@ -13,9 +13,13 @@ function NavBar({ items, cart }) {
     console.log(typeof suma);
     suma += prizeAll * 1;
     return (
-      <a href={`/product/${item.id}`} class="dropdown-item ">
-        {item.name} {" |  "} {item.quantity} pak {" |  "}
-        {prizeAll}zł
+      <a href={`/product/${item.id}`} class="dropdown-item menu__cart">
+        <span class="pr-5 flex-grow">{item.name}</span>
+        <span class="ml-auto">
+          {item.quantity}
+          {item.quantity === 1 ? "paczka" : "paczek"} {" |  "}
+          {prizeAll}zł
+        </span>
       </a>
     );
   });

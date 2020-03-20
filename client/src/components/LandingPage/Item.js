@@ -157,6 +157,12 @@ function Item({ items, match, handleAddingToCart, best }) {
                 value={packet}
                 onChange={e => {
                   setPacket(e.target.value);
+                  const selID = e.target.selectedIndex;
+                  if (item.prizeSelected) {
+                    item.prizeEach = item.prizeSelected[selID];
+                    item.prize = item.prizeEach ;
+                    console.log(item.prizeEach, item.prize);
+                  }
                 }}
                 id="quantity"
                 name="quantity"

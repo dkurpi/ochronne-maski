@@ -195,10 +195,10 @@ body {
 .singleProduct__name a {
   font-size: 20px;
 }
+
 .singleProduct__info {
   display: flex;
   flex-direction: column;
-  flex-basis: 50%;
   align-items: left;
   margin-right: 3vw;
 }

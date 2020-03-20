@@ -1,10 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Popup from "reactjs-popup";
+import gsap from "gsap";
 
 export default function Items(props) {
   const [items, setitems] = useState(props.items);
   const [item, setitem] = useState({});
   const [PopedOpen, setPopedOpen] = useState(false);
+
+  const handleAnimations = () => {
+   
+    const items = document.querySelector(
+      ".row.flexcolumn-wrapper"
+    //  "slider__section"
+    )
+
+    const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
+    tl.from(items, 2, { y: 300, opacity: 0, stagger: 0.2 }, "=+1");
+  };
+
+  useEffect(() => {
+    handleAnimations();
+  }, []);
   const popup = [
     <Popup
       open={PopedOpen}

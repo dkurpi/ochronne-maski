@@ -14,9 +14,17 @@ code {
 img {
   image-orientation: from-image !important;
 }
+html,
+body,
+#app,
+#app > div {
+  height: 100% !important;
+  width: 100% !important;
+  overflow-x: hidden;
+}
 
 body {
-
+  width: 100vw !important;
   font-size: 14px;
   line-height: 1.5;
   color: #24292e;
@@ -40,7 +48,7 @@ input.error {
   height: 5px;
   margin-top: -12px;
 }
-.footer_contact{
+.footer_contact {
   font-size: 3em;
   margin: 0.2em;
 }

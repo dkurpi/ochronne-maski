@@ -1,4 +1,4 @@
-import React, { useEffect, useParams, useState } from "react";
+import React, { useEffect,  useState } from "react";
 import { LightgalleryProvider, LightgalleryItem } from "react-lightgallery";
 import "lightgallery.js/dist/css/lightgallery.css";
 import Items from "./Items.js";
@@ -37,7 +37,7 @@ function Item({ items, match, handleAddingToCart, best }) {
       .childNodes;
     const prize = [prize1[0], prize1[1]];
     const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
-    tl.from([prize, quant], 0.2, { x: 300, opacity: 0, stagger: 0.2 });
+    tl.from([prize, quant],  { x: 300, opacity: 0, stagger: 0.2 });
   };
   useEffect(() => {
     const ID = parseInt(match.params.id);
@@ -107,12 +107,16 @@ function Item({ items, match, handleAddingToCart, best }) {
           />
           <div className="popup__text">
             <br />
-            <h4>{item.name}</h4>
+            <h4>{item.name}
+           <hr/>
+            </h4>
             Masek w paczce: {packet} <br />
             Ilość paczek: {quantity} <br />
             Łącznie masek: {packet * quantity} <br />
             <h4>
+            <hr/>
               {[packet * quantity * item.prize][0].toFixed(2)} zł <br />
+            <hr/>
             </h4>
           </div>
           <div className="actions">

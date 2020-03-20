@@ -14,6 +14,7 @@ function App() {
   const best = bestID.map(id => items[id]);
   const [cart, setcart] = useState([]);
 
+  
   const cookiesDeleteItem = index => {
     const cartCopy = cart;
     cartCopy.splice(index, 1);
@@ -24,12 +25,11 @@ function App() {
     window.location.reload();
   };
 
-  const handleDelete = index => {};
 
   const handleAddingToCart = (itm, quantity, packet) => {
     let item = itm;
     item.quantity = quantity;
-    item.packet = packet
+    item.packet = packet;
 
     setcart([...cart, item]);
     console.log(cart);

@@ -1,18 +1,9 @@
 import React, { useState } from "react";
-import gsap from "gsap";
 
 import "bootstrap/dist/css/bootstrap.css";
 function NavBar({ items, cart }) {
   let suma = 0;
 
-  const handleAnimationsNavBar = () => {
-    const titles = document.querySelectorAll(".dropdown-item span");
-
-    const tl = gsap.timeline({
-      defaults: { ease: "power3.inOut", opacity: 1 }
-    });
-    tl.from(titles, 2 ,{ x: -300, opacity: 0, stagger:0.1 });
-  };
   const navItems = items.map(item => (
     <a href={`/product/${item.id}`} class="dropdown-item">
       <span> {item.name}</span>
@@ -46,9 +37,6 @@ function NavBar({ items, cart }) {
           </a>
         </div>
         <button
-          onClick={() => {
-            handleAnimationsNavBar();
-          }}
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"

@@ -43,6 +43,8 @@ export default class AdminOrders extends Component {
   async componentDidMount() {
     const key = Cookies.get("maseczki-ochronne-admin");
     if (key === "eyJrIjoiT0tTcG1pUlY2RnVKZTFVaDFsNFZXdE9ZWmNrMkZYbk") {
+      this.loadItem();
+
       this.setState({
         auth: true
       });
@@ -51,7 +53,6 @@ export default class AdminOrders extends Component {
 
   render() {
     if (this.state.auth) {
-      this.loadItem();
       if (this.state.isLoaded) {
         const items = this.state.orders;
         const { customerInfo, cart } = this.state.item;

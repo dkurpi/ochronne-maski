@@ -52,6 +52,20 @@ MongoClient.connect(
         });
     });
 
+    app.post("/api/AdminLogin", (req, res) => {
+      const _login = "kacztex";
+      const _password = "kacztex123";
+
+      const { login, password } = req.body;
+      console.log(login, password);
+
+      if (login === _login && password === _password)
+        res.json({
+          isAuth: true,
+          key: "eyJrIjoiT0tTcG1pUlY2RnVKZTFVaDFsNFZXdE9ZWmNrMkZYbk"
+        });
+      else res.json({ isAuth: false });
+    });
     /////////////PRODUCTION
     if (process.env.NODE_ENV === "production") {
       // Set static folder

@@ -118,9 +118,7 @@ ol.carousel-indicators li.active {
 .carousel-control-prev-icon {
   color: black !important;
 }
-.Text.text__delivery {
-  margin-top: 8em !important;
-}
+
 .slider__section {
   display: flex;
   width: 100%;
@@ -131,8 +129,8 @@ ol.carousel-indicators li.active {
   padding: 0.4em 0;
 }
 .menu__cart {
-  display: flex!important;
-  justify-content: space-evenly!important;
+  display: flex !important;
+  justify-content: space-evenly !important;
   font-size: 13px;
 }
 .slider__image {
@@ -142,8 +140,15 @@ ol.carousel-indicators li.active {
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   filter: invert(1);
+} 
+.logout .panel__menuItem {
+  padding: .5em 1em;
+  background-color: rgb(247, 22, 22);
+  color: white !important;
+  font-size: 32px;
+  width: auto;
+  margin-left: 2em;
 }
-
 .vat {
   font-size: 14px;
   color: gray;

@@ -80,27 +80,6 @@ const items = [
     prizeSelected: [13.99, 13.99, 13.99, 13.49, 13.49, 12.99, 12.49],
     prizeEach: 13.99,
     description: ""
-  },
-  {
-    id: 8,
-    images: ["/images/maska1.jpg", "/images/maska1.jpg"],
-
-    name: "Maska biała",
-    prize: 13.99,
-    oldPrize: 20.99,
-    prizeSelected: [13.99, 13.99, 13.99, 13.49, 13.49, 12.99, 12.49],
-    prizeEach: 13.99,
-    description: ""
-  },
-  {
-    id: 9,
-    images: ["/images/maska1.jpg", "/images/maska1.jpg"],
-    name: "Maska błekitna",
-    prize: 13.99,
-    oldPrize: 20.99,
-    prizeSelected: [13.99, 13.99, 13.99, 13.49, 13.49, 12.99, 12.49],
-    prizeEach: 13.99,
-    description: ""
   }
 ];
 

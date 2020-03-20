@@ -6,7 +6,16 @@ function Carousel({ items }) {
       <div class="col-lg-6 col-md-4  col-sm-6 mb-2 flexcolumn">
         <div class="card h-100  text-center color-gray">
           <a href={`/product/${items[index].id}`}>
-            <img class="card-img-top" src={items[index].images[0]} alt="" />
+            <img 
+            onPointerEnter={e => {
+              items[index].images[1]
+                ? (e.target.src = items[index].images[1])
+                : (e.target.src = items[index].images[0]);
+            }}
+            onPointerLeave={e => {
+              e.target.src = items[index].images[0];
+            }}
+            class="card-img-top" src={items[index].images[0]} alt="" />
           </a>
           <div class="card-body">
             <h4 class="card-title">
@@ -63,10 +72,10 @@ function Carousel({ items }) {
             </div>
           </div>
           <div class="carousel-item">
-            <div className="slider__section">{[item(2), item(1)]}</div>
+            <div className="slider__section">{[item(0), item(7)]}</div>
           </div>
           <div class="carousel-item">
-            <div className="slider__section">{[item(1), item(3)]}</div>
+            <div className="slider__section">{[item(2), item(1)]}</div>
           </div>
         </div>
         <a

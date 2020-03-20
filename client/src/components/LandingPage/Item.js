@@ -93,9 +93,7 @@ function Item({ items, match, handleAddingToCart, best }) {
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100  text-center">
               <LightgalleryProvider>
-                <div className="mini-items  justify-content-center">
-                  {mini_images}
-                </div>
+                <div className="mini-items">{mini_images}</div>
 
                 <LightgalleryItem group={`item`} src={item.images[0]}>
                   <img
@@ -168,10 +166,9 @@ function Item({ items, match, handleAddingToCart, best }) {
                 <h4>Maska filtrująca:</h4>
                 <ul>
                   <li>
-                    tkanina najwyższej jakości bawełny 100% z możliwością
-                    dezynfekcji i wielokrotnego użytku
+                    Tkanina najwyższej jakości OEKO-TEX Bawełny 100% z
+                    możliwością dezynfekcji i wielokrotnego użytku
                   </li>
-
                   <li>
                     ergonomiczny kształt z metalowym dociskiem na nos idealnie
                     dostosuje się do twarzy
@@ -181,9 +178,7 @@ function Item({ items, match, handleAddingToCart, best }) {
                     metalowa klamra na wysokości nosa na zewnętrznej części
                     maski
                   </li>
-                  <li>
-                    okrągły kształt półmaski zapewnia dopasowanie do twarzy
-                  </li>
+
                   <li>idealna ochrona przed pyłami i drobnymi cząstkami</li>
                 </ul>
               </div>

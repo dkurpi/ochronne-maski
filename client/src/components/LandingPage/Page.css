@@ -46,7 +46,8 @@
   font-size: 12px;
 }
 .mini-item {
-  width: 50px;
+  width: 100px;
+  margin: 0.1em;
 }
 .descriptions {
   flex-basis: 100% !important;
@@ -151,9 +152,8 @@ ol.carousel-indicators li.active {
     order: 1;
   }
   .mini-item {
-    width: 50px;
+    width: 75px;
     margin: 5px;
-    flex-grow: 1;
   }
 }
 .card-img-top {

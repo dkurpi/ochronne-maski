@@ -51,7 +51,19 @@ export default function Items(props) {
         <div class="col-lg-3 col-md-4  col-sm-6 mb-2 flexcolumn">
           <div class="card h-100  text-center">
             <a href={`/product/${item.id}`}>
-              <img class="card-img-top" src={item.images[0]} alt="" />
+              <img
+                class="card-img-top"
+                onPointerEnter={e => {
+                  item.images[1]
+                    ? (e.target.src = item.images[1])
+                    : (e.target.src = item.images[0]);
+                }}
+                onPointerLeave={e => {
+                  e.target.src = item.images[0];
+                }}
+                src={item.images[0]}
+                alt=""
+              />
             </a>
             <div class="card-body">
               <h4 class="card-title">

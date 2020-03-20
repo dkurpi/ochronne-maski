@@ -12,62 +12,75 @@ function App() {
   const items = [
     {
       id: 0,
-      images: [
-        "/images/maska1.jpg",
-        "/images/maska2.jpg",
-        "/images/maska3.jpg",
-        "/images/maska2.jpg"
-      ],
-      name: "Maska1 - 50 masek",
-      prize: 500,
-      oldPrize: 759.99,
-      prizeEach: 10.0,
-      description: "Lorem ipsum "
+      images: ["/images/M0-1.jpeg", "/images/M0-2.jpeg"],
+      name: "Maska0 - 1 maska",
+      prize: 39.99,
+      oldPrize: 59.99,
+      prizeEach: 39.99
     },
     {
       id: 1,
-      images: ["/images/maska2.jpg"],
-      name: "Maska2",
+      images: ["/images/M1-1.jpeg", "/images/M1-2.jpeg"],
+      name: "Maska1 - 1 maska",
       prize: 39.99,
       oldPrize: 59.99,
-      prizeEach: 39.99,
-      description: "Lorem ipsum dolor sit, ameos!"
+      prizeEach: 39.99
     },
     {
       id: 2,
-      images: ["/images/maska3.jpg"],
-      name: "Maska3",
+      images: ["/images/M2-1.jpeg", "/images/M2-2.jpeg"],
+      name: "Maska2 - 1 maska",
       prize: 39.99,
       oldPrize: 59.99,
-      prizeEach: 39.99,
-      description: "Lorem ipsum dolor sit, ameos!"
+      prizeEach: 39.99
     },
     {
       id: 3,
-      images: ["/images/maska3.jpg"],
-      name: "Mask4",
+      images: ["/images/M3-1.jpeg", "/images/M3-2.jpeg"],
+      name: "Maska3 - 1 maska",
       prize: 39.99,
       oldPrize: 59.99,
-      prizeEach: 39.99,
-      description: "Lorem ipsum dolor sit, ameos!"
+      prizeEach: 39.99
     },
     {
       id: 4,
-      images: ["/images/maska2.jpg"],
-      name: "Mask5",
+      images: ["/images/M4-1.jpeg", "/images/M4-2.jpeg"],
+      name: "Maska4 - 1 maska",
       prize: 39.99,
       oldPrize: 59.99,
-      prizeEach: 39.99,
-      description: "Lorem ipsum dolor sit, ameos!"
+      prizeEach: 39.99
     },
     {
       id: 5,
-      images: ["/images/maska1.jpg"],
-      name: "Mask6",
+      images: ["/images/M5-1.jpeg", "/images/M5-2.jpeg"],
+      name: "Maska5 - 1 maska",
       prize: 39.99,
       oldPrize: 59.99,
-      prizeEach: 39.99,
-      description: "Lorem ipsum dolor sit, ameos!"
+      prizeEach: 39.99
+    },
+    {
+      id: 6,
+      images: ["/images/M6-1.jpeg", "/images/M6-2.jpeg"],
+      name: "Maska6 - 1 maska",
+      prize: 39.99,
+      oldPrize: 59.99,
+      prizeEach: 39.99
+    },
+    {
+      id: 7,
+      images: ["/images/M7-1.jpeg", "/images/M7-2.jpeg"],
+      name: "Maska7 - 1 maska",
+      prize: 39.99,
+      oldPrize: 59.99,
+      prizeEach: 39.99
+    },
+    {
+      id: 8,
+      images: ["/images/M8-1.jpeg", "/images/M8-2.jpeg"],
+      name: "Maska8 - 1 maska",
+      prize: 39.99,
+      oldPrize: 59.99,
+      prizeEach: 39.99
     }
   ];
 

@@ -1,11 +1,21 @@
 import React, { useState } from "react";
+import gsap from "gsap";
 
 import "bootstrap/dist/css/bootstrap.css";
 function NavBar({ items, cart }) {
   let suma = 0;
+
+  const handleAnimationsNavBar = () => {
+    const titles = document.querySelectorAll(".dropdown-item span");
+
+    const tl = gsap.timeline({
+      defaults: { ease: "power3.inOut", opacity: 1 }
+    });
+    tl.from(titles, 2 ,{ x: -300, opacity: 0, stagger:0.1 });
+  };
   const navItems = items.map(item => (
     <a href={`/product/${item.id}`} class="dropdown-item">
-      {item.name}
+      <span> {item.name}</span>
     </a>
   ));
   const cartList = cart.map(item => {
@@ -28,7 +38,7 @@ function NavBar({ items, cart }) {
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center fixed-top">
       <div style={{ maxWidth: "1620px" }} class="container-fluid ">
         <a class="navbar-brand" href="/">
-          Maseczki ochronne
+          Ochronne maski
         </a>
         <div className="cartMini ml-auto mr-3">
           <a href="/koszyk">
@@ -36,6 +46,9 @@ function NavBar({ items, cart }) {
           </a>
         </div>
         <button
+          onClick={() => {
+            handleAnimationsNavBar();
+          }}
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"

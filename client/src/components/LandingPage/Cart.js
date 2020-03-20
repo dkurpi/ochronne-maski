@@ -100,14 +100,15 @@ export default class Cart extends Component {
         isClicked: true
       });
     }
-    const form = document.querySelector(".orderForm");
 
+    const form = document.querySelector(".orderForm");
     const formPosition =
-      window.pageYOffset +
+      document.body.scrollTop +
       form.getBoundingClientRect().top -
       window.innerHeight * 0.1;
-    console.log(formPosition, window.pageYOffset);
-    window.scrollTo({
+    console.log(formPosition);
+
+    document.body.scrollTo({
       top: formPosition,
       behavior: "smooth"
     });
@@ -198,9 +199,7 @@ export default class Cart extends Component {
           </div>
           <div className="orderForm__delivery orderForm__delivery--pay">
             <h3>
-              <span className="Text text__delivery">
-                Formy płatności
-              </span>
+              <span className="Text text__delivery">Formy płatności</span>
             </h3>
             <p>
               <span style={{ fontWeight: "400" }}>
@@ -215,17 +214,14 @@ export default class Cart extends Component {
                 <span style={{ fontWeight: "400" }}>
                   Płatności przy pobraniu paczki
                 </span>
-                
               </li>
             </ol>
             <p>
-            <hr/>
-
+              <hr />
               Po powierdzeniu zamówienia, skontaktujemy się z Toba drogą mailową
               <span style={{ fontWeight: "400" }}>
-                <hr/>
-                W razie pytań prosimy o kontakt. Więcej informacji znajdziesz w
-                zakładce <a href="/kontakt">kontakt</a>
+                <hr />W razie pytań prosimy o kontakt. Więcej informacji
+                znajdziesz w zakładce <a href="/kontakt">kontakt</a>
               </span>
             </p>
             <br />

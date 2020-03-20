@@ -140,9 +140,19 @@ ol.carousel-indicators li.active {
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   filter: invert(1);
-} 
+}
+.orderCheck {
+  background-color: rgba(0, 47, 255, 0.068);
+  font-size: 22px;
+  font-weight: 200;
+  line-height: 28px;
+  padding: 1em;
+}
+.orderForm__delivery--pay{
+  padding: 0 3em !important;
+}
 .logout .panel__menuItem {
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   background-color: rgb(247, 22, 22);
   color: white !important;
   font-size: 32px;
@@ -209,7 +219,9 @@ ol.carousel-indicators li.active {
     padding: 0.5em !important;
     text-align: center;
   }
-
+  .orderForm__delivery--pay{
+    padding: 0 .1em !important;
+  }
   .dropdown-item {
     padding: 2px 1em !important;
     border-radius: 0 !important;

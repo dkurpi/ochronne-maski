@@ -71,7 +71,6 @@ tr:hover {
   width: 100vw;
   display: flex;
   padding: 20px;
-  margin: 10vh 0;
 }
 .singleCartItem__img {
   flex-grow: 1;
@@ -165,7 +164,6 @@ table th {
     width: 100vw !important;
     font-weight: normal;
     margin: 0.2em;
-    overflow-x: auto;
     background: rgba(243, 243, 243, 0.377);
   }
   table th {

@@ -7,7 +7,6 @@ export default function Items(props) {
   const [PopedOpen, setPopedOpen] = useState(false);
   const popup = [
     <Popup
-      item={item}
       open={PopedOpen}
       modal
       onClose={() => {

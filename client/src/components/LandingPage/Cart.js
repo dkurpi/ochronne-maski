@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 import "./cart.css";
 import Cookies from "js-cookie";
+import Popup from "reactjs-popup";
 
 export default class Cart extends Component {
   state = {
     cart: [],
     customerInfo: {},
     isClicked: false,
-    suma: 0
+    suma: 0,
+    isPop: false
   };
+
+  popup = [];
 
   componentDidMount() {
     if (Cookies.get("maski-ochronne")) {
@@ -24,6 +28,7 @@ export default class Cart extends Component {
       });
     }
   }
+
   handleDelete = (e, index) => {
     this.props.cookiesDeleteItem(index);
   };
@@ -112,7 +117,6 @@ export default class Cart extends Component {
     const now = new Date();
     const dat1 = now.toString();
     const date = dat1.slice(0, 24);
-
     const data = {
       cart,
       customerInfo,
@@ -130,10 +134,13 @@ export default class Cart extends Component {
       })
         .then(res => res.json())
         .then(res => {
-          alert(res.isSaved);
+          if (res.isSaved) {
+            this.setState({
+              isPop: true
+            });
+          }
         });
     } else alert("Popraw dane");
-    // this.props.clearCart();
   };
 
   resetCart = () => {};
@@ -156,26 +163,29 @@ export default class Cart extends Component {
         numberStreet,
         deliveryMethod
       } = this.state.customerInfo;
+
       info = [
         <div className="orderForm">
           <div className="orderForm__personalInfo">
             <span className="Text text__delivery">
               Sprawdź poprawność danych
+              <hr />
             </span>
-            {`${name}`}
-            {`${surname}`}
-            <br />
-            {street} {numberStreet}
-            <br />
-            {`${adressCode}`}
-            {`${city}`}
-            <br />
-            {`${telephone}`}
-            <br />
-            {`${email}`}
-            <br />
-            {`${deliveryMethod}`}
-            <br />
+            <div className="orderCheck">
+              {`${name}`}
+              {`${surname}`}
+              <br />
+              {street} {numberStreet}
+              <br />
+              {`${adressCode}`} {`${city}`}
+              <br />
+              {`${telephone}`}
+              <br />
+              {`${email}`}
+              <br />
+              {`${deliveryMethod}`}
+              <br />
+            </div>
             <button
               onClick={() => {
                 const orderMove = document.querySelector(".form-containers");
@@ -186,19 +196,39 @@ export default class Cart extends Component {
               wróć
             </button>
           </div>
-          <div className="orderForm__delivery">
-            <span className="deliveryInfo">
-              Dostawę zamówionych produktów realizujemy za pośrednictwem firmy
-              kurierskiej DPD <br />
-              <br />
-              Koszt przesyłki naliczamy zgodnie z taryfikatorem: <br />
-              <span>13,99 zł</span> przesyłka za wcześniejszym przelewem na
-              konto
-              <span>21,99 zł</span> przesyłka pobraniowa
-              <br />
-              <br /> W przypadku wysyłki za granicę koszt zgodnie z cennikiem
-              Poczty Polskiej.
-            </span>
+          <div className="orderForm__delivery orderForm__delivery--pay">
+            <h3>
+              <span className="Text text__delivery">
+                Formy płatności
+              </span>
+            </h3>
+            <p>
+              <span style={{ fontWeight: "400" }}>
+                Istnieje możliwość płatności w dwóch formach:
+              </span>
+            </p>
+            <ol>
+              <li style={{ fontWeight: "400" }}>
+                <span style={{ fontWeight: "400" }}>Przelew na konto</span>
+              </li>
+              <li style={{ fontWeight: "400" }}>
+                <span style={{ fontWeight: "400" }}>
+                  Płatności przy pobraniu paczki
+                </span>
+                
+              </li>
+            </ol>
+            <p>
+            <hr/>
+
+              Po powierdzeniu zamówienia, skontaktujemy się z Toba drogą mailową
+              <span style={{ fontWeight: "400" }}>
+                <hr/>
+                W razie pytań prosimy o kontakt. Więcej informacji znajdziesz w
+                zakładce <a href="/kontakt">kontakt</a>
+              </span>
+            </p>
+            <br />
             <button onClick={this.sendToBackEnd} class="sendOrder">
               Potwierdź zamówienie
             </button>
@@ -273,7 +303,7 @@ export default class Cart extends Component {
             * - pola wymagane
           </div>
         </div>
-        <div className="orderForm__delivery">
+        <div className="orderForm__delivery ">
           <span className="Text text__delivery"> Wybierz metodę płatności</span>
           <select className="delivery" name="delivery">
             <option id="option" value="courier">
@@ -363,6 +393,47 @@ export default class Cart extends Component {
             </div>
           </div>
         </div>
+
+        <Popup
+          open={this.state.isPop}
+          modal
+          onClose={() => {
+            this.setState({ isPop: false });
+          }}
+        >
+          {close => (
+            <div className="modale">
+              <a
+                className="close"
+                onClick={() => {
+                  close();
+                }}
+              >
+                &times;
+              </a>
+              <h4 className="header"> Zamównie przyjęte do realizacji</h4>
+              <hr />
+              Zamówienie zostało pomyślnie wysłane. Prosimy sprawdzić dane
+              płatności na Państwa adresie mailowym.
+              <br />
+              <br />
+              Jeżeli nie widzą Państwo mail'a prosimy o sprawdzenie zakładki -
+              SPAM.{" "}
+              <div className="actions">
+                <button
+                  className="button"
+                  onClick={() => {
+                    close();
+                    window.location = "/";
+                    Cookies.remove("maski-ochronne");
+                  }}
+                >
+                  Zamknij
+                </button>
+              </div>
+            </div>
+          )}
+        </Popup>
       </>
     );
   }

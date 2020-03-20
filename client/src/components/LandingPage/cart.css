@@ -20,7 +20,6 @@ body {
   flex-direction: column;
   padding: 2vh 0.5vw 2vh 1vw;
   box-sizing: border-box;
-  overflow-x: hidden;
   background-image: linear-gradient(
     to right,
     rgba(70, 70, 70, 0),

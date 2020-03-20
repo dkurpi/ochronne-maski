@@ -24,7 +24,7 @@
   text-align: center;
 }
 .popup__img {
-  margin: 10px 4em;
+  margin: 0 2em 10px;
 }
 .popup__text {
   display: flex;

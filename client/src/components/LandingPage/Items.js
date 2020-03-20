@@ -1,26 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Popup from "reactjs-popup";
-import gsap from "gsap";
 
 export default function Items(props) {
   const [items, setitems] = useState(props.items);
   const [item, setitem] = useState({});
   const [PopedOpen, setPopedOpen] = useState(false);
 
-  const handleAnimations = () => {
-   
-    const items = document.querySelector(
-      ".row.flexcolumn-wrapper"
-    //  "slider__section"
-    )
-
-    const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
-    tl.from(items, 2, { y: 300, opacity: 0, stagger: 0.2 }, "=+1");
-  };
-
-  useEffect(() => {
-    handleAnimations();
-  }, []);
+  
   const popup = [
     <Popup
       open={PopedOpen}
@@ -49,14 +35,12 @@ export default function Items(props) {
             alt=""
           />
           <div className="popup__text">
-            <br />
             <h4>{item.name}</h4>
             Masek w paczce: {item.packet} <br />
             Ilość paczek: {item.quantity} <br />
             Łącznie masek: {item.packet * item.quantity} <br />
             <h4>
               {[item.packet * item.quantity * item.prize][0].toFixed(2)} zł{" "}
-              <br />
             </h4>
           </div>
           <div className="actions">

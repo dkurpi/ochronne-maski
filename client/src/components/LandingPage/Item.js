@@ -20,7 +20,7 @@ function Item({ items, match, handleAddingToCart, best }) {
     ).childNodes;
 
     const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
-    tl.from(titles, 2, { x: -300, opacity: 0, stagger: 0.2 }).from(
+    tl.from(titles, 2, { x: -300, opacity: 0, stagger: 0.2,delay: .4 }).from(
       items,
       {
         x: 500,
@@ -101,22 +101,18 @@ function Item({ items, match, handleAddingToCart, best }) {
           <img
             class="popup__img"
             src={item.images[0]}
-            height="200"
-            width="200"
+            height="150"
+            width="150"
             alt=""
           />
           <div className="popup__text">
-            <br />
             <h4>{item.name}
-           <hr/>
             </h4>
             Masek w paczce: {packet} <br />
             Ilość paczek: {quantity} <br />
             Łącznie masek: {packet * quantity} <br />
             <h4>
-            <hr/>
               {[packet * quantity * item.prize][0].toFixed(2)} zł <br />
-            <hr/>
             </h4>
           </div>
           <div className="actions">

@@ -68,14 +68,14 @@ function Carousel({ items }) {
           <div class="carousel-item active">
             <div className="slider__section">
               {/* <img class="slider__image" src="/images/slider1.jpg" alt="" /> */}
-              <div className="slider__section">{[item(0), item(4)]}</div>
+              <div className="slider__section">{[item(0), item(1)]}</div>
             </div>
           </div>
           <div class="carousel-item">
-            <div className="slider__section">{[item(1), item(7)]}</div>
+            <div className="slider__section">{[item(2), item(3)]}</div>
           </div>
           <div class="carousel-item">
-            <div className="slider__section">{[item(6), item(3)]}</div>
+            <div className="slider__section">{[item(6), item(7)]}</div>
           </div>
         </div>
         <a

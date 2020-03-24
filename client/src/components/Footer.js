@@ -9,7 +9,7 @@ function Footer() {
       <footer class="page-footer font-small blue  pt-4">
         <div class="container-fluid text-center text-md-left">
           <div class="row">
-            <div class="col-md-6 mt-md-0 mt-3">
+            <div class="col-md-6 mt-md-0 mt-3 contact__footer">
               <h5 class="text-uppercase">Kontakt</h5>
               <div>
                 <a href="tel:600441542">
@@ -18,9 +18,9 @@ function Footer() {
                 </a>
               </div>
               <div>
-                <a href="mailto:info@ochronne-maski.pl">
+                <a href="mailto:kacztex@wp.pl">
                   <i className="fas fa-envelope footer_contact"></i>
-                  info@ochronne-maski.pl
+                  kacztex@wp.pl
                 </a>
               </div>
             </div>

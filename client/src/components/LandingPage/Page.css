@@ -148,7 +148,7 @@ ol.carousel-indicators li.active {
   line-height: 28px;
   padding: 1em;
 }
-.orderForm__delivery--pay{
+.orderForm__delivery--pay {
   padding: 0 3em !important;
 }
 .logout .panel__menuItem {
@@ -166,6 +166,12 @@ ol.carousel-indicators li.active {
 .contacto {
   color: white !important;
 }
+
+  .contact__footer {
+    padding:  0 60px !important;
+  }
+
+
 @media (max-width: 1024px) {
   .dropdown-menu {
     display: block !important;
@@ -219,13 +225,13 @@ ol.carousel-indicators li.active {
     padding: 0.5em !important;
     text-align: center;
   }
-  .orderForm__delivery--pay{
-    padding: 0 .1em !important;
+  .orderForm__delivery--pay {
+    padding: 0 0.1em !important;
   }
   .dropdown-item {
-    padding: .5em 1em !important;
+    padding: 0.5em 1em !important;
     font-family: montserrat;
-    font-size: 14px ;
+    font-size: 14px;
     border-radius: 0 !important;
     background-color: #343a40 !important;
     color: rgb(241, 240, 240) !important;

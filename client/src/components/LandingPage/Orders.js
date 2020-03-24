@@ -97,7 +97,7 @@ export default class AdminOrders extends Component {
               </div>
               <div className="singleCartItem__info">
                 <div className="singleCartItem__infoSingle">
-                  <a href={`/product/${item.id}`}>{item.name}</a>
+                  <a className="ahrefff"href={`/product/${item.id}`}>{item.name}</a>
                 </div>
 
                 <div className="singleCartItem__infoSingle">
@@ -117,7 +117,7 @@ export default class AdminOrders extends Component {
                   <h6>
                     Łącznie:{" "}
                     {[item.prize * item.packet * item.quantity][0].toFixed(2)}zł
-                    za {item.quantity * item.packet} sztuk
+                    za {item.quantity * item.packet} masek
                   </h6>
                   <hr />
                 </div>

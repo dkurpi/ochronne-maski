@@ -152,6 +152,11 @@ table th {
 
   flex-direction: column;
 }
+.ahrefff {
+  color: black !important;
+  text-decoration: none;
+  font-size: 22px;
+}
 
 @media (max-width: 425px) {
   .panel__menu {

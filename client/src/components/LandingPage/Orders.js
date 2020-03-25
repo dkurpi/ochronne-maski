@@ -97,7 +97,9 @@ export default class AdminOrders extends Component {
               </div>
               <div className="singleCartItem__info">
                 <div className="singleCartItem__infoSingle">
-                  <a className="ahrefff"href={`/product/${item.id}`}>{item.name}</a>
+                  <a className="ahrefff" href={`/product/${item.id}`}>
+                    {item.name}
+                  </a>
                 </div>
 
                 <div className="singleCartItem__infoSingle">
@@ -217,6 +219,20 @@ export default class AdminOrders extends Component {
           <>
             <div className="containterOrders">
               <div style={{ height: "5em" }}></div>
+
+              <div className="logout">
+                <a
+                  onClick={e => {
+                    Cookies.remove("maseczki-ochronne-admin");
+                  }}
+                  className="panel__menuItem"
+                  href="/zamowienia"
+                >
+                  wyloguj
+                </a>
+              <div style={{ height: "1em" }}></div>
+
+              </div>
               <span className="Text text__delivery"> Zamówienia</span>
               <hr size="2px" width="100%" />
               <table>
@@ -236,17 +252,6 @@ export default class AdminOrders extends Component {
                 {listOfProducts}
               </table>
               {adminOrder}
-            </div>
-            <div className="logout">
-              <a
-                onClick={e => {
-                  Cookies.remove("maseczki-ochronne-admin");
-                }}
-                className="panel__menuItem"
-                href="/zamowienia"
-              >
-                wyloguj
-              </a>
             </div>
           </>
         );

@@ -18,9 +18,9 @@ function Footer() {
                 </a>
               </div>
               <div>
-                <a href="mailto:kacztex@wp.pl">
+                <a href="mailto:info@ochronne-maski.pl">
                   <i className="fas fa-envelope footer_contact"></i>
-                  kacztex@wp.pl
+                  info@ochronne-maski.pl
                 </a>
               </div>
             </div>
@@ -187,10 +187,21 @@ function Contact() {
                     </header>
                     <hr />
                     <div class="entry-content">
-                      <p>
-                        <span style={{ fontWeight: "400" }}>
-                          Krawiectwo Konfekcyjne kacztex
-                        </span>
+                      <div>
+                        <a href="mailto:info@ochronne-maski.pl">
+                          <i className="fas fa-envelope footer_contact"></i>
+                          info@ochronne-maski.pl
+                        </a>
+                      </div>
+                      <div>
+                        <a href="tel:600441542">
+                          <i className="fas fa-mobile-alt footer_contact"></i>
+                          600 441 542
+                        </a>
+                      </div>
+                      <hr />
+                      <p style={{ fontWeight: "400" }}>
+                        Krawiectwo Konfekcyjne kacztex
                       </p>
                       Franciszek Kaczor
                       <br />
@@ -198,9 +209,6 @@ function Contact() {
                       <br />
                       Skawa 558A
                       <br />
-                      <span style={{ fontWeight: "400" }}>
-                        <a href="tel:600441542">Tel. 600441542</a>
-                      </span>
                     </div>
                   </div>
                 </article>

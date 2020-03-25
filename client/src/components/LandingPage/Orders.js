@@ -113,7 +113,6 @@ export default class AdminOrders extends Component {
                 </div>
                 <div
                   className="singleCartItem__infoSingle"
-                  style={{ marginTop: "auto" }}
                 >
                   <hr />
                   <h6>

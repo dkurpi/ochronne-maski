@@ -74,8 +74,6 @@ tr:hover {
   margin: 10vh 0;
 }
 .singleCartItem__img {
-  flex-grow: 1;
-  flex-basis: 100%;
 }
 .adminOrder__personal-info {
   flex-basis: 30%;

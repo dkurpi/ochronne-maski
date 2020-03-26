@@ -49,6 +49,7 @@ const items = [
     prizeEach: 8.99,
     description: ""
   },
+  
   {
     id: 5,
     images: ["/images/M7-1.jpeg", "/images/M7-2.jpeg"],
@@ -91,6 +92,16 @@ const items = [
     prizeEach: 8.99,
     description:
       "100 % bawełna artykuł medikal granatura 180 gram.pojedyncza warstwa"
+  },
+  {
+    id: 9,
+    images: ["/images/M2-1.jpeg", "/images/M2-2.jpeg"],
+    name: "Maska biała kwiatki",
+    prize: 8.99,
+    oldPrize: 13.99,
+    prizeSelected: [8.99, 8.99, 8.99, 7.99, 6.99, 6.49, 6.49],
+    prizeEach: 8.99,
+    description: ""
   }
 ];
 

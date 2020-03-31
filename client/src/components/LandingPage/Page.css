@@ -157,11 +157,9 @@ ol.carousel-indicators li.active {
   color: white !important;
   font-size: 18px;
   width: auto;
-  
 }
 
-.logout{
-
+.logout {
   margin-left: auto;
   margin-right: 1em;
 }
@@ -174,10 +172,9 @@ ol.carousel-indicators li.active {
   color: white !important;
 }
 
-  .contact__footer {
-    padding:  0 60px !important;
-  }
-
+.contact__footer {
+  padding: 0 60px !important;
+}
 
 @media (max-width: 1024px) {
   .dropdown-menu {
@@ -213,7 +210,10 @@ ol.carousel-indicators li.active {
 .nav-link.dropdown-toggle.btn-danger {
   color: rgb(255, 255, 255) !important;
 }
-
+.red {
+  background-color: red !important;
+  color: white !important;
+}
 .list-group-item.list-group-item-action:hover {
   background-color: rgba(141, 141, 141, 0.685) !important;
 }
@@ -293,4 +293,10 @@ h5 {
 
 .popup-content {
   width: auto !important;
+}
+
+.red {
+  background-color: rgb(228, 26, 26) !important;
+  color: white !important;
+  font-weight: 800;
 }

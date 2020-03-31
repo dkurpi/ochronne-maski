@@ -49,6 +49,7 @@ function NavBar({ items, cart }) {
         </button>
         <div class="collapse navbar-collapse  " id="navbarResponsive">
           <ul class="navbar-nav  ml-auto mr-8 justify-content-center">
+            <li class="nav-item contacto "></li>
             <li class="nav-item contacto ">
               <a class="nav-link contacto" href="/kontakt">
                 Kontakt
@@ -92,7 +93,17 @@ function NavBar({ items, cart }) {
               >
                 Produkty
               </a>
-              <div class="dropdown-menu ">{navItems}</div>
+              <div class="dropdown-menu ">
+                {navItems}
+
+                <a
+                  href="/koszyk"
+                  class="dropdown-item btn-danger red"
+                  style={{ backgroundColor: "red !important", color: "white" }}
+                >
+                  <span> Koszyk</span>
+                </a>
+              </div>
             </li>
           </ul>
         </div>

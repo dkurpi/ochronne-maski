@@ -93,17 +93,18 @@ function NavBar({ items, cart }) {
               >
                 Produkty
               </a>
-              <div class="dropdown-menu ">
+              <div class="dropdown-menu scrollableMenu">
                 {navItems}
 
-                <a
+                
+              </div>
+              <a
                   href="/koszyk"
                   class="dropdown-item btn-danger red"
                   style={{ backgroundColor: "red !important", color: "white" }}
                 >
                   <span> Koszyk</span>
                 </a>
-              </div>
             </li>
           </ul>
         </div>

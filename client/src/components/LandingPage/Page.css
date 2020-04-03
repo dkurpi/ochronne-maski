@@ -246,7 +246,6 @@ ol.carousel-indicators li.active {
   }
   .dropdown-item:nth-child(1) {
     border-top: none !important;
-    margin-top: 0.5em !important;
   }
   .navbar.navbar-expand-lg.navbar-dark {
   }
@@ -299,4 +298,19 @@ h5 {
   background-color: rgb(228, 26, 26) !important;
   color: white !important;
   font-weight: 800;
+}
+@media(min-width:1024px){
+  .red {
+    display: none !important;
+  }
+
+
+}
+
+.scrollableMenu{
+  max-height: 60vh;
+  background-color: red;
+  overflow-y: scroll;
+
+
 }

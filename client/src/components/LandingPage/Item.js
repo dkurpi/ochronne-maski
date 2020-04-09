@@ -268,7 +268,6 @@ function Item({ items, match, handleAddingToCart, best }) {
                     ergonomiczny kształt z metalowym dociskiem na nos idealnie
                     dostosuje się do twarzy
                   </li>
-                  <li>zakładana na elastyczną gumkę</li>
                   <li>
                     metalowa klamra na wysokości nosa na zewnętrznej części
                     maski
@@ -276,6 +275,10 @@ function Item({ items, match, handleAddingToCart, best }) {
 
                   <li>idealna ochrona przed pyłami i drobnymi cząstkami</li>
                 </ul>
+                <h5>
+                  Zakładana na{" "}
+                  {item.group !== 1 ? " troczki" : "elastyczną gumkę"}
+                </h5>
                 <h5>{item.description} </h5>
                 <br />
                 <hr />

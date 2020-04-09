@@ -175,6 +175,9 @@ ol.carousel-indicators li.active {
 .contact__footer {
   padding: 0 60px !important;
 }
+.nowe {
+  background-color: rgb(255, 124, 124);
+}
 
 @media (max-width: 1024px) {
   .dropdown-menu {

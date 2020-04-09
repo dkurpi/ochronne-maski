@@ -18,8 +18,8 @@ function NavBar({ items, cart }) {
         <span class="pr-5 flex-grow">{item.name}</span>
         <span class="ml-auto">
           {item.quantity}
-          {item.quantity === 1 ? "paczka" : "paczek"} {" |  "}
-          {prizeAll}zł
+          {item.quantity === 1 ? " paczka" : " paczek"} {" |  "}
+          {item.packet * item.quantity}szt
         </span>
       </a>
     );
@@ -77,7 +77,7 @@ function NavBar({ items, cart }) {
                   [
                     cartList,
                     <a href={`/koszyk`} class=" dropdown-item pay ">
-                      ZAPŁAĆ ({suma.toFixed(2)} zł)
+                      ZAPŁAĆ 
                     </a>
                   ]
                 )}

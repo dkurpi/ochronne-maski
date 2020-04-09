@@ -486,6 +486,9 @@ a {
   .orderForm:nth-last-child(1) {
     align-content: flex-start;
   }
+  .flexbox-cart{
+    margin: 0 5px;
+  }
 }
 
 @media (max-width: 325px) {

@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const cors = require("cors");
+var ObjectId = require("mongodb").ObjectID;
 
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
@@ -22,7 +23,7 @@ MongoClient.connect(
   uri,
   {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   },
   (err, db) => {
     console.log("connected to MongoClient");
@@ -43,10 +44,10 @@ MongoClient.connect(
       collection
         .find({})
         .toArray()
-        .then(response => {
+        .then((response) => {
           const orders = { orders: response };
           res.json({
-            orders
+            orders,
           });
           console.log(response);
         });
@@ -62,10 +63,43 @@ MongoClient.connect(
       if (login === _login && password === _password)
         res.json({
           isAuth: true,
-          key: "eyJrIjoiT0tTcG1pUlY2RnVKZTFVaDFsNFZXdE9ZWmNrMkZYbk"
+          key: "eyJrIjoiT0tTcG1pUlY2RnVKZTFVaDFsNFZXdE9ZWmNrMkZYbk",
         });
       else res.json({ isAuth: false });
     });
+
+    app.put("/api/orderModify", (req, res) => {
+      const { target, status } = req.body;
+
+      const collection = db.db("ochronne-maski").collection("zamowienia");
+      const obj = ObjectId(target);
+
+      collection.updateOne(
+        { _id: obj },
+        {
+          $set: {
+            status: status,
+          },
+        },
+        {}
+      );
+
+      // collection
+      //   .find({})
+      //   .toArray()
+      //   .then((response) => {
+      //     const orders = { orders: response };
+      //     res.json({
+      //       orders,
+      //     });
+      //     console.log(response);
+      //   });
+
+      res.json({
+        message: "elo",
+      });
+    });
+
     /////////////PRODUCTION
     if (process.env.NODE_ENV === "production") {
       // Set static folder

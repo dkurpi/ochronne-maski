@@ -93,7 +93,7 @@ function NavBar({ items, cart }) {
               >
                 Produkty
               </a>
-              <div class="dropdown-menu scrollableMenu">
+              <div class="dropdown-menu scrollableMenu dropdown-menu-right">
                 {navItems}
 
                 

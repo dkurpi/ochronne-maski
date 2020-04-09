@@ -12,9 +12,9 @@ function Footer() {
             <div class="col-md-6 mt-md-0 mt-3 contact__footer">
               <h5 class="text-uppercase">Kontakt</h5>
               <div>
-                <a href="tel:600441542">
-                  <i className="fas fa-mobile-alt footer_contact"></i>600 441
-                  542
+                <a href="tel:534325980">
+                  <i className="fas fa-mobile-alt footer_contact"></i>534 325
+                  980
                 </a>
               </div>
               <div>
@@ -194,9 +194,9 @@ function Contact() {
                         </a>
                       </div>
                       <div>
-                        <a href="tel:600441542">
+                        <a href="tel:534325980">
                           <i className="fas fa-mobile-alt footer_contact"></i>
-                          600 441 542
+                          534 325 980
                         </a>
                       </div>
                       <hr />

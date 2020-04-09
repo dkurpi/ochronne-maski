@@ -6,10 +6,10 @@ import Cookies from "js-cookie";
 export default class AdminOrders extends Component {
   state = {
     isLoaded: false,
-    auth: false
+    auth: false,
   };
 
-  handleListClick = item => {
+  handleListClick = (item) => {
     console.log("działa");
     this.setState({ item });
     const info = document.querySelector(".adminOrder");
@@ -21,21 +21,21 @@ export default class AdminOrders extends Component {
 
     document.body.scrollTo({
       top: infoPosition,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
   loadItem = () => {
     fetch("/api/orders")
-      .then(res => res.json())
-      .then(res => {
+      .then((res) => res.json())
+      .then((res) => {
         const { orders } = res.orders;
         const item = orders[orders.length - 1];
         console.log(orders);
         this.setState({
           orders,
           isLoaded: true,
-          item
+          item,
         });
       });
   };
@@ -46,7 +46,7 @@ export default class AdminOrders extends Component {
       this.loadItem();
 
       this.setState({
-        auth: true
+        auth: true,
       });
     }
   }
@@ -60,7 +60,7 @@ export default class AdminOrders extends Component {
         const listOfProducts = items.map((item, index) => {
           let sum = 0;
 
-          item.cart.forEach(i => {
+          item.cart.forEach((i) => {
             sum += i.prize;
           });
 
@@ -86,7 +86,7 @@ export default class AdminOrders extends Component {
           );
         });
         let suma = 0;
-        const customerCart = cart.map(item => {
+        const customerCart = cart.map((item) => {
           suma += item.prize;
           return (
             <div className="adminOrder__item ">
@@ -111,9 +111,7 @@ export default class AdminOrders extends Component {
                 <div className="singleCartItem__infoSingle">
                   Cena: {item.prize}zł za sztukę
                 </div>
-                <div
-                  className="singleCartItem__infoSingle"
-                >
+                <div className="singleCartItem__infoSingle">
                   <hr />
                   <h6>
                     Łącznie:{" "}
@@ -126,7 +124,15 @@ export default class AdminOrders extends Component {
             </div>
           );
         });
+        ////////Cena przesyłki
+        let deliveryPrice = 0;
 
+        if (customerInfo.deliveryMethod === "Przelew na konto")
+          deliveryPrice = 13.99;
+        else if (customerInfo.deliveryMethod === "Płatność przy odbiorze")
+          deliveryPrice = 21.99;
+
+        ////////////Tabelka
         const adminOrder = [
           <div className="adminOrder">
             <div className="adminOrder__personal-info">
@@ -191,15 +197,6 @@ export default class AdminOrders extends Component {
                     {customerInfo.telephone}
                   </div>
                 </div>
-
-                <div className="adminOrder__singleTableColumn">
-                  <div className="adminOrder__singleTableRow">
-                    Sposób doręczenia
-                  </div>{" "}
-                  <div className="adminOrder__singleTableRow">
-                    {customerInfo.deliveryMethod}
-                  </div>
-                </div>
                 <div className="adminOrder__singleTableColumn">
                   <div className="adminOrder__singleTableRow">
                     Cena produktów{" "}
@@ -208,10 +205,33 @@ export default class AdminOrders extends Component {
                     {customerInfo.suma} PLN
                   </div>
                 </div>
+                <div className="adminOrder__singleTableColumn">
+                  <div className="adminOrder__singleTableRow">Przesyłka </div>{" "}
+                  <div className="adminOrder__singleTableRow">
+                    {deliveryPrice} PLN
+                  </div>
+                </div>
+                <div className="adminOrder__singleTableColumn">
+                  <div className="adminOrder__singleTableRow">
+                    Sposób doręczenia
+                  </div>{" "}
+                  <div className="adminOrder__singleTableRow">
+                    {customerInfo.deliveryMethod}
+                  </div>
+                </div>
+
+                <div className="adminOrder__singleTableColumn">
+                  <div className="adminOrder__singleTableRow">
+                    Cena całkowita{" "}
+                  </div>{" "}
+                  <div className="adminOrder__singleTableRow">
+                    {[customerInfo.suma * 1 + deliveryPrice][0].toFixed(2)} PLN
+                  </div>
+                </div>
               </div>
             </div>
             <div className="adminOrder__cart-info">{customerCart}</div>
-          </div>
+          </div>,
         ];
 
         return (
@@ -221,7 +241,7 @@ export default class AdminOrders extends Component {
 
               <div className="logout">
                 <a
-                  onClick={e => {
+                  onClick={(e) => {
                     Cookies.remove("maseczki-ochronne-admin");
                   }}
                   className="panel__menuItem"
@@ -229,8 +249,7 @@ export default class AdminOrders extends Component {
                 >
                   wyloguj
                 </a>
-              <div style={{ height: "1em" }}></div>
-
+                <div style={{ height: "1em" }}></div>
               </div>
               <span className="Text text__delivery"> Zamówienia</span>
               <hr size="2px" width="100%" />
@@ -258,29 +277,3 @@ export default class AdminOrders extends Component {
     } else return <AdminLogin />;
   }
 }
-
-// const cart = item.cart.map(item => {
-//   console.log(item);
-//   return (
-//     <>
-//       <div className="singleCartItem">
-// <div className="singleCartItem__img">
-//   <a href={`/product/${item.id}`}>
-//     <img src={item.imgSrc[0]} alt="" />
-//   </a>
-// </div>
-// <div className="singleCartItem__info">
-//   <div className="singleCartItem__infoSingle">
-//     <a href={`/product/${item.id}`}>{item.name}</a>
-//   </div>
-//   <div className="singleCartItem__infoSingle">
-//     Rozmiar {item.size}
-//   </div>
-//   <div className="singleCartItem__infoSingle">
-//     Cena {item.prize}
-//   </div>
-// </div>
-//       </div>
-//     </>
-//   );
-// });

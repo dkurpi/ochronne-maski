@@ -167,11 +167,9 @@ body {
   width: 60vw;
 }
 
-
 .sizes {
   display: flex;
   margin: 3vh 0.5vw;
-  border-right: 1px solid rgba(187, 187, 187, 0.521);
 }
 
 .singleProduct__image {
@@ -357,7 +355,18 @@ a {
 }
 .singleProduct--suma__des {
   margin: 20px;
+  
 }
+.flexbox-cart {
+  flex-grow: 1;
+}
+.flexbox-cart div:nth-child(1){
+  color: rgb(95, 95, 95);
+  font-weight: 800;
+  
+}
+
+
 @media (max-width: 1366px) {
   .cart {
     right: 0;
@@ -454,6 +463,8 @@ a {
   }
   .sizes {
     border: none;
+    display: flex;
+    justify-content: center;
   }
   .singleProduct__name button {
     margin-left: 0;

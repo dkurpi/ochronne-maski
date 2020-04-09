@@ -3,7 +3,7 @@ import React from "react";
 function Carousel({ items }) {
   const item = index => {
     return (
-      <div class="col-lg-6 col-md-4  col-sm-6 mb-2 flexcolumn">
+      <div class="col-lg-6 col-md-6  col-sm-6 mb-2 flexcolumn">
         <div class="card h-100  text-center color-gray">
           <a href={`/product/${items[index].id}`}>
             <img 

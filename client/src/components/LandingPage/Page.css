@@ -293,24 +293,25 @@ h5 {
 .popup-content {
   width: auto !important;
 }
-
+a {
+  text-decoration: none !important;
+}
 .red {
-  background-color: rgb(228, 26, 26) !important;
-  color: white !important;
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(49, 49, 49) !important;
   font-weight: 800;
 }
-@media(min-width:1024px){
+.entry-content div a {
+  color: gray !important;
+}
+@media (min-width: 1024px) {
   .red {
     display: none !important;
   }
-
-
 }
 
-.scrollableMenu{
+.scrollableMenu {
   max-height: 60vh;
   background-color: red;
   overflow-y: scroll;
-
-
 }

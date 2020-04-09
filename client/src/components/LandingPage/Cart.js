@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./cart.css";
 import Cookies from "js-cookie";
 import Popup from "reactjs-popup";
+import promo from "../promo";
 
 export default class Cart extends Component {
   state = {
@@ -9,7 +10,7 @@ export default class Cart extends Component {
     customerInfo: {},
     isClicked: false,
     suma: 0,
-    isPop: false
+    isPop: false,
   };
 
   popup = [];
@@ -20,11 +21,13 @@ export default class Cart extends Component {
 
       let suma = 0;
       const items = cookiesLog;
-      items.forEach(item => (suma += item.quantity * item.prize * item.packet));
+      items.forEach(
+        (item) => (suma += item.quantity * item.prize * item.packet)
+      );
       suma = suma.toFixed(2);
       this.setState({
         cart: cookiesLog,
-        suma
+        suma,
       });
     }
   }
@@ -93,11 +96,11 @@ export default class Cart extends Component {
         telephone,
         email,
         deliveryMethod: text,
-        suma: this.state.suma
+        suma: this.state.suma,
       };
       this.setState({
         customerInfo,
-        isClicked: true
+        isClicked: true,
       });
     }
 
@@ -110,7 +113,7 @@ export default class Cart extends Component {
 
     document.body.scrollTo({
       top: formPosition,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
   sendToBackEnd = () => {
@@ -121,7 +124,7 @@ export default class Cart extends Component {
     const data = {
       cart,
       customerInfo,
-      date
+      date,
     };
     console.log(data);
 
@@ -129,15 +132,15 @@ export default class Cart extends Component {
       fetch("/api/new-order", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       })
-        .then(res => res.json())
-        .then(res => {
+        .then((res) => res.json())
+        .then((res) => {
           if (res.isSaved) {
             this.setState({
-              isPop: true
+              isPop: true,
             });
           }
         });
@@ -148,9 +151,32 @@ export default class Cart extends Component {
   render() {
     const items = this.state.cart;
     let suma = 0;
-    console.log(this.state);
-    items.forEach(item => (suma += item.quantity * item.prize * item.packet));
 
+    /////////// counting quantity of groups
+    const quantityOfGroups = [0, 0, 0];
+    items.forEach((item) => {
+      suma += item.quantity * item.prize * item.packet;
+      quantityOfGroups[item.group - 1] += item.quantity * item.packet * 1;
+    });
+    console.log(quantityOfGroups);
+    /////////// counting sum
+    console.log(promo);
+
+    const quantityPrizes = [promo[0][0], promo[1][0], promo[2][0]];
+
+    const quantities = [3, 5, 10, 20, 50, 100, 200];
+    const quantitiesReversed = [...quantities];
+    quantitiesReversed.reverse();
+
+    quantityOfGroups.forEach((group, index) => {
+      const ile = quantitiesReversed.find((qnt) => group >= qnt) || 0;
+      const indexPromo = quantities.findIndex((qnts) => qnts === ile);
+      quantityPrizes[index] = promo[index][indexPromo] || promo[index][0];
+    });
+
+    console.log({ quantityPrizes });
+
+    ///////////
     let info = [];
     if (this.state.isClicked) {
       const {
@@ -162,7 +188,7 @@ export default class Cart extends Component {
         email,
         street,
         numberStreet,
-        deliveryMethod
+        deliveryMethod,
       } = this.state.customerInfo;
 
       info = [
@@ -218,7 +244,8 @@ export default class Cart extends Component {
             </ol>
             <p>
               <hr />
-              Po powierdzeniu zamówienia, skontaktujemy się z Toba drogą mailową
+              Po powierdzeniu zamówienia, skontaktujemy się z Toba telefonicznie
+              (SMS) lub drogą meilową.
               <span style={{ fontWeight: "400" }}>
                 <hr />W razie pytań prosimy o kontakt. Więcej informacji
                 znajdziesz w zakładce <a href="/kontakt">kontakt</a>
@@ -229,7 +256,7 @@ export default class Cart extends Component {
               Potwierdź zamówienie
             </button>
           </div>
-        </div>
+        </div>,
       ];
     }
 
@@ -257,20 +284,133 @@ export default class Cart extends Component {
                 <div className="singleProduct__info-des">
                   {item.packet * item.quantity}
                 </div>
-                <div className="singleProduct__info-des"> {item.prize}</div>
+                <div className="singleProduct__info-des">
+                  {" "}
+                  {quantityPrizes[item.group - 1]}
+                </div>
               </div>
             </div>
-            <button onClick={e => this.handleDelete(e, index)}>USUŃ</button>
+            <button onClick={(e) => this.handleDelete(e, index)}>USUŃ</button>
           </div>
 
           <div className="singleProduct__prize">
             {" "}
-            {[item.prize * item.quantity * item.packet][0].toFixed(2)} PLN
+            {[
+              quantityPrizes[item.group - 1] * item.quantity * item.packet,
+            ][0].toFixed(2)}{" "}
+            PLN
           </div>
         </div>
       );
     });
 
+    const AllOrder = [
+      <div style={{ justifyContent: "center" }} className="singleProduct">
+        <div className="sizes">
+          <div className="singleProduct__info flexbox-cart">
+            <div className="singleProduct__info-des">Rodzaj </div>
+
+            {quantityOfGroups[0] === 0 ? null : (
+              <div className="singleProduct__info-des">Masek z gumkami:</div>
+            )}
+            {quantityOfGroups[1] === 0 ? null : (
+              <div className="singleProduct__info-des">Masek z troczkami:</div>
+            )}
+            {quantityOfGroups[2] === 0 ? null : (
+              <div className="singleProduct__info-des">Masek z haftem:</div>
+            )}
+          </div>
+          <div className="singleProduct__info flexbox-cart">
+            <div className="singleProduct__info-des">Ilość </div>
+
+            {quantityOfGroups[0] === 0 ? null : (
+              <div className="singleProduct__info-des">
+                {quantityOfGroups[0]} szt
+              </div>
+            )}
+            {quantityOfGroups[1] === 0 ? null : (
+              <div className="singleProduct__info-des">
+                {quantityOfGroups[1]} szt
+              </div>
+            )}
+            {quantityOfGroups[2] === 0 ? null : (
+              <div className="singleProduct__info-des">
+                {quantityOfGroups[2]} szt
+              </div>
+            )}
+          </div>
+          <div className="singleProduct__info flexbox-cart">
+            <div className="singleProduct__info-des">Cena </div>
+            {quantityOfGroups[0] === 0 ? null : (
+              <div className="singleProduct__info-des">
+                {quantityPrizes[0] === promo[0][0] ? null : (
+                  <>
+                    <s style={{ color: "red", fontSize: "15px" }}>
+                      {promo[0][0]}
+                    </s>{" "}
+                    {quantityPrizes[0]}{" "}
+                  </>
+                )}{" "}
+                zł/szt
+              </div>
+            )}
+            {quantityOfGroups[1] === 0 ? null : (
+              <div className="singleProduct__info-des">
+                {quantityPrizes[1] === promo[1][0] ? (
+                  quantityPrizes[1]
+                ) : (
+                  <>
+                    <s style={{ color: "red", fontSize: "15px" }}>
+                      {promo[1][0]}
+                    </s>{" "}
+                    {quantityPrizes[2]}{" "}
+                  </>
+                )}{" "}
+                zł/szt
+              </div>
+            )}
+            {quantityOfGroups[2] === 0 ? null : (
+              <div className="singleProduct__info-des">
+                {quantityPrizes[2] === promo[2][0] ? (
+                  quantityPrizes[2]
+                ) : (
+                  <>
+                    <s style={{ color: "red", fontSize: "15px" }}>
+                      {promo[2][0]}
+                    </s>{" "}
+                    {quantityPrizes[1]}{" "}
+                  </>
+                )}{" "}
+                zł/szt
+              </div>
+            )}
+          </div>
+          <div className="singleProduct__info flexbox-cart">
+            <div className="singleProduct__info-des">Suma </div>
+
+            {quantityOfGroups[0] === 0 ? null : (
+              <div className="singleProduct__info-des">
+                {(quantityOfGroups[0] * quantityPrizes[0]).toFixed(2)} zł
+              </div>
+            )}
+            {quantityOfGroups[1] === 0 ? null : (
+              <div className="singleProduct__info-des">
+                {(quantityOfGroups[1] * quantityPrizes[1]).toFixed(2)} zł
+              </div>
+            )}
+            {quantityOfGroups[2] === 0 ? null : (
+              <div className="singleProduct__info-des">
+                {(quantityOfGroups[2] * quantityPrizes[2]).toFixed(2)} zł
+              </div>
+            )}
+          </div>
+        </div>
+      </div>,
+      <div style={{ justifyContent: "flex-end" }} className="singleProduct">
+        <div className="singleProduct--suma__des">Łącznie</div>
+        <div className="singleProduct--suma__des">{suma.toFixed(2)} PLN</div>
+      </div>,
+    ];
     const orderInfo = [
       <div className="orderForm">
         <div className="orderForm__personalInfo">
@@ -325,13 +465,13 @@ export default class Cart extends Component {
             Przejdź dalej
           </button>
         </div>
-      </div>
+      </div>,
     ];
 
     const popup = [
       <div className="popup">
         <div
-          onClick={e => {
+          onClick={(e) => {
             document.querySelector(".popup").style.display = "none";
           }}
           className="popup__background"
@@ -339,8 +479,8 @@ export default class Cart extends Component {
         <div className="popup__content">
           <div className="popup__contentText">
             <div className="popup__title">Zamówienie zaakceptowane</div>
-            Zamówienie zostało pomyślnie wysłane. Prosimy sprawdzić dane
-            płatności na Państwa adresie mailowym.
+            Zamówienie zostało pomyślnie wysłane. Prosimy oczekiwać na{" "}
+            <b>SMS</b> lub<b>e-mail</b>.
             <br />
             <br />
             Jeżeli nie widzą Państwo mail'a prosimy o sprawdzenie zakładki -
@@ -356,7 +496,7 @@ export default class Cart extends Component {
             Zakończ
           </button>
         </div>
-      </div>
+      </div>,
     ];
 
     return (
@@ -372,14 +512,8 @@ export default class Cart extends Component {
           <div className="orderWrapper">
             <div className="orderedProducts">
               <div className="allProducts">
+                {AllOrder}
                 {listOfProducts}
-
-                <div className="singleProduct singleProduct--suma">
-                  <div className="singleProduct--suma__des">SUMA</div>
-                  <div className="singleProduct--suma__des">
-                    {suma.toFixed(2)} PLN
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -397,7 +531,7 @@ export default class Cart extends Component {
             this.setState({ isPop: false });
           }}
         >
-          {close => (
+          {(close) => (
             <div className="modale">
               <a
                 className="close"
@@ -409,8 +543,8 @@ export default class Cart extends Component {
               </a>
               <h4 className="header"> Zamównie przyjęte do realizacji</h4>
               <hr />
-              Zamówienie zostało pomyślnie wysłane. Prosimy sprawdzić dane
-              płatności na Państwa adresie mailowym.
+              Zamówienie zostało pomyślnie wysłane. Zamówienie zostało pomyślnie
+              wysłane. Prosimy oczekiwać na <b>SMS</b> lub <b>e-mail</b>.
               <br />
               <br />
               Jeżeli nie widzą Państwo mail'a prosimy o sprawdzenie zakładki -

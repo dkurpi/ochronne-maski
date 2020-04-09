@@ -1,4 +1,4 @@
-import React, { useEffect,  useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LightgalleryProvider, LightgalleryItem } from "react-lightgallery";
 import "lightgallery.js/dist/css/lightgallery.css";
 import Items from "./Items.js";
@@ -14,19 +14,20 @@ function Item({ items, match, handleAddingToCart, best }) {
 
   const handleAnimations = () => {
     const titles = document.querySelector(".col-lg-4.col-md-6.mb-4").childNodes;
-    console.log(titles);
     const items = document.querySelector(
       ".media-body.order-2.order-lg-2.ml-lg-5.flex-fill"
     ).childNodes;
 
-    const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
-    tl.from(titles, 2, { x: -300, opacity: 0, stagger: 0.2,delay: .4 }).from(
+    const tl = gsap.timeline({
+      defaults: { ease: "power3.inOut", opacity: 1 },
+    });
+    tl.from(titles, 2, { x: -300, opacity: 0, stagger: 0.2, delay: 0.4 }).from(
       items,
       {
         x: 500,
         opacity: 0,
         stagger: 0.2,
-        ease: "power0"
+        ease: "power0",
       },
       "-=1"
     );
@@ -37,13 +38,13 @@ function Item({ items, match, handleAddingToCart, best }) {
       .childNodes;
     const prize = [prize1[0], prize1[1]];
     const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
-    tl.from([prize, quant],  { x: 300, opacity: 0, stagger: 0.2 });
+    tl.from([prize, quant], { x: 300, opacity: 0, stagger: 0.2 });
   };
   useEffect(() => {
     const ID = parseInt(match.params.id);
-    const item1 = items.find(itm => itm.id === ID);
+    const item1 = items.find((itm) => itm.id === ID);
     setitem(item1);
-    handleAnimations();
+    // handleAnimations();
   }, [item]);
 
   const mini_images = item.images.map((itm, idx) => {
@@ -52,7 +53,7 @@ function Item({ items, match, handleAddingToCart, best }) {
         <div className="mini-item">
           <LightgalleryItem group={`item`} src={itm}>
             <img
-              onMouseEnter={e => {
+              onMouseEnter={(e) => {
                 document.querySelector(".mainImage").src = itm;
               }}
               className="mini-item"
@@ -65,7 +66,7 @@ function Item({ items, match, handleAddingToCart, best }) {
       return (
         <div className="mini-item">
           <img
-            onMouseEnter={e => {
+            onMouseEnter={(e) => {
               document.querySelector(".mainImage").src = itm;
             }}
             className="mini-item"
@@ -85,7 +86,7 @@ function Item({ items, match, handleAddingToCart, best }) {
       setisPopedOpen={setisPopedOpen}
       onClose={() => setisPopedOpen(false)}
     >
-      {close => (
+      {(close) => (
         <div className="modale">
           <a
             className="close"
@@ -106,8 +107,7 @@ function Item({ items, match, handleAddingToCart, best }) {
             alt=""
           />
           <div className="popup__text">
-            <h4>{item.name}
-            </h4>
+            <h4>{item.name}</h4>
             Masek w paczce: {packet} <br />
             Ilość paczek: {quantity} <br />
             Łącznie masek: {packet * quantity} <br />
@@ -137,7 +137,7 @@ function Item({ items, match, handleAddingToCart, best }) {
           </div>
         </div>
       )}
-    </Popup>
+    </Popup>,
   ];
 
   return (
@@ -166,7 +166,7 @@ function Item({ items, match, handleAddingToCart, best }) {
             </h2>
             <hr />
             <div class="product-rating my-2">
-              Dostępność: towar na wyczerpaniu
+              Dostępność: <i>Towar dostępny</i>
             </div>
             <div class="product-rating mb-2 vat">Wysyłka w: 24 godzin</div>
             <span class="product_price price-new">
@@ -183,7 +183,7 @@ function Item({ items, match, handleAddingToCart, best }) {
               <label for="quantity">Masek w paczce :</label>
               <select
                 value={packet}
-                onChange={e => {
+                onChange={(e) => {
                   handleChangePrize();
                   setPacket(e.target.value);
                   const selID = e.target.selectedIndex;
@@ -207,7 +207,7 @@ function Item({ items, match, handleAddingToCart, best }) {
               </select>
               <div className="adding my-2">
                 <input
-                  onChange={e => {
+                  onChange={(e) => {
                     setQuantity(parseInt(e.target.value));
                     console.log(quantity);
                   }}
@@ -227,7 +227,7 @@ function Item({ items, match, handleAddingToCart, best }) {
                       quantity <= 100 &&
                       typeof quantity === "number"
                     ) {
-                      let selectedItem = item;
+                      const selectedItem = { ...item };
                       selectedItem.name = `${item.name} - paczka ${packet} masek`;
                       handleAddingToCart(selectedItem, quantity, packet);
                       setisPopedOpen(true);
@@ -289,6 +289,7 @@ function Item({ items, match, handleAddingToCart, best }) {
         <Items items={best} handleAddingToCart={handleAddingToCart} />
       </div>
       {popup}
+      {console.log({ item, quantity, packet })}
     </>
   );
 }

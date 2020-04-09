@@ -304,6 +304,14 @@ export default class Cart extends Component {
       );
     });
 
+    const groupSum = [0, 0, 0];
+    groupSum.forEach(
+      (group, index) =>
+        (groupSum[index] = (
+          quantityOfGroups[index] * quantityPrizes[index]
+        ).toFixed(2)*1)
+    );
+    console.log(groupSum);
     const AllOrder = [
       <div style={{ justifyContent: "center" }} className="singleProduct">
         <div className="sizes">
@@ -343,7 +351,9 @@ export default class Cart extends Component {
             <div className="singleProduct__info-des">Cena </div>
             {quantityOfGroups[0] === 0 ? null : (
               <div className="singleProduct__info-des">
-                {quantityPrizes[0] === promo[0][0] ? null : (
+                {quantityPrizes[0] === promo[0][0] ? (
+                  quantityPrizes[0]
+                ) : (
                   <>
                     <s style={{ color: "red", fontSize: "15px" }}>
                       {promo[0][0]}
@@ -363,7 +373,7 @@ export default class Cart extends Component {
                     <s style={{ color: "red", fontSize: "15px" }}>
                       {promo[1][0]}
                     </s>{" "}
-                    {quantityPrizes[2]}{" "}
+                    {quantityPrizes[1]}{" "}
                   </>
                 )}{" "}
                 zł/szt
@@ -389,26 +399,20 @@ export default class Cart extends Component {
             <div className="singleProduct__info-des">Suma </div>
 
             {quantityOfGroups[0] === 0 ? null : (
-              <div className="singleProduct__info-des">
-                {(quantityOfGroups[0] * quantityPrizes[0]).toFixed(2)} zł
-              </div>
+              <div className="singleProduct__info-des">{groupSum[0]} zł</div>
             )}
             {quantityOfGroups[1] === 0 ? null : (
-              <div className="singleProduct__info-des">
-                {(quantityOfGroups[1] * quantityPrizes[1]).toFixed(2)} zł
-              </div>
+              <div className="singleProduct__info-des">{groupSum[1]} zł</div>
             )}
             {quantityOfGroups[2] === 0 ? null : (
-              <div className="singleProduct__info-des">
-                {(quantityOfGroups[2] * quantityPrizes[2]).toFixed(2)} zł
-              </div>
+              <div className="singleProduct__info-des">{groupSum[2]} zł</div>
             )}
           </div>
         </div>
       </div>,
       <div style={{ justifyContent: "flex-end" }} className="singleProduct">
         <div className="singleProduct--suma__des">Łącznie</div>
-        <div className="singleProduct--suma__des">{suma.toFixed(2)} PLN</div>
+        <div className="singleProduct--suma__des">{(groupSum[0]+groupSum[1]+groupSum[2]).toFixed(2)} PLN</div>
       </div>,
     ];
     const orderInfo = [

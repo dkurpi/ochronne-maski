@@ -433,7 +433,7 @@ export default class Cart extends Component {
           >
             <div className="singleProduct--suma__des">Łącznie:</div>
             <div className="singleProduct--suma__des">
-              {(groupSum[0] + groupSum[1] + groupSum[2]).toFixed(2)} PLN
+              {(groupSum[0] + groupSum[1] + groupSum[2]).toFixed(2)} PLN + przesyłka
             </div>
           </div>
         </div>
@@ -576,8 +576,8 @@ export default class Cart extends Component {
               </a>
               <h4 className="header"> Zamównie przyjęte do realizacji</h4>
               <hr />
-              Zamówienie zostało pomyślnie wysłane. Zamówienie zostało pomyślnie
-              wysłane. Prosimy oczekiwać na <b>SMS</b> lub <b>e-mail</b>.
+              Zamówienie zostało pomyślnie wysłane. Prosimy oczekiwać na{" "}
+              <b>SMS</b> lub <b>e-mail</b>.
               <br />
               <br />
               Jeżeli nie widzą Państwo mail'a prosimy o sprawdzenie zakładki -

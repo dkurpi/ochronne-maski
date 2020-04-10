@@ -39,9 +39,7 @@ export default function Items(props) {
             Masek w paczce: {item.packet} <br />
             Ilość paczek: {item.quantity} <br />
             Łącznie masek: {item.packet * item.quantity} <br />
-            <h4>
-              {[item.packet * item.quantity * item.prize][0].toFixed(2)} zł{" "}
-            </h4>
+         
           </div>
           <div className="actions">
             <button

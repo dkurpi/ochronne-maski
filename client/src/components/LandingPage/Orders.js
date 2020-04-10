@@ -83,13 +83,13 @@ export default class AdminOrders extends Component {
 
           return (
             <>
-              <tr>
-                <th
+              <tr className={item.status}>
+                <th style={{width:"50px !important"}}
                   onClick={() => {
                     this.handleListClick(item);
                   }}
                 >
-                  V
+                  Pokaż
                 </th>
                 <th>{index}</th>
                 <th>{item.customerInfo.name}</th>
@@ -100,20 +100,27 @@ export default class AdminOrders extends Component {
                 <th>{item.customerInfo.email}</th>
                 <th>{item.customerInfo.deliveryMethod}</th>
                 <th>{item.date}</th>
-                <th className={item.status}>{item.status}</th>
+                <th>{item.status}</th>
                 <button
                   onClick={() => {
-                    this.handleModyfing(item._id, "nowe");
+                    this.handleModyfing(item._id, "Nowe");
                   }}
                 >
-                  Oznacz
+                  Nowe
                 </button>
                 <button
                   onClick={() => {
-                    this.handleModyfing(item._id, "stare");
+                    this.handleModyfing(item._id, "Przelew");
                   }}
                 >
-                  stare
+                  Przelew
+                </button>
+                <button
+                  onClick={() => {
+                    this.handleModyfing(item._id, "Wysłane");
+                  }}
+                >
+                  Wysłane
                 </button>
                 {/* <button>P</button>
                 <button>M</button> */}

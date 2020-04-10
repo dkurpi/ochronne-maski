@@ -142,11 +142,13 @@ body {
   transform: translateX(-50%);
 }
 .Text {
+  display: block;
   margin-top: auto;
   font-size: 32px;
   color: white;
   font-size: 32px;
   font-weight: 300;
+  margin-bottom: 40px;
   font-family: "Montserrat";
 }
 .orderedProducts {
@@ -169,7 +171,7 @@ body {
 
 .sizes {
   display: flex;
-  margin: 3vh 0.5vw;
+  margin: 2vh 0.5vw;
 }
 
 .singleProduct__image {
@@ -206,8 +208,6 @@ body {
 }
 
 .singleProduct__info-des {
-  flex-basis: 33%;
-  padding: 0.1vh;
   color: rgb(129, 129, 129);
 }
 .singleProduct__name button {
@@ -355,17 +355,14 @@ a {
 }
 .singleProduct--suma__des {
   margin: 20px;
-  
 }
 .flexbox-cart {
   flex-grow: 1;
 }
-.flexbox-cart div:nth-child(1){
+.flexbox-cart div:nth-child(1) {
   color: rgb(95, 95, 95);
   font-weight: 800;
-  
 }
-
 
 @media (max-width: 1366px) {
   .cart {
@@ -486,7 +483,7 @@ a {
   .orderForm:nth-last-child(1) {
     align-content: flex-start;
   }
-  .flexbox-cart{
+  .flexbox-cart {
     margin: 0 5px;
   }
 }

@@ -175,8 +175,19 @@ ol.carousel-indicators li.active {
 .contact__footer {
   padding: 0 60px !important;
 }
-.nowe {
-  background-color: rgb(255, 124, 124);
+.Nowe {
+  background-color: rgb(255, 188, 188);
+}
+.Przelew {
+  background-color: rgb(242, 255, 124);
+}
+.Wysłane {
+  background-color: rgb(160, 255, 116);
+}
+.flexbox-cart {
+}
+.header--main {
+  margin: 0 !important;
 }
 
 @media (max-width: 1024px) {

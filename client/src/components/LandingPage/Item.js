@@ -111,9 +111,6 @@ function Item({ items, match, handleAddingToCart, best }) {
             Masek w paczce: {packet} <br />
             Ilość paczek: {quantity} <br />
             Łącznie masek: {packet * quantity} <br />
-            <h4>
-              {[packet * quantity * item.prize][0].toFixed(2)} zł <br />
-            </h4>
           </div>
           <div className="actions">
             <button

@@ -8,6 +8,8 @@ import Item from "./Item.js";
 import Cart from "./Cart.js";
 import Orders from "./Orders.js";
 import { Contact, Delivery, Terms } from "../Footer.js";
+import PrizeTable from "./PrizeTable.js";
+
 
 function LandingPage(props) {
   return (
@@ -28,11 +30,13 @@ function LandingPage(props) {
               <div class="row mb-5">
                 <Menu items={props.items} />
                 <div class="col-lg-9 mt-lg-3 mt-6 container-top">
+                  <PrizeTable />
+
                   <Carousel
                     items={props.items}
                     handleAddingToCart={props.handleAddingToCart}
                   />
-                  <span className="Text text__delivery"> Promocje:</span>
+                  <span className="Text text__delivery"> Produkty:</span>
                   <hr />
                   <Items
                     items={props.items}
@@ -44,7 +48,7 @@ function LandingPage(props) {
           </Route>
           <Route
             path="/product/:id"
-            render={propse => [
+            render={(propse) => [
               <>
                 <div class="container-fluid container--modified">
                   <div class="row">
@@ -56,7 +60,7 @@ function LandingPage(props) {
                     />
                   </div>
                 </div>
-              </>
+              </>,
             ]}
           ></Route>
           <Route path="/kontakt" component={Contact} />

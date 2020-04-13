@@ -84,7 +84,8 @@ export default class AdminOrders extends Component {
           return (
             <>
               <tr className={item.status}>
-                <th style={{width:"50px !important"}}
+                <th
+                  style={{ width: "50px !important" }}
                   onClick={() => {
                     this.handleListClick(item);
                   }}
@@ -98,7 +99,16 @@ export default class AdminOrders extends Component {
                 <th>{item.customerInfo.suma}</th>
                 <th>{item.customerInfo.telephone}</th>
                 <th>{item.customerInfo.email}</th>
-                <th>{item.customerInfo.deliveryMethod}</th>
+                <th
+                  className={
+                    item.customerInfo.deliveryMethod ===
+                    "Płatność przy odbiorze"
+                      ? "red2"
+                      : null
+                  }
+                >
+                  {item.customerInfo.deliveryMethod}
+                </th>
                 <th>{item.date}</th>
                 <th>{item.status}</th>
                 <button
@@ -310,6 +320,12 @@ export default class AdminOrders extends Component {
                   </div>{" "}
                   <div className="adminOrder__singleTableRow">
                     {[customerInfo.suma * 1 + deliveryPrice][0].toFixed(2)} PLN
+                  </div>
+                </div>
+                <div className="adminOrder__singleTableColumn">
+                  <div className="adminOrder__singleTableRow">Uwagi:</div>
+                  <div className="adminOrder__singleTableRow">
+                    {customerInfo.uwagi}
                   </div>
                 </div>
               </div>

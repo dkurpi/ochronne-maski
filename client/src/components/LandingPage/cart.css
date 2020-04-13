@@ -143,7 +143,6 @@ body {
 }
 .Text {
   display: block;
-  margin-top: auto;
   font-size: 32px;
   color: white;
   font-size: 32px;
@@ -434,6 +433,16 @@ a {
     padding: 10px;
     width: 90vw;
     justify-content: center;
+  }
+  .Text {
+    font-size: 22px;
+    text-align: left;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .orderHeaderMask__your-order {
+    width: 80%;
   }
   .singleProduct--suma {
     justify-content: flex-end;

@@ -128,13 +128,17 @@ export default class Cart extends Component {
     const now = new Date();
     const dat1 = now.toString();
     const date = dat1.slice(0, 24);
+
+    const uwagi = document.getElementById("uwagi").value;
+    if (uwagi) {
+      customerInfo.uwagi = uwagi;
+    } else customerInfo.uwagi = "brak";
     const data = {
       cart,
       customerInfo,
       date,
       status: "Nowe",
     };
-    console.log(data);
 
     if (cart.length !== "") {
       fetch("/api/new-order", {
@@ -220,6 +224,11 @@ export default class Cart extends Component {
               {`${deliveryMethod}`}
               <br />
             </div>
+            <br />
+            Uwagi:
+            <br />
+            <textarea id="uwagi" rows="4" cols="50"></textarea>
+            <br></br>
             <button
               onClick={() => {
                 const orderMove = document.querySelector(".form-containers");
@@ -433,7 +442,8 @@ export default class Cart extends Component {
           >
             <div className="singleProduct--suma__des">Łącznie:</div>
             <div className="singleProduct--suma__des">
-              {(groupSum[0] + groupSum[1] + groupSum[2]).toFixed(2)} PLN + przesyłka
+              {(groupSum[0] + groupSum[1] + groupSum[2]).toFixed(2)} PLN +
+              przesyłka
             </div>
           </div>
         </div>

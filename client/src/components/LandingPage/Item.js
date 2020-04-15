@@ -6,7 +6,9 @@ import Popup from "reactjs-popup";
 import gsap from "gsap";
 
 function Item({ items, match, handleAddingToCart, best }) {
-  const [item, setitem] = useState(items[match.params.id]);
+  const ID = parseInt(match.params.id);
+  const itemID = items.find((itm) => itm.id === ID);
+  const [item, setitem] = useState(itemID);
   const [quantity, setQuantity] = useState(0);
   const [packet, setPacket] = useState(3);
 

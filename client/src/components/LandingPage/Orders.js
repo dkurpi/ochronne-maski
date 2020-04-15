@@ -81,6 +81,13 @@ export default class AdminOrders extends Component {
             sum += i.prize;
           });
 
+          let deliveryPrice = 0;
+
+          if (customerInfo.deliveryMethod === "Przelew na konto")
+            deliveryPrice = 13.99;
+          else if (customerInfo.deliveryMethod === "Płatność przy odbiorze")
+            deliveryPrice = 21.99;
+
           return (
             <>
               <tr className={item.status}>
@@ -96,7 +103,9 @@ export default class AdminOrders extends Component {
                 <th>{item.customerInfo.name}</th>
                 <th>{item.customerInfo.surname}</th>
                 <th>{item.customerInfo.city}</th>
-                <th>{item.customerInfo.suma}</th>
+                <th>
+                  {[item.customerInfo.suma * 1 + deliveryPrice][0].toFixed(2)}
+                </th>
                 <th>{item.customerInfo.telephone}</th>
                 <th>{item.customerInfo.email}</th>
                 <th
@@ -322,7 +331,13 @@ export default class AdminOrders extends Component {
                     {[customerInfo.suma * 1 + deliveryPrice][0].toFixed(2)} PLN
                   </div>
                 </div>
-                <div className="adminOrder__singleTableColumn">
+                <div
+                  className={
+                    customerInfo.uwagi === "brak"
+                      ? "adminOrder__singleTableColumn"
+                      : "adminOrder__singleTableColumn red2"
+                  }
+                >
                   <div className="adminOrder__singleTableRow">Uwagi:</div>
                   <div className="adminOrder__singleTableRow">
                     {customerInfo.uwagi}

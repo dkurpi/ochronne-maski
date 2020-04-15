@@ -50,7 +50,7 @@ export default function PrizeTable() {
           <hr />
           <i style={{ textAlign: "center", fontSize: "12px", color: "gray" }}>
             *Promocja działa także przy zakupie różnych wzorów <br />
-            *Możliwość zamówienia różnych kolorow w paczce. Rodzaje koloróws
+            *Możliwość zamówienia różnych kolorow w paczce. Rodzaje kolorów
             można wypisać w polu "Uwagi", po wprowadzeniu danych osobowych.
           </i>
         </div>

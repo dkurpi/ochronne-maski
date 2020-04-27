@@ -10,7 +10,7 @@ import "./LandingPage/popup.css";
 import items from "./przedmioty.js";
 
 function App() {
-  const bestID = [4, 3, 2, 1];
+  const bestID = [4, 18, 21, 23,15,0, 2,23];
   const best = bestID.map(id => items[id]);
   const [cart, setcart] = useState([]);
 

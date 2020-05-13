@@ -1,7 +1,6 @@
 .headerProductsSite--admin {
   background-image: url("/photos/szafaaa.jpg");
 }
-
 .panel {
   font-family: "Montserrat";
   padding: 3px;
@@ -73,14 +72,12 @@ tr:hover {
   padding: 20px;
   margin: 10vh 0;
 }
-.singleCartItem__img {
-}
+
 .adminOrder__personal-info {
   flex-basis: 30%;
   height: 100%;
   background-color: white;
 }
-
 .adminOrder__singleTable {
   display: flex;
   width: 100%;
@@ -89,14 +86,12 @@ tr:hover {
   flex-direction: column;
   margin-left: 1vw;
 }
-
 .adminOrder__singleTableColumn {
   font-family: "montserrat";
   font-size: 20px;
   font-weight: 200;
   display: flex;
 }
-
 .adminOrder__singleTableRow {
   border: 2px solid rgba(128, 128, 128, 0.219);
   flex-basis: 50%;
@@ -109,7 +104,6 @@ tr:hover {
   display: flex;
   flex-wrap: wrap;
 }
-
 .adminOrder__item {
   display: flex;
   flex-direction: column;
@@ -126,11 +120,7 @@ table th {
   border: 1px solid gray;
 }
 table{
-
   overflow-x: auto !important;
-
-
-
 }
 .containterOrders {
   display: flex;

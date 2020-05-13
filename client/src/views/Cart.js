@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./cart.css";
+import "../css/cart.css";
 import Cookies from "js-cookie";
 import Popup from "reactjs-popup";
-import promo from "../promo";
+import promo from "./promo";
 import PrizeTable from "./PrizeTable.js";
 
 export default class Cart extends Component {

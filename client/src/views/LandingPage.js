@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Carousel from "./Carousel/Carousel.js";
+import Carousel from "./Carousel.js";
 import Items from "./Items.js";
 import Menu from "./Menu.js";
-import "./Page.css";
+import "../css/Page.css";
 import Item from "./Item.js";
 import Cart from "./Cart.js";
 import Orders from "./Orders.js";
-import { Contact, Delivery, Terms } from "../Footer.js";
+import { Contact, Delivery, Terms } from "./Footer.js";
 import PrizeTable from "./PrizeTable.js";
 
 

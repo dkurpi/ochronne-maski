@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../css/Admin.css";
+import "./Admin.css";
 import AdminLogin from "./AdminLogin";
 import Cookies from "js-cookie";
 

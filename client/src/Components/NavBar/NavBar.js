@@ -1,15 +1,16 @@
 import React, { useState } from "react";
+import items from "../../products/przedmioty.js";
 
 import "bootstrap/dist/css/bootstrap.css";
-function NavBar({ items, cart }) {
+function NavBar({ cart }) {
   let suma = 0;
 
-  const navItems = items.map(item => (
+  const navItems = items.map((item) => (
     <a href={`/product/${item.id}`} class="dropdown-item">
       <span> {item.name}</span>
     </a>
   ));
-  const cartList = cart.map(item => {
+  const cartList = cart.map((item) => {
     const prizeAll = [item.packet * item.quantity * item.prize][0].toFixed(2);
     console.log(typeof suma);
     suma += prizeAll * 1;
@@ -57,7 +58,7 @@ function NavBar({ items, cart }) {
             </li>
 
             <li
-              onMouseEnter={e => {
+              onMouseEnter={(e) => {
                 console.log("eee");
               }}
               class="nav-item dropdown cartLG"
@@ -77,8 +78,8 @@ function NavBar({ items, cart }) {
                   [
                     cartList,
                     <a href={`/koszyk`} class=" dropdown-item pay ">
-                      ZAPŁAĆ 
-                    </a>
+                      ZAPŁAĆ
+                    </a>,
                   ]
                 )}
               </div>
@@ -95,16 +96,14 @@ function NavBar({ items, cart }) {
               </a>
               <div class="dropdown-menu scrollableMenu dropdown-menu-right">
                 {navItems}
-
-                
               </div>
               <a
-                  href="/koszyk"
-                  class="dropdown-item btn-danger red"
-                  style={{ backgroundColor: "red !important", color: "white" }}
-                >
-                  <span> Koszyk</span>
-                </a>
+                href="/koszyk"
+                class="dropdown-item btn-danger red"
+                style={{ backgroundColor: "red !important", color: "white" }}
+              >
+                <span> Koszyk</span>
+              </a>
             </li>
           </ul>
         </div>

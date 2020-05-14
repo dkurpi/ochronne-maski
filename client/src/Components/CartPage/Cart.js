@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "../css/cart.css";
+import "./cart.css";
 import Cookies from "js-cookie";
 import Popup from "reactjs-popup";
-import promo from "./promo";
-import PrizeTable from "./PrizeTable.js";
+import promo from "../../products/promo";
+import PrizeTable from "../PrizeTable/PrizeTable.js";
 
 export default class Cart extends Component {
   state = {

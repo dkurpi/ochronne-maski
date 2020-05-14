@@ -1,5 +1,5 @@
 import React from "react";
-import promo from "./promo";
+import promo from "../../products/promo";
 
 export default function PrizeTable() {
   return (

@@ -9,10 +9,12 @@ export default function PrizeTable() {
         className="singleProduct header--main"
       >
         <div className="absolute">
-          <h4 style={{ textAlign: "center" }}>Cennik<i style={{ textAlign: "center", fontSize: "12px", color: "gray" }}>
-            {"  "}(Cena za sztukę)
-          </i>{" "} </h4>
-          
+          <h4 style={{ textAlign: "center" }}>
+            Cennik
+            <i style={{ textAlign: "center", fontSize: "12px", color: "gray" }}>
+              (Cena za sztukę)
+            </i>
+          </h4>
           <hr />
           <div className="sizes">
             <div className="singleProduct__info flexbox-cart">
@@ -46,7 +48,7 @@ export default function PrizeTable() {
               <div className="singleProduct__info-des">{promo[2][5]}</div>
             </div>
           </div>
-          
+
           <hr />
           <i style={{ textAlign: "center", fontSize: "12px", color: "gray" }}>
             *Promocja działa także przy zakupie różnych wzorów <br />

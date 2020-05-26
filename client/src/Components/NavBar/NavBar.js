@@ -1,26 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import items from "../../products/przedmioty.js";
 
 import "bootstrap/dist/css/bootstrap.css";
 function NavBar({ cart }) {
   let suma = 0;
 
-  const navItems = items.map((item) => (
-    <a href={`/product/${item.id}`} class="dropdown-item">
-      <span> {item.name}</span>
+  const navItems = items.map(({ name, id }) => (
+    <a href={`/product/${id}`} class="dropdown-item">
+      <span> {name}</span>
     </a>
   ));
-  const cartList = cart.map((item) => {
-    const prizeAll = [item.packet * item.quantity * item.prize][0].toFixed(2);
+  const cartList = cart.map(({ name, id, packet, quantity, prize }) => {
+    const prizeAll = [packet * quantity * prize][0].toFixed(2);
     console.log(typeof suma);
     suma += prizeAll * 1;
     return (
-      <a href={`/product/${item.id}`} class="dropdown-item menu__cart">
-        <span class="pr-5 flex-grow">{item.name}</span>
+      <a href={`/product/${id}`} class="dropdown-item menu__cart">
+        <span class="pr-5 flex-grow">{name}</span>
         <span class="ml-auto">
-          {item.quantity}
-          {item.quantity === 1 ? " paczka" : " paczek"} {" |  "}
-          {item.packet * item.quantity}szt
+          {quantity}
+          {quantity === 1 ? " paczka" : " paczek"} {" |  "}
+          {packet * quantity}szt
         </span>
       </a>
     );

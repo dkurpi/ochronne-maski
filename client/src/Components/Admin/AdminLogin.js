@@ -4,7 +4,8 @@ import Cookies from "js-cookie";
 export default function AdminLogin() {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
-  const handleSubmit = () => {
+
+  const handleAdminForm = () => {
     fetch("/api/AdminLogin", {
       method: "POST",
       headers: {
@@ -14,7 +15,6 @@ export default function AdminLogin() {
     })
       .then(res => res.json())
       .then(res => {
-        console.log(res);
         const { isAuth, key } = res;
         if (isAuth) {
           Cookies.set("maseczki-ochronne-admin", key, {
@@ -24,11 +24,12 @@ export default function AdminLogin() {
         } else alert("Złe dane");
       });
   };
+
   return (
     <div className="admin-login">
       ZALOGUJ SIE
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleAdminForm}
         className="admin-form"
         action="sumbit"
         method="post"
@@ -53,7 +54,7 @@ export default function AdminLogin() {
           placeholder="haslo"
           id="password"
         />
-        <input onClick={handleSubmit} type="button" value="Zaloguj" />
+        <input onClick={handleAdminForm} type="button" value="Zaloguj" />
       </form>
     </div>
   );

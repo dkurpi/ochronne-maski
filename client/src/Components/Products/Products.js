@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import Popup from "reactjs-popup";
 
 export default function Items(props) {
-  const [items, setitems] = useState(props.items);
+  const [items, setItems] = useState(props.items);
   const [item, setitem] = useState({});
   const [PopedOpen, setPopedOpen] = useState(false);
 
-  
   const popup = [
     <Popup
       open={PopedOpen}
@@ -15,7 +14,7 @@ export default function Items(props) {
         setPopedOpen(false);
       }}
     >
-      {close => (
+      {(close) => (
         <div className="modale">
           <a
             className="close"
@@ -39,7 +38,6 @@ export default function Items(props) {
             Masek w paczce: {item.packet} <br />
             Ilość paczek: {item.quantity} <br />
             Łącznie masek: {item.packet * item.quantity} <br />
-         
           </div>
           <div className="actions">
             <button
@@ -63,10 +61,10 @@ export default function Items(props) {
           </div>
         </div>
       )}
-    </Popup>
+    </Popup>,
   ];
 
-  const products = items.map(item => {
+  const products = items.map((item) => {
     return (
       <>
         <div class="col-lg-3 col-md-4  col-sm-6 mb-2 flexcolumn">
@@ -74,12 +72,12 @@ export default function Items(props) {
             <a href={`/product/${item.id}`}>
               <img
                 class="card-img-top"
-                onPointerEnter={e => {
+                onPointerEnter={(e) => {
                   item.images[1]
                     ? (e.target.src = item.images[1])
                     : (e.target.src = item.images[0]);
                 }}
-                onPointerLeave={e => {
+                onPointerLeave={(e) => {
                   e.target.src = item.images[0];
                 }}
                 src={item.images[0]}
@@ -121,5 +119,11 @@ export default function Items(props) {
     );
   });
 
-  return <div class="row flexcolumn-wrapper">{products}</div>;
+  return (
+    <>
+      <span className="Text text__delivery"> Produkty:</span>
+      <hr />
+      <div class="row flexcolumn-wrapper">{products}</div>
+    </>
+  );
 }

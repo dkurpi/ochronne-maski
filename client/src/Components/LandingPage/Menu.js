@@ -11,19 +11,14 @@ function Menu({ items }) {
     handleAnimations();
   }, []);
 
-  const menuItems = items.map((item) => (
-    <a
-      href={`/product/${item.id}`}
-      class="list-group-item list-group-item-action"
-    >
-      {item.name}
+  const menuItems = items.map(({ id, name }) => (
+    <a href={`/product/${id}`} class="list-group-item list-group-item-action">
+      {name}
     </a>
   ));
   return (
     <div class="col-lg-3 menuItem mt-3">
-      <span className="Text text__delivery">
-        Nasze produkty:
-      </span>
+      <span className="Text text__delivery">Nasze produkty:</span>
       <hr />
       <div class="list-group ">{menuItems}</div>
     </div>

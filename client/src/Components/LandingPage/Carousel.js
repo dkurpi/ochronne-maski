@@ -1,49 +1,6 @@
 import React from "react";
 
-const Item = ({ id, images, name, prize, prizeEach, oldPrize }) => {
-  return (
-    <div class="col-lg-6 col-md-6  col-sm-6 mb-2 flexcolumn">
-      <div class="card h-100  text-center color-gray">
-        <a href={`/product/${id}`}>
-          <img
-            onPointerEnter={(e) => {
-              images[1]
-                ? (e.target.src = images[1])
-                : (e.target.src = images[0]);
-            }}
-            onPointerLeave={(e) => {
-              e.target.src = images[0];
-            }}
-            class="card-img-top"
-            src={images[0]}
-            alt=""
-          />
-        </a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href={`product/${id}`}>{name}</a>
-          </h4>
-          <h4>
-            <s style={{ color: "red", fontSize: "15px" }}>{oldPrize}zł</s>
-            {prize}zł
-          </h4>
-          <div class="product-rating mb-2 vat">{prizeEach} zł/maska</div>
-
-          <h6 class="vat">zawiera 23% VAT, bez kosztów dostawy</h6>
-        </div>
-        <div class="card-footer">
-          <a href={`product/${id}`}>
-            <button type="button" class="btn btn-danger">
-              Sprawdź
-            </button>
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-function Carousel({ items }) {
+export default function Carousel({ items }) {
   const getItem = (index) => {
     const [item] = items.filter(({ id }) => id === index);
     return item;
@@ -111,5 +68,45 @@ function Carousel({ items }) {
     </>
   );
 }
+const Item = ({ id, images, name, prize, prizeEach, oldPrize }) => {
+  return (
+    <div class="col-lg-6 col-md-6  col-sm-6 mb-2 flexcolumn">
+      <div class="card h-100  text-center color-gray">
+        <a href={`/product/${id}`}>
+          <img
+            onPointerEnter={(e) => {
+              images[1]
+                ? (e.target.src = images[1])
+                : (e.target.src = images[0]);
+            }}
+            onPointerLeave={(e) => {
+              e.target.src = images[0];
+            }}
+            class="card-img-top"
+            src={images[0]}
+            alt=""
+          />
+        </a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href={`product/${id}`}>{name}</a>
+          </h4>
+          <h4>
+            <s style={{ color: "red", fontSize: "15px" }}>{oldPrize}zł</s>
+            {prize}zł
+          </h4>
+          <div class="product-rating mb-2 vat">{prizeEach} zł/maska</div>
 
-export default Carousel;
+          <h6 class="vat">zawiera 23% VAT, bez kosztów dostawy</h6>
+        </div>
+        <div class="card-footer">
+          <a href={`product/${id}`}>
+            <button type="button" class="btn btn-danger">
+              Sprawdź
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./cart.css";
 import Popup from "reactjs-popup";
-import promo from "../../products/promo";
-import PrizeTable from "../PrizeTable/PrizeTable.js";
+import promo from "../../Utils/products/promo";
+import PriceTable from "../PriceTable/PriceTable.js";
 import OrderSummary from "./Sections/OrderSummary.js";
 import { CustomerInfo, AcceptOrder } from "./Sections/Info.js";
 import ListOfProducts from "./Sections/ListOfProducts.js";
@@ -102,6 +102,7 @@ export default class Cart extends Component {
       behavior: "smooth",
     });
   };
+  
   sendToBackEnd = () => {
     const { customerInfo } = this.state;
     const { cart } = this.props;
@@ -121,7 +122,7 @@ export default class Cart extends Component {
     };
 
     if (cart.length !== "") {
-      fetch("/api/new-order", {
+      fetch("/api/newOrder", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -138,9 +139,9 @@ export default class Cart extends Component {
         });
     } else alert("Popraw dane");
   };
+
   render() {
     const { cart } = this.props;
-    console.log(this.state.customerInfo);
     /////////// Quantity
     const quantityOfGroups = [0, 0, 0];
     cart.forEach((item) => {
@@ -177,7 +178,7 @@ export default class Cart extends Component {
           <div className="orderWrapper">
             <div className="orderedProducts">
               <div className="allProducts">
-                <PrizeTable />
+                <PriceTable />
                 <OrderSummary
                   quantityOfGroups={quantityOfGroups}
                   quantityPrizes={quantityPrizes}
@@ -187,7 +188,7 @@ export default class Cart extends Component {
                 <ListOfProducts
                   quantityPrizes={quantityPrizes}
                   items={cart}
-                  cookiesDeleteItem={this.props.cookiesDeleteItem}
+                  handleDeleteItemFromCart={this.props.handleDeleteItemFromCart}
                 />
               </div>
             </div>

@@ -6,7 +6,7 @@ export default function AdminLogin() {
   const [password, setPassword] = useState("");
 
   const handleAdminForm = () => {
-    fetch("/api/AdminLogin", {
+    fetch("/api/adminLogin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

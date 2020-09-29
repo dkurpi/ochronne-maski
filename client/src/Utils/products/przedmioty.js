@@ -269,8 +269,6 @@ const items = [
     description: "",
     group: 1,
   },
-
-
 ];
 
 export default items;

@@ -12,7 +12,6 @@ export default function TableWithOrders({
       document.body.scrollTop +
       info.getBoundingClientRect().top -
       document.body.offsetHeight * 0.1;
-    console.log(infoPosition);
 
     document.body.scrollTo({
       top: infoPosition,
@@ -29,7 +28,7 @@ export default function TableWithOrders({
       body: JSON.stringify({ target, status }),
     };
 
-    fetch("/api/orderModify", options)
+    fetch("/api/modifyOrder", options)
       .then((res) => res.json())
       .then((res) => {
         loadItems();

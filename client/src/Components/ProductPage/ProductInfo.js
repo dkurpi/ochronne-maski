@@ -1,6 +1,6 @@
 import React from "react";
-import { LightgalleryProvider, LightgalleryItem } from "react-lightgallery";
-import "lightgallery.js/dist/css/lightgallery.css";
+import Gallery from "./Gallery";
+
 export default function ProductInfo({
   item,
   packet,
@@ -11,46 +11,10 @@ export default function ProductInfo({
   setQuantity,
   setisPopedOpen,
 }) {
-  const mini_images = item.images.map((itm, idx) => {
-    if (idx !== 0)
-      return (
-        <div className="mini-item">
-          <LightgalleryItem group={`item`} src={itm}>
-            <img
-              onMouseEnter={(e) => {
-                document.querySelector(".mainImage").src = itm;
-              }}
-              className="mini-item"
-              src={itm}
-            />
-          </LightgalleryItem>
-        </div>
-      );
-    else
-      return (
-        <div className="mini-item">
-          <img
-            onMouseEnter={(e) => {
-              document.querySelector(".mainImage").src = itm;
-            }}
-            className="mini-item"
-            src={itm}
-          />
-        </div>
-      );
-  });
-
   return (
     <div class="descriptions media  flex-column flex-lg-row">
       <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100  text-center">
-          <LightgalleryProvider>
-            <div className="mini-items">{mini_images}</div>
-            <LightgalleryItem group={`item`} src={item.images[0]}>
-              <img class="card-img-top mainImage" src={item.images[0]} alt="" />
-            </LightgalleryItem>
-          </LightgalleryProvider>
-        </div>
+        <Gallery item={item} />
       </div>
 
       <div class="media-body order-2 order-lg-2 ml-lg-5 flex-fill">
@@ -81,7 +45,6 @@ export default function ProductInfo({
               if (item.prizeSelected) {
                 item.prizeEach = item.prizeSelected[selID];
                 item.prize = item.prizeEach;
-                console.log(item.prizeEach, item.prize);
               }
             }}
             id="quantity"
@@ -100,7 +63,6 @@ export default function ProductInfo({
             <input
               onChange={(e) => {
                 setQuantity(parseInt(e.target.value));
-                console.log(quantity);
               }}
               class="quantity"
               min="1"
@@ -112,7 +74,6 @@ export default function ProductInfo({
             />
             <button
               onClick={() => {
-                console.log("działa");
                 if (
                   quantity >= 1 &&
                   quantity <= 100 &&

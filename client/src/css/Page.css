@@ -2,15 +2,12 @@
   margin-top: 4em;
   max-width: 1620px;
 }
-.carousel-modified {
-}
 
 .fa-shopping-cart {
   font-size: 22px !important;
   color: white !important;
 }
-.shoppingCart {
-}
+
 .productSiteWrapper {
   background: #343a40 !important;
 }
@@ -18,7 +15,6 @@
   margin-left: 20px;
   margin-right: 20px;
 }
-
 
 #quantity {
   padding: 2px;
@@ -115,8 +111,6 @@ ol.carousel-indicators li.active {
   border: none !important;
 }
 
-.carousel-control-prev {
-}
 .carousel-control-prev-icon {
   color: black !important;
 }
@@ -186,8 +180,7 @@ ol.carousel-indicators li.active {
 .Wysłane {
   background-color: rgb(160, 255, 116);
 }
-.flexbox-cart {
-}
+
 .header--main {
   margin: 0 !important;
 }
@@ -215,9 +208,7 @@ ol.carousel-indicators li.active {
     margin: 5px;
   }
 }
-.card-img-top {
-  max-height: 60%;
-}
+
 .pay {
   background-color: red !important;
   color: white !important;
@@ -263,8 +254,7 @@ ol.carousel-indicators li.active {
   .dropdown-item:nth-child(1) {
     border-top: none !important;
   }
-  .navbar.navbar-expand-lg.navbar-dark {
-  }
+
   .nav-item {
     margin: 0 !important;
   }
@@ -284,8 +274,6 @@ ol.carousel-indicators li.active {
   }
 }
 
-.color-gray {
-}
 .card-title {
   font-size: 16px;
 }
@@ -331,7 +319,6 @@ a {
   background-color: red;
   overflow-y: scroll;
 }
-
 
 .red2 {
   background-color: rgba(255, 0, 0, 0.356) !important;

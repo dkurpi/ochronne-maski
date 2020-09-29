@@ -1,7 +1,7 @@
 import React from "react";
-import promo from "../../products/promo";
+import promo from "../../Utils/products/promo";
 
-export default function PrizeTable() {
+export default function PriceTable() {
   return (
     <>
       <div

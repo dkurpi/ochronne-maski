@@ -4,6 +4,7 @@ const path = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
+require("dotenv").config();
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -12,11 +13,9 @@ app.use(cookieParser());
 app.use("/api", require("./routes/orders"));
 
 const MongoClient = require("mongodb").MongoClient;
-const uri =
-  "mongodb+srv://local:dawidrw123@cluster0-ehgqo.mongodb.net/test?authSource=admin&replicaSet=Cluster0-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass%20Community&retryWrites=true&ssl=true";
 
 MongoClient.connect(
-  uri,
+  process.env.MONGODB_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -24,7 +23,6 @@ MongoClient.connect(
   (err, db) => {
     console.log("connected to MongoClient");
     app.db = db;
-
 
     /////////////PRODUCTION
     if (process.env.NODE_ENV === "production") {

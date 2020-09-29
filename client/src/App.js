@@ -4,7 +4,6 @@ import NavBar from "./Components/NavBar/NavBar.js";
 import { Footer } from "./Components/Footer/Footer.js";
 import * as serviceWorker from './serviceWorker';
 import './setupProxy.js';
-// import "./css/popup.css";
 
 function App() {
   const [cart, setCart] = useState([]);

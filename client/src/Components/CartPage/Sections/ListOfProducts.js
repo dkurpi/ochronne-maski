@@ -3,7 +3,7 @@ import React from "react";
 export default function ListOfProducts({
   quantityPrizes,
   items,
-  cookiesDeleteItem,
+  handleDeleteItemFromCart,
 }) {
   const list = items.map((item, index) => {
     return (
@@ -45,7 +45,7 @@ export default function ListOfProducts({
               </div>
             </div>
           </div>
-          <button onClick={(e) => cookiesDeleteItem(e, index)}>USUŃ</button>
+          <button onClick={(e) => handleDeleteItemFromCart(e, index)}>USUŃ</button>
         </div>
 
         <div className="singleProduct__prize">

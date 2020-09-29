@@ -9,10 +9,8 @@ import Cart from "./CartPage/Cart.js";
 import Orders from "./Admin/Orders.js";
 import { Contact, Delivery, Terms } from "./Footer/Footer.js";
 
-import items from "../products/przedmioty.js";
-
 function PageContent({ cart, setCart }) {
-  const cookiesDeleteItem = (index) => {
+  const handleDeleteItemFromCart = (index) => {
     const cartCopy = cart;
     cartCopy.splice(index, 1);
     Cookies.set("maski-ochronne", cartCopy, {
@@ -28,7 +26,6 @@ function PageContent({ cart, setCart }) {
     item.packet = packet;
 
     setCart([...cart, item]);
-    console.log(cart);
     Cookies.set("maski-ochronne", [...cart, item], {
       expires: 1,
     });
@@ -46,23 +43,19 @@ function PageContent({ cart, setCart }) {
       <Router>
         <Switch>
           <Route exact path="/">
-            <LandingPage
-              items={items}
-              handleAddingToCart={handleAddingToCart}
-            />
+            <LandingPage handleAddingToCart={handleAddingToCart} />
           </Route>
           <Route
             path="/product/:id"
             render={(props) => (
-              <ProductPage
-                items={items}
-                handleAddingToCart={handleAddingToCart}
-                {...props}
-              />
+              <ProductPage handleAddingToCart={handleAddingToCart} {...props} />
             )}
           />
           <Route exact path="/koszyk">
-            <Cart cart={cart} cookiesDeleteItem={cookiesDeleteItem} />
+            <Cart
+              cart={cart}
+              handleDeleteItemFromCart={handleDeleteItemFromCart}
+            />
           </Route>
           <Route exact path="/zamowienia" component={Orders} />
           <Route exact path="/kontakt" component={Contact} />

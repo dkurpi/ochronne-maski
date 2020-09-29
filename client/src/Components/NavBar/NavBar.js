@@ -1,31 +1,9 @@
 import React from "react";
-import items from "../../products/przedmioty.js";
-
 import "bootstrap/dist/css/bootstrap.css";
+import NavItems from "./Sections/NavItems";
+import CartList from "./Sections/CartList";
+
 function NavBar({ cart }) {
-  let suma = 0;
-
-  const navItems = items.map(({ name, id }) => (
-    <a href={`/product/${id}`} class="dropdown-item">
-      <span> {name}</span>
-    </a>
-  ));
-  const cartList = cart.map(({ name, id, packet, quantity, prize }) => {
-    const prizeAll = [packet * quantity * prize][0].toFixed(2);
-    console.log(typeof suma);
-    suma += prizeAll * 1;
-    return (
-      <a href={`/product/${id}`} class="dropdown-item menu__cart">
-        <span class="pr-5 flex-grow">{name}</span>
-        <span class="ml-auto">
-          {quantity}
-          {quantity === 1 ? " paczka" : " paczek"} {" |  "}
-          {packet * quantity}szt
-        </span>
-      </a>
-    );
-  });
-
   return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center fixed-top">
       <div style={{ maxWidth: "1620px" }} class="container-fluid ">
@@ -57,12 +35,7 @@ function NavBar({ cart }) {
               </a>
             </li>
 
-            <li
-              onMouseEnter={(e) => {
-                console.log("eee");
-              }}
-              class="nav-item dropdown cartLG"
-            >
+            <li class="nav-item dropdown cartLG">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -76,7 +49,7 @@ function NavBar({ cart }) {
                   <a class="dropdown-item ">Brak przedmiotów w koszyku</a>
                 ) : (
                   [
-                    cartList,
+                    <CartList cart={cart} />,
                     <a href={`/koszyk`} class=" dropdown-item pay ">
                       ZAPŁAĆ
                     </a>,
@@ -95,7 +68,7 @@ function NavBar({ cart }) {
                 Produkty
               </a>
               <div class="dropdown-menu scrollableMenu dropdown-menu-right">
-                {navItems}
+                <NavItems />
               </div>
               <a
                 href="/koszyk"

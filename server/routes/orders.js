@@ -6,10 +6,9 @@ var ObjectId = require("mongodb").ObjectID;
 //             Orders
 //=================================
 
-router.post("/new-order", (req, res, err) => {
+router.post("/newOrder", (req, res, err) => {
   const newOrder = req.body;
   const collection = req.app.db.db("ochronne-maski").collection("zamowienia");
-  console.log("newor", newOrder);
   res.json({ isSaved: true });
   collection.insertOne(newOrder);
 });
@@ -27,19 +26,19 @@ router.get("/orders", (req, res) => {
     });
 });
 
-router.post("/AdminLogin", (req, res) => {
-  const _login = "kacztex";
-  const _password = "kacztex123";
+router.post("/adminLogin", (req, res) => {
+  const _login = process.env.LOGIN;
+  const _password = process.env.PASSWORD;
   const { login, password } = req.body;
   if (login === _login && password === _password)
     res.json({
       isAuth: true,
-      key: "eyJrIjoiT0tTcG1pUlY2RnVKZTFVaDFsNFZXdE9ZWmNrMkZYbk",
+      key: process.env.ADMIN_KEY,
     });
   else res.json({ isAuth: false });
 });
 
-router.put("/orderModify", (req, res) => {
+router.put("/modifyOrder", (req, res) => {
   const { target, status } = req.body;
   const collection = req.app.db.db("ochronne-maski").collection("zamowienia");
   const obj = ObjectId(target);

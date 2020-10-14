@@ -20,7 +20,7 @@ export default class Cart extends Component {
       adressCode: "",
       telephone: "",
       email: "",
-      deliveryMethod: "courier",
+      deliveryMethod: "Płatność przy odbiorze",
     },
     isClicked: false,
     suma: 0,
@@ -29,6 +29,7 @@ export default class Cart extends Component {
 
   handleInput = (event, property) => {
     const { value } = event.target;
+    console.log(this.state.customerInfo.deliveryMethod);
     this.setState(({ customerInfo }) => {
       return { customerInfo: { ...customerInfo, [property]: value } };
     });
@@ -102,7 +103,7 @@ export default class Cart extends Component {
       behavior: "smooth",
     });
   };
-  
+
   sendToBackEnd = () => {
     const { customerInfo } = this.state;
     const { cart } = this.props;
@@ -111,9 +112,7 @@ export default class Cart extends Component {
     const date = dat1.slice(0, 24);
 
     const uwagi = document.getElementById("uwagi").value;
-    if (uwagi) {
-      customerInfo.uwagi = uwagi;
-    } else customerInfo.uwagi = "brak";
+    uwagi ? (customerInfo.uwagi = uwagi) : (customerInfo.uwagi = "brak");
     const data = {
       cart,
       customerInfo,

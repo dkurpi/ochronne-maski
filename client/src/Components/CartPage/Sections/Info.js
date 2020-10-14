@@ -94,10 +94,10 @@ export function CustomerInfo({
           className="delivery"
           name="delivery"
         >
-          <option id="option" value="courier">
+          <option id="option" value="Płatność przy odbiorze">
             Płatność przy odbiorze
           </option>
-          <option id="option" value="account">
+          <option id="option" value="Przelew na konto">
             Przelew na konto
           </option>
         </select>

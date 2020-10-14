@@ -13,10 +13,7 @@ export default function TableWithOrders({
       info.getBoundingClientRect().top -
       document.body.offsetHeight * 0.1;
 
-    document.body.scrollTo({
-      top: infoPosition,
-      behavior: "smooth",
-    });
+    window.scrollTo(0, infoPosition);
   };
 
   const handleModyfing = (target, status) => {
@@ -47,7 +44,7 @@ export default function TableWithOrders({
     const customerCartSum = (
       parseFloat(customerInfo.suma) + deliveryPrice
     ).toFixed(2);
-    
+
     return (
       <>
         <tr className={status}>

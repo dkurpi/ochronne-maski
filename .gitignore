@@ -2,10 +2,8 @@
 
 dev.js
 
-
-
 .DS_Store
-
+.env
 npm-debug.log*
 yarn-debug.kog*
 yarn-error.log*

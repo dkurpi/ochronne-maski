@@ -5,7 +5,7 @@ import ProductInfo from "./ProductInfo.js";
 import SuggestedProducts from "../SuggestedProducts/SuggestedProducts.js";
 import gsap from "gsap";
 import { bestsellersID } from "../../Utils/products/bestsellersID";
-import items from "../../Utils/products/przedmioty.js";
+import items from "../../Utils/products/items.js";
 
 function ProductPage({ match, handleAddingToCart }) {
   const [item, setItem] = useState({});

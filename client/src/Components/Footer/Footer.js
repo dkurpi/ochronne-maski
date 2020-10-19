@@ -348,7 +348,7 @@ function Terms() {
                       <hr />
                       <h3>
                         <span style={{ fontWeight: "200" }}>
-                          Co to są ciasteczka?
+                          Czym są ciasteczka?
                         </span>
                       </h3>
                       <p>

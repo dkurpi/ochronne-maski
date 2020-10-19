@@ -1,5 +1,5 @@
 import React from "react";
-import items from "../../../Utils/products/przedmioty.js";
+import items from "../../../Utils/products/items.js";
 
 export default function NavItems() {
   return (

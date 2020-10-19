@@ -4,7 +4,7 @@ import Carousel from "./Carousel.js";
 
 import PriceTable from "../PriceTable/PriceTable.js";
 import SuggestedProducts from "../SuggestedProducts/SuggestedProducts.js";
-import items from "../../Utils/products/przedmioty";
+import items from "../../Utils/products/items";
 
 function LandingPage({ handleAddingToCart }) {
   return (

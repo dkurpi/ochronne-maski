@@ -17,7 +17,9 @@ E-commerce website for a local company selling reusable masks in variety designs
 - place orders with the manage the status of orders
 
 ## Demo
-Here is a website link: http://www.ochronne-maski.pl/
+~~Here is a website link: http://www.ochronne-maski.pl/~~
+* ORIGINAL WEBSITE NOT AVAILABLE ALREADY (CLIENT DOES NOT SELL MASK NOW) *
+Here is a backup demo link: https://maseczkiochronne.herokuapp.com/
 
 ## Technologies
 Full-stack application utilising a MERN stack.

@@ -18,7 +18,7 @@ E-commerce website for a local company selling reusable masks in variety designs
 
 ## Demo
 ~~Here is a website link: http://www.ochronne-maski.pl/~~
-* ORIGINAL WEBSITE NOT AVAILABLE ALREADY (CLIENT DOES NOT SELL MASK NOW) 
+* ORIGINAL WEBSITE NOT AVAILABLE ALREADY (CLIENT DOES NOT SELL MASKS AL THIS MOMENT) 
 * Here is a backup demo link: https://maseczkiochronne.herokuapp.com/
 
 ## Technologies
